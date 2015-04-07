@@ -1,25 +1,11 @@
 
-  <div class="container">
-    <div class="row">
-      <div class="col s12 m3 l2"><p></p>
-      </div>
-
-      <div id="middle" class="col s12 m6 l8 z-depth-5">
-        <h2 class="language_choice">Choose Your Language</h2>
-          <form id action="#">
-          <p>
-          <input  name="flag" type="radio" id="flag1"/>
-          <label for="flag1" id="tester"></label><p class="english_flag">
-          </p>
-          <p>
-          <input class="intro_flags" type="radio" name="flag" id="flag2" name="group1"/>
-          <label for="flag2" id="tester" class="intro_flags">
-          <p class="spanish_flag"></p></label>
-          </p>
-      </div>
-
-      <div class="col s12 m3 l2"><p></p>
-      </div>
+<div class="container">
+  <div class="row">
+    <main class="col s12 z-depth-5">
+      <h2>Chirpy</h2>
+      <%= link_to 'Log in', new_user_session_path %>
+      <%= link_to 'Sign up', new_user_registration_path %>
+    </main>
   </div>
 </div>
 
