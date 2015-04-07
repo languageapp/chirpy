@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    redirect_to new_user_registration_path
-  end  
+
+  end
 end

@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+ #middle{
+  background-color: #64b5f6;
+  height: 500px;
+  margin-top: 200px;
+}
+.language_choice{
+  text-align: center;
+}
+.english_flag{
+  position: absolute;
+  margin-left: 20%;
+  background-image: url('/assets/british_flag.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 50%;
+  width: 50%;
+}
+
+.spanish_flag{
+  position: absolute;
+  margin-left: 20%;
+  margin-top: 20px;
+  background-image: url('/assets/spanish_flag.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 50%;
+  width: 50%;
+}
+
