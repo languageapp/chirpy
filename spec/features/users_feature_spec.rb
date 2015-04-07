@@ -8,17 +8,16 @@ context 'user not signed in and lands on home page' do
     expect(page).to have_css('.spanish_flag')
   end
 
-end
-
-context 'user not signed in and on the log in page' do
   it 'should see a "login" form and a "sign up" link' do
-    visit('/users/sign_in')
+    visit('/')
+    click_link('english_flag')
     expect(page).to have_css('input[type="email"]')
     expect(page).to have_link('Sign up')
   end
 
   it 'should not see "sign out" link' do
-    visit('/users/sign_in')
+    visit('/')
+    click_link('english_flag')
     expect(page).not_to have_link('Sign out')
   end
 
