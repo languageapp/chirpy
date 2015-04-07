@@ -2,22 +2,23 @@ require 'rails_helper'
 
 context 'user not signed in and lands on home page' do
 
-  it 'should display flags' do
-    visit '/'
-    expect(page).to have_css('.english_flag')
-    expect(page).to have_css('.spanish_flag')
+  it 'should see a "login" form and a "sign up" link' do
+    visit('/')
+    click_link('Sign up')
+    expect(page).to have_css('input[type="email"]')
+    expect(page).to have_button('Sign up')
   end
 
   it 'should see a "login" form and a "sign up" link' do
     visit('/')
-    click_link('english_flag')
+    click_link('Log in')
     expect(page).to have_css('input[type="email"]')
-    expect(page).to have_link('Sign up')
+    expect(page).to have_button('Log in')
   end
 
   it 'should not see "sign out" link' do
     visit('/')
-    click_link('english_flag')
+    click_link('Log in')
     expect(page).not_to have_link('Sign out')
   end
 
