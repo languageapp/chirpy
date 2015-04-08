@@ -43,4 +43,15 @@ context 'a profile has been created' do
     expect(page).to have_content 'Please teach me Swedish!'
     expect(page).to have_content 'Male'
   end
+
+  it 'a profile can be updated' do
+    sign_up
+    visit('/')
+    create_profile
+    click_link('edit your profile')
+    fill_in('Name', with: 'Joe')
+    click_button('Update Profile')
+    expect(page).to have_content 'Joe'
+    expect(current_path).to eq '/profiles/2'
+  end
 end
