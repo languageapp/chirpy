@@ -2,4 +2,72 @@
  
 </main>
 
+<<<<<<< HEAD
+||||||| merged common ancestors
+<div class="container z-depth-3">
+  <div class="row">
+    <header>
+      <h2>Chirpy</h2>
+      <% if user_signed_in? %>
+        <p>Welcome <%= current_user.email %></p>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Log in', new_user_session_path %>
+        <%= link_to 'Sign up', new_user_registration_path %>
+      <% end %>
+    </header>  
+    <main class="col s12">
+      <% if user_signed_in? %>
+      <% end %>      
+
+    </main>
+  </div>
+</div>
+=======
+
+<div class="container">
+  <div class="row">
+    <main class="col s12 z-depth-3" id="signup_main">
+      <h3>Log In</h3>
+
+<div class="container z-depth-3">
+  <div class="row">
+    <header>
+      <h2>Chirpy</h2>
+
+      <% if user_signed_in? %>
+        <p>Welcome <%= current_user.email %></p>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      <% else %>
+      <div>
+        <%= link_to 'Log in', new_user_session_path %>
+        </div>
+        <div>
+        <%= link_to 'Sign up', new_user_registration_path %>
+        </div>
+      <% end %>
+
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+ new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+    </header>
+    <main class="col s12">
+      <% if user_signed_in? %>
+      <% end %>
+
+
+
+
+
+
+    </main>
+  </div>
+</div>
+>>>>>>> ba46a44b012b43d09e95c38577c402cabb1a8dfe
+
 
