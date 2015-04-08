@@ -1,32 +1,36 @@
+<div class="container">
+  <div class="row">
+    <main class="col s6 offset-s3 z-depth-3 signup-main">
+
 <%= form_for @profile, html:{class: 'chirpy-form'}  do |f| %>
 <div class="field input-field">
   <%= f.label :name %>
-  </div>
-  <div class="field input-field">
   <%= f.text_field :name %>
   </div>
   <div class="field input-field">
   <%= f.label :age %>
-  </div>
-  <div class="field input-field">
   <%= f.text_field :age %>
   </div>
 
   <div class="field input-field ">
   <%= f.file_field :image %>
-  </div>
-  <div class="field input-field">
+</div>
+
+ <div class="field input-field ">
   <%= f.label :bio %>
-  </div>
-  <div class="field input-field">
   <%= f.text_field :bio %>
   </div>
 
   <div class="field input-field">
-  <%= f.select :gender,%w{Male Female}, required: true, placeholder: 'Gender', class: 'form-control' %>
+  <%= f.select :gender,%w{Male Female}, required: true, placeholder: 'Gender', class: 'form-control gender' %>
 </div>
  <div class="actions">
   <%= f.submit "Create Profile", class: 'waves-effect waves-light btn log-in-button' %>
   </div>
 
 <% end %>
+
+
+    </main>
+  </div>
+</div>

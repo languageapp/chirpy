@@ -85,6 +85,10 @@ h4{
   color: #4db6ac;
 }
 
+#profile_gender{
+  width: 20%;
+}
+
 .forgot_password{
   position: relative;
   float: right;
