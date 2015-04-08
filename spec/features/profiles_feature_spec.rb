@@ -35,8 +35,8 @@ context 'a profile has been created' do
 
   it 'should display the users profile' do
     sign_up
-    create_profile
     visit('/')
+    create_profile
     expect(page).to have_content 'Kev'
     expect(page).to have_content '21'
     expect(page).to have_css("img[src*='british_flag.png']")
