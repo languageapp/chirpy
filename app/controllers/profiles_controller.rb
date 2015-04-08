@@ -3,6 +3,13 @@ class ProfilesController < ApplicationController
   
   def index
     @profiles = Profile.all
+    if current_user
+      if current_user.profile
+        redirect_to profile_path(current_user.profile)
+      else
+        redirect_to new_profile_path
+      end       
+    end
   end
 
   def new
@@ -10,21 +17,21 @@ class ProfilesController < ApplicationController
   end
   
   def create
-    @profile = Profile.create(options = {:name => profile_params[:name], :user => current_user} )
-    if @restaurant.save  
+    @profile = current_user.build_profile(profile_params)
+    if @profile.save  
       flash[:notice] = 'Profile added successfully'
-      redirect_to restaurants_path
+      redirect_to profile_path(@profile)
     else
       render 'new'
     end    
   end
 
-  def restaurant_params
-    params.require(:profile).permit(:name, :image)
+  def profile_params
+    params.require(:profile).permit(:name, :image, :age, :bio, :gender)
   end  
 
   def show
-    @profile = Profile.find(params[:id])
+    @profile = current_user.profile
   end  
 
   def edit

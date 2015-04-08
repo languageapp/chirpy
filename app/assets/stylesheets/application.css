@@ -13,6 +13,24 @@
  *= require_tree .
  *= require_self
  */
+.login-button{
+  position: absolute;
+  float: right;
+}
+
+.sign-up-button{
+  position: absolute;
+  float: right;
+}
+
+.sign-out-button{
+  position: absolute;
+  float: right;
+}
+
+select#profile_gender{
+  display: inline-block;
+}
 
 .chirpy-form .input-field label{
   font-size: 16px;
@@ -75,11 +93,6 @@ h4{
 
 .password_reset_button{
   left: 30%;
-}
-
-.log-in-button{
-  position: relative;
-
 }
 
 #error_explanation h2{
