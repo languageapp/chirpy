@@ -35,20 +35,21 @@ select#profile_gender{
 .chirpy-form .input-field label{
   font-size: 16px;
   margin-top: -10px;
-  color: #ffffff;
+  color: #4db6ac;
 }
 
 .chirpy-form .input-field input[type=email]:focus {
-  border-bottom: 1px solid #ffffff;
-  box-shadow: 0 1px 0 0 #ffffff;
+  border-bottom: 1px solid #4db6ac;
+  box-shadow: 0 1px 0 0 #4db6ac;
 }
 
 .chirpy-form .input-field input[type=password]:focus {
-  border-bottom: 1px solid #ffffff;
-  box-shadow: 0 1px 0 0 #ffffff;
+  border-bottom: 1px solid #4db6ac;
+  box-shadow: 0 1px 0 0 #4db6ac;
 }
 
 header{
+  background-color: #ffffff;
   background-image: url('http://cdn.animals-pics.com/pictures/www.bluebirdfinance.com/wp-content/uploads/2011/10/Original-Blue-Bird-Logo1.jpg');
   background-repeat: no-repeat;
   background-size: 140px 90px;
@@ -56,29 +57,33 @@ header{
   height: 90px;
 }
 
+body{
+  background-color: #64b5f6;
+}
+
 .signup-main{
   position: relative;
-  background-color: #64b5f6;
+  background-color: #fafafa;
   height: 28em;
 }
 
 .forgotten-password-main{
   position: relative;
-  background-color: #64b5f6;
+  background-color: #fafafa;
   height: 18em;
 }
 
 h4{
   position: relative;
   text-align: center;
-  color: #ffffff;
+  color: #4db6ac;
 }
 
 .forgot_password{
   position: relative;
   float: right;
   font-size: 15px;
-  color: #ffffff;
+  color: #4db6ac;
   text-decoration: underline;
 }
 
@@ -88,7 +93,7 @@ h4{
 }
 
 .field{
-  color: #ffffff;
+  color: #4db6ac;
 }
 
 .password_reset_button{
@@ -100,6 +105,6 @@ h4{
 }
 
 #error_explanation li{
-  color: #ffffff;
+  color: #4db6ac;
   font-weight: bold;
 }
