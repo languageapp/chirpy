@@ -44,6 +44,12 @@ header{
   height: 28em;
 }
 
+.forgotten-password-main{
+  position: relative;
+  background-color: #64b5f6;
+  height: 18em;
+}
+
 h3{
   position: relative;
   text-align: center;
