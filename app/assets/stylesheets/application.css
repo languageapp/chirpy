@@ -40,7 +40,7 @@ header{
 .signup-main{
   position: relative;
   background-color: #64b5f6;
-  height: 25em;
+  height: 28em;
 }
 
 h3{
@@ -57,8 +57,9 @@ h3{
   text-decoration: underline;
 }
 
-.remember_me{
-  top: 15em;
+.remember-me{
+  position:absolute;
+  top: 5em;
 }
 
 .field{
@@ -67,5 +68,10 @@ h3{
 
 .password_reset_button{
   left: 30%;
+}
+
+.log-in-button{
+  position: relative;
+
 }
 
