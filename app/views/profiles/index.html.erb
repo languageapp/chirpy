@@ -1,15 +1,14 @@
-<<<<<<< HEAD
+
 <div class="container">
   <div class="row">
     <main class="col s12 z-depth-3" id="signup_main">
       <h3>Log In</h3>
-=======
 
 <div class="container z-depth-3">
   <div class="row">
     <header>
       <h2>Chirpy</h2>
->>>>>>> 2ad09e43e3c89b3819ef26a1f2a85bebdf9f4d45
+
       <% if user_signed_in? %>
         <p>Welcome <%= current_user.email %></p>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
@@ -21,14 +20,13 @@
         <%= link_to 'Sign up', new_user_registration_path %>
         </div>
       <% end %>
-<<<<<<< HEAD
-=======
-    </header>  
+
+    </header>
     <main class="col s12">
       <% if user_signed_in? %>
-      <% end %>      
+      <% end %>
 
->>>>>>> 2ad09e43e3c89b3819ef26a1f2a85bebdf9f4d45
+
     </main>
   </div>
 </div>
