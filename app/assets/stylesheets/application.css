@@ -52,8 +52,7 @@ header{
   background-color: #ffffff;
   background-image: url('http://cdn.animals-pics.com/pictures/www.bluebirdfinance.com/wp-content/uploads/2011/10/Original-Blue-Bird-Logo1.jpg');
   background-repeat: no-repeat;
-  background-size: 140px 90px;
-  height: 100%;
+  background-size: 90px 90px;
   height: 90px;
 }
 
@@ -70,14 +69,9 @@ body{
 .profile-main{
   position: relative;
   background-color: #fafafa;
-  height: 28em;
+  height: 40em;
 }
 
-.edit-profile{
-  position: relative;
-  background-color: #fafafa;
-  height: 28em;
-}
 
 .forgotten-password-main{
   position: relative;
