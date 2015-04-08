@@ -50,7 +50,7 @@ header{
   height: 18em;
 }
 
-h3{
+h4{
   position: relative;
   text-align: center;
   color: #ffffff;
@@ -82,3 +82,12 @@ h3{
 
 }
 
+#error_explanation h2{
+  display: none;
+}
+
+#error_explanation li{
+  color: #ffffff;
+  font-weight: bold;
+
+}
