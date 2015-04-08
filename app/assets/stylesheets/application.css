@@ -13,7 +13,93 @@
  *= require_tree .
  *= require_self
  */
+.login-button{
+  position: absolute;
+  float: right;
+}
 
+.sign-up-button{
+  position: absolute;
+  float: right;
+}
 
+.sign-out-button{
+  position: absolute;
+  float: right;
+}
 
+select#profile_gender{
+  display: inline-block;
+}
 
+.chirpy-form .input-field label{
+  font-size: 16px;
+  margin-top: -10px;
+  color: #ffffff;
+}
+
+.chirpy-form .input-field input[type=email]:focus {
+  border-bottom: 1px solid #ffffff;
+  box-shadow: 0 1px 0 0 #ffffff;
+}
+
+.chirpy-form .input-field input[type=password]:focus {
+  border-bottom: 1px solid #ffffff;
+  box-shadow: 0 1px 0 0 #ffffff;
+}
+
+header{
+  background-image: url('http://cdn.animals-pics.com/pictures/www.bluebirdfinance.com/wp-content/uploads/2011/10/Original-Blue-Bird-Logo1.jpg');
+  background-repeat: no-repeat;
+  background-size: 140px 90px;
+  height: 100%;
+  height: 90px;
+}
+
+.signup-main{
+  position: relative;
+  background-color: #64b5f6;
+  height: 28em;
+}
+
+.forgotten-password-main{
+  position: relative;
+  background-color: #64b5f6;
+  height: 18em;
+}
+
+h4{
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+}
+
+.forgot_password{
+  position: relative;
+  float: right;
+  font-size: 15px;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.remember-me{
+  position:absolute;
+  top: 5em;
+}
+
+.field{
+  color: #ffffff;
+}
+
+.password_reset_button{
+  left: 30%;
+}
+
+#error_explanation h2{
+  display: none;
+}
+
+#error_explanation li{
+  color: #ffffff;
+  font-weight: bold;
+}

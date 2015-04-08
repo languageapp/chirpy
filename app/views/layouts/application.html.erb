@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Chirpy</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
-
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>Chirpy</title>
+    <link rel="shortcut icon" href="http://cdn.animals-pics.com/pictures/www.bluebirdfinance.com/wp-content/uploads/2011/10/Original-Blue-Bird-Logo1.jpg"/>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  </head>
+  <body>
+  <header class="col s12 z-depth-5">
+      <% if user_signed_in? %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'waves-effect waves-light btn sign-out-button'   %>
+      <% else %>
+        <%= link_to 'Log in', new_user_session_path, class: 'waves-effect waves-light btn log-in-button login-button'   %>
+        <%= link_to 'Sign up', new_user_registration_path, class: 'waves-effect waves-light btn sign-up-button'  %>
+      <% end %>
+  </header>
+    <%= notice %>
+    <%= yield %>
+  </body>
 </html>
