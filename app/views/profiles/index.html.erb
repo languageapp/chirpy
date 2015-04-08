@@ -1,21 +1,5 @@
+<main class="col s12">
+ 
+</main>
 
-<div class="container z-depth-3">
-  <div class="row">
-    <header>
-      <h2>Chirpy</h2>
-      <% if user_signed_in? %>
-        <p>Welcome <%= current_user.email %></p>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Log in', new_user_session_path %>
-        <%= link_to 'Sign up', new_user_registration_path %>
-      <% end %>
-    </header>  
-    <main class="col s12">
-      <% if user_signed_in? %>
-      <% end %>      
-
-    </main>
-  </div>
-</div>
 
