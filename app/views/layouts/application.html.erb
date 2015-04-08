@@ -7,11 +7,23 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+
+    <meta name="google-translate-customization" content="838253ce8325d05-2793fdcc698d5f5c-g9d6648fd4da037e9-1c"></meta>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
   <body>
   <header class="col s12 z-depth-3">
   </header>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<div class="g-hangout" data-render="createhangout"></div>
+</script>
+
+
+
+
+
     <%= yield %>
   </body>
 </html>

@@ -1,4 +1,5 @@
 
+
 <div class="container">
   <div class="row">
     <main class="col s12 z-depth-3" id="signup_main">
@@ -21,23 +22,25 @@
         </div>
       <% end %>
 
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+ new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
     </header>
     <main class="col s12">
       <% if user_signed_in? %>
       <% end %>
 
 
+
+
+
+
     </main>
   </div>
 </div>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<div id="placeholder-div5"></div>
-<script>
- gapi.hangout.render('placeholder-div5', {
-   'topic': 'cats',
-   'render': 'createhangout',
-   'hangout_type': 'onair',
-   'initial_apps': [{'app_id' : '184219133185', 'start_data' : 'dQw4w9WgXcQ', 'app_type' : 'ROOM_APP' }],
-   'widget_size': 72
- });
-</script>
+
