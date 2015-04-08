@@ -1,3 +1,7 @@
+<div class="container">
+  <div class="row">
+    <main class="col s6 offset-s3 z-depth-3 edit-profile">
+
 <%= form_for @profile do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -10,5 +14,9 @@
   <%= f.label :gender %>
   <%= f.select :gender,%w{Male Female}, required: true, placeholder: 'Gender', class: 'form-control' %>
 
-  <%= f.submit %>
+  <%= f.submit "Update Profile", class: 'waves-effect waves-light btn log-in-button'%>
 <% end %>
+
+   </main>
+  </div>
+</div>

@@ -67,6 +67,18 @@ body{
   height: 28em;
 }
 
+.profile-main{
+  position: relative;
+  background-color: #fafafa;
+  height: 28em;
+}
+
+.edit-profile{
+  position: relative;
+  background-color: #fafafa;
+  height: 28em;
+}
+
 .forgotten-password-main{
   position: relative;
   background-color: #fafafa;
