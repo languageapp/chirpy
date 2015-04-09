@@ -14,6 +14,10 @@
  *= require_self
  */
 
+h3{
+  color: #4db6ac;
+}
+
 
  h4{
   position: relative;
@@ -25,6 +29,10 @@
 h5{
   position: relative;
   text-align: center;
+  color: #4db6ac;
+}
+
+h6{
   color: #4db6ac;
 }
 
@@ -90,11 +98,17 @@ body{
 
 .online{
   position: absolute;
-  bottom: 162px;
 }
 
 .online-users{
+  margin-top: -530px;
   background-color: #fafafa;
+  height: 34em;
+
+}
+
+.online-users:hover {
+  overflow-y:scroll;
 }
 
 td{
@@ -104,27 +118,52 @@ td{
 .signup-main{
   position: relative;
   background-color: #fafafa;
-  height: 35em;
+  height: 28em;
+  margin-top: 90px;
+}
+
+.signup-details{
+  position: relative;
+  background-color: #fafafa;
+  height: 34em;
+  margin-top: 90px;
 }
 
 .profile-main{
   position: relative;
   background-color: #fafafa;
-  height: 22em;
+  height: 34em;
   margin-top: 90px;
+}
+
+.profile-description{
+  border-bottom-style: solid;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #4db6ac;
+}
+
+.profile-name{
+  text-align: center;
+}
+
+.gender-age{
+  font-weight: bold;
 }
 
 .update-profile{
   position: relative;
   background-color: #fafafa;
-  height: 28em;
+  height: 30em;
   margin-top: 90px;
 }
 
 .profile-picture{
-  height: 35%;
+  position: relative;
+  height: 25%;
   width: 30%;
   border-radius: 100px;
+  left: 35%;
 }
 
 #profile_name{
