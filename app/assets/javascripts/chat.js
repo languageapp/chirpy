@@ -172,16 +172,15 @@ var ready = function () {
         checkInputKey: function (event, chatboxtextarea, conversation_id) {
             if (event.keyCode == 13 && event.shiftKey == 0) {
                 event.preventDefault();
- 
-                message = chatboxtextarea.val();
-                message = message.replace(/^\s+|\s+$/g, "");
- 
-                if (message != '') {
-                    $('#conversation_form_' + conversation_id).submit();
-                    $(chatboxtextarea).val('');
-                    $(chatboxtextarea).focus();
-                    $(chatboxtextarea).css('height', '44px');
-                }
+                var message = chatboxtextarea.val();
+                console.log(message);
+                console.log($.post("/conversations/" + conversation_id + "/messages"));
+                $.post("/conversations/" + conversation_id + "/messages", { body: message, "conversation_id": conversation_id, "authenticity_token": "<%= form_authenticity_token %>" }, function (data) {
+                  console.log(data)
+                });
+                $(chatboxtextarea).val('');
+                $(chatboxtextarea).focus();
+                $(chatboxtextarea).css('height', '44px');
             }
  
             var adjustedHeight = chatboxtextarea.clientHeight;

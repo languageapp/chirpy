@@ -1,19 +1,15 @@
 class MessagesController < ApplicationController
-  before_filter :authenticate_user!
- 
+  skip_before_filter :verify_authenticity_token
+
+  def new
+    @message = Message.new
+  end  
+
   def create
     @conversation = Conversation.find(params[:conversation_id])
-    @message = @conversation.messages.build(message_params)
-    @message.user = current_user
-    @message.save!
-    PrivatePub.publish_to("/conversations/#{@conversation.id}/new", "alert('#{@message.body}');")
- 
+    @message = @conversation.messages.build(body: params[:body], user: current_user)
+    @message.save! 
     @path = conversation_path(@conversation)
   end
- 
-  private
- 
-  def message_params
-    params.require(:message).permit(:body)
-  end
+  
 end

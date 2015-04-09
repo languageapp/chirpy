@@ -32,6 +32,7 @@ gem 'paperclip'
 gem 'shoulda'
 
 gem 'private_pub'
+
 gem 'thin'
 
 
