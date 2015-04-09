@@ -2,11 +2,11 @@
   <div class="row">
     <main class="col s6 z-depth-3 profile-main">
 
-<%= image_tag @profile.image.url(:thumb, timestamp: false) %>
-<p>Name: <%= @profile.name %></p>
-<p>Bio: <%= @profile.bio %></p>
-<p>Age: <%= @profile.age %></p>
-<p>Gender: <%= @profile.gender %></p>
+<%= image_tag @profile.image.url(:thumb, timestamp: false), class: 'profile-picture' %>
+<p><%= @profile.name %></p>
+<p><%= @profile.bio %></p>
+<p><%= @profile.age %></p>
+<p><%= @profile.gender %></p>
 
 <%= link_to 'edit your profile', edit_profile_path(@profile), class: 'waves-effect waves-light btn sign-up-button'  %>
 
@@ -15,9 +15,9 @@
 </div>
 
 
-
+<div class="container">
 <div class="row">
-  <div class="col-md-4">
+  <div class="col s6">
     <div style="height: 300px; overflow-y: auto;">
       <div class="panel panel-default">
         <div class="panel-heading">Registered Users</div>
@@ -35,7 +35,7 @@
                 <td><%= index +=1 %></td>
                 <td><%= user.email %></td>
                 <td>
-                  <%= link_to "Send Message", '#', class: "btn btn-success btn-xs start-conversation",
+                  <%= link_to "Message", '#', class: "btn btn-success btn-xs start-conversation",
                               "data-sid" => current_user.id, "data-rip" => user.id %>
                 </td>
               </tr>
@@ -48,6 +48,6 @@
     </div>
 
   </div>
-
+</div>
 </div>
 

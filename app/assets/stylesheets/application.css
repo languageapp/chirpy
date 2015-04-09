@@ -69,21 +69,36 @@ body{
 .profile-main{
   position: relative;
   background-color: #fafafa;
-  height: 40em;
+  height: 22em;
+}
+
+.update-profile{
+  position: relative;
+  background-color: #fafafa;
+  height: 28em;
+}
+
+.profile-picture{
+  height: 35%;
+  width: 30%;
+  border-radius: 100px;
 }
 
 #profile_name{
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 #profile_age{
-  margin-top: 20px;
+  margin-top: 15px;
+}
+
+#profile_image{
+  margin-top: 15px;
 }
 
 #profile_bio{
-  margin-top: 20px;
+  margin-top: 15px;
 }
-
 
 .forgotten-password-main{
   position: relative;
