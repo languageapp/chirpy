@@ -104,7 +104,7 @@ body{
   margin-top: -530px;
   background-color: #fafafa;
   height: 34em;
-
+  overflow: hidden;
 }
 
 .online-users:hover {
