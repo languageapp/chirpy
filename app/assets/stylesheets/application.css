@@ -60,6 +60,19 @@ body{
   background-color: #64b5f6;
 }
 
+.mdi-communication-message{
+  color: #64b5f6;
+  font-size: 15px;
+}
+
+.online-users{
+  background-color: #fafafa;
+}
+
+td{
+  color: #4db6ac;
+}
+
 .signup-main{
   position: relative;
   background-color: #fafafa;
