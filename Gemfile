@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'websocket-rails'
+gem 'google-instant-hangouts', '~> 0.0.3'
+gem 'faye'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
