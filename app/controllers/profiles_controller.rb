@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
-  
+
   def index
     @profiles = Profile.all
     if current_user
@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
         redirect_to profile_path(current_user.profile)
       else
         redirect_to new_profile_path
-      end       
+      end
     end
   end
 
@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new
     @language = Language.new
   end
-  
+
   def create
     @profile = current_user.build_profile(profile_params)
     @language = current_user.languages.build(language_params)
@@ -25,7 +25,7 @@ class ProfilesController < ApplicationController
       redirect_to profile_path(@profile)
     else
       render 'new'
-    end    
+    end
   end
 
   def show
@@ -55,3 +55,5 @@ class ProfilesController < ApplicationController
   end  
 
 end
+
+

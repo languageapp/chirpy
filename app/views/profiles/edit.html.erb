@@ -2,7 +2,7 @@
   <div class="row">
     <main class="col s6 z-depth-3 profile-main">
 
-<%= form_for @profile do |f| %>
+<%= form_for @profile, html:{class: 'chirpy-form'} do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :age %>
@@ -13,6 +13,7 @@
   <%= f.text_field :bio %>
   <%= f.label :gender %>
   <%= f.select :gender,%w{Male Female}, required: true, placeholder: 'Gender', class: 'form-control' %>
+
 
   <ul>
     <% @language.each do |lang| %>

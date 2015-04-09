@@ -10,7 +10,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
   <body>
-  <header class="col s12 z-depth-5">
+  <header class="col s12 z-depth-2">
       <% if user_signed_in? %>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'waves-effect waves-light btn sign-out-button'   %>
       <% else %>
