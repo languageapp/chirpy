@@ -63,13 +63,25 @@ body{
 .signup-main{
   position: relative;
   background-color: #fafafa;
-  height: 28em;
+  height: 35em;
 }
 
 .profile-main{
   position: relative;
   background-color: #fafafa;
   height: 40em;
+}
+
+#profile_name{
+  margin-top: 20px;
+}
+
+#profile_age{
+  margin-top: 20px;
+}
+
+#profile_bio{
+  margin-top: 20px;
 }
 
 
