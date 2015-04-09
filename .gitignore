@@ -13,4 +13,4 @@
 /tmp
 .DS_Store
 Gemfile.lock
-schema.rb
+db/schema.rb
