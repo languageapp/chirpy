@@ -13,7 +13,20 @@
  *= require_tree .
  *= require_self
  */
+.login-button{
+  position: absolute;
+  float: right;
+}
 
+.sign-up-button{
+  position: absolute;
+  float: right;
+}
+
+.sign-out-button{
+  position: absolute;
+  float: right;
+}
 
 select#profile_gender{
   display: inline-block;
@@ -55,7 +68,7 @@ header{
   height: 18em;
 }
 
-h3{
+h4{
   position: relative;
   text-align: center;
   color: #ffffff;
@@ -82,8 +95,12 @@ h3{
   left: 30%;
 }
 
-.log-in-button{
-  position: relative;
-
+#error_explanation h2{
+  display: none;
 }
 
+#error_explanation li{
+  color: #ffffff;
+  font-weight: bold;
+
+}
