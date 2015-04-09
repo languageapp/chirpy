@@ -4,9 +4,15 @@
     <title>Chirpy</title>
     <link rel="shortcut icon" href="http://cdn.animals-pics.com/pictures/www.bluebirdfinance.com/wp-content/uploads/2011/10/Original-Blue-Bird-Logo1.jpg"/>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+
+    <%= csrf_meta_tag %>
+    <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
+    <meta name="google-translate-customization" content="838253ce8325d05-2793fdcc698d5f5c-g9d6648fd4da037e9-1c"></meta>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
   <body>

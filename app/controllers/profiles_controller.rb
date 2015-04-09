@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
 
   def index
-    @profiles = Profile.all
+
     if current_user
       if current_user.profile
         redirect_to profile_path(current_user.profile)
@@ -31,6 +31,8 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @conversations = Conversation.involving(current_user).order("created_at DESC")
+    @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
     @profile = current_user.profile
   end
 
