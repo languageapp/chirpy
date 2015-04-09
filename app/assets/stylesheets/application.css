@@ -14,6 +14,8 @@
  *= require_self
  */
 
+ @import url(http://fonts.googleapis.com/css?family=Comfortaa);
+
 h3{
   color: #4db6ac;
 }
@@ -85,6 +87,25 @@ header{
 
 body{
   background-color: #64b5f6;
+}
+
+.home-page{
+  position: relative;
+  background-color: #fafafa;
+  height: 28em;
+  margin-top: 90px;
+}
+
+.flags{
+  display: inline-block;
+  padding: 4em;
+}
+
+.welcome{
+  font-family: 'Comfortaa', cursive;
+  text-align: center;
+  font-weight: bold;
+  color: #4db6ac;
 }
 
 .user-email{
