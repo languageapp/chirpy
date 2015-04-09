@@ -13,6 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+
+ h4{
+  position: relative;
+  text-align: center;
+  color: #4db6ac;
+}
+
+
+h5{
+  position: relative;
+  text-align: center;
+  color: #4db6ac;
+}
+
 .login-button{
   position: absolute;
   float: right;
@@ -54,15 +69,28 @@ header{
   background-repeat: no-repeat;
   background-size: 90px 90px;
   height: 90px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
 }
 
 body{
   background-color: #64b5f6;
 }
 
+.user-email{
+  font-size: 12px;
+}
+
 .mdi-communication-message{
   color: #64b5f6;
-  font-size: 15px;
+  font-size: 12px;
+}
+
+.online{
+  position: absolute;
+  bottom: 162px;
 }
 
 .online-users{
@@ -83,12 +111,14 @@ td{
   position: relative;
   background-color: #fafafa;
   height: 22em;
+  margin-top: 90px;
 }
 
 .update-profile{
   position: relative;
   background-color: #fafafa;
   height: 28em;
+  margin-top: 90px;
 }
 
 .profile-picture{
@@ -117,12 +147,6 @@ td{
   position: relative;
   background-color: #fafafa;
   height: 18em;
-}
-
-h4{
-  position: relative;
-  text-align: center;
-  color: #4db6ac;
 }
 
 #profile_gender{

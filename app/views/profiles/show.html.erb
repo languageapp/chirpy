@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <main class="col s6 z-depth-3 profile-main">
+    <main class="col s6 offset-s3 z-depth-3 profile-main">
 
 <%= image_tag @profile.image.url(:thumb, timestamp: false), class: 'profile-picture' %>
 <p><%= @profile.name %></p>
@@ -15,9 +15,9 @@
 </div>
 
 
-<div class="container">
+<div class="container online">
 <div class="row">
-  <div class="col s6 online-users">
+  <div class="col s4 online-users z-depth-3">
     <div style="height: 300px; overflow-y: auto;">
       <div class="panel panel-default">
         <div class="panel-heading"><h5>Registered Users</h5></div>
@@ -31,7 +31,7 @@
           <tbody>
           <% @users.each_with_index do |user, index| %>
               <tr>
-                <td><%= user.email %></td>
+                <td><p class="user-email"><%= user.email %><p></td>
                 <td>
                   <%= link_to " Send Message", '#', class: "mdi-communication-message btn-success btn-xs start-conversation",
                               "data-sid" => current_user.id, "data-rip" => user.id %>
