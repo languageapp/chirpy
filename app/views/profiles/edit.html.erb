@@ -18,8 +18,9 @@
   <ul>
     <% @language.each do |lang| %>
       <li>
-        Language: <%= text_field_tag "language_name", lang.language_name %>
-        Proficiency: <%= select_tag(:proficiency, options_for_select([1,2,3], selected: lang.proficiency)) %>
+        Native language: <%= text_field_tag "language_native", lang.language_native %>
+        Language to learn: <%= text_field_tag "language_target", lang.language_target %>
+        Current proficiency: <%= select_tag(:proficiency, options_for_select([1,2,3], selected: lang.proficiency)) %>
       </li>
     <% end %>
   </ul>

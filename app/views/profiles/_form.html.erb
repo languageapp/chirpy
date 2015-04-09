@@ -29,13 +29,19 @@
 
 <%= fields_for @language, html:{class: 'chirpy-form', id: 'lang-form'}  do |f| %>
 <div class="field input-field">
-  <%= f.label :language_name %>
+  <%= f.label "Native language" %>
 </div>
 <div class="field input-field" id="lang">
-  <%= f.text_field :language_name %>
+  <%= f.text_field :language_native %>
+  </div>
+  <div class="field input-field">
+  <%= f.label "Language to learn" %>
+</div>
+<div class="field input-field" id="lang">
+  <%= f.text_field :language_target %>
   </div>
 <div class="field input-field">
-  <%= f.label :proficiency %>
+  <%= f.label "Current proficiency" %>
 </div>
  <div class="field input-field" id="prof">
   <%= f.text_field :proficiency %>
@@ -43,13 +49,6 @@
 
 <% end %>
 
-  <button type="button" onclick="addLanguageFunction()">Add another language</button>
-  <script>
-  function addLanguageFunction(){
-  $("#lang").after( "<div>Language name</div>");
-    $("#prof").after( "<div>Proficiency</div>");
-  }
-  </script>
 
  <div class="actions">
   <%= f.submit "Create Profile", class: 'waves-effect waves-light btn log-in-button' %>

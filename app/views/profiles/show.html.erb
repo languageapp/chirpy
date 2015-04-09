@@ -9,14 +9,11 @@
 <p>Age: <%= @profile.age %></p>
 <p>Gender: <%= @profile.gender %></p>
 
-  <ul>
     <% @language.uniq.each do |lang| %>
-      <li>
-        Language: <%= lang.language_name %>
-        Proficiency: <%= lang.proficiency %>
-      </li>
+        <p>Native language: <%= lang.language_native %></p>
+        <p>Language to learn: <%= lang.language_target %></p>
+        <p>Current proficiency: <%= lang.proficiency %></p>
     <% end %>
-  </ul>
 
 <%= link_to 'edit your profile', edit_profile_path(@profile), class: 'waves-effect waves-light btn sign-up-button'  %>
 

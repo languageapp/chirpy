@@ -42,12 +42,12 @@ class ProfilesController < ApplicationController
     @profile = current_user.profile
     @profile.update(profile_params)
     @language = current_user.languages
-    @language.update_all(params.permit(:language_name, :proficiency))
+    @language.update_all(params.permit(:language_native, :language_target, :proficiency))
     redirect_to profile_path(@profile)
   end
 
   def language_params
-    params.require(:language).permit(:language_name, :proficiency)
+    params.require(:language).permit(:language_native, :language_target,)
   end  
 
   def profile_params
