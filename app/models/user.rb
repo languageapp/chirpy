@@ -4,5 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :profile       
+  has_one :profile   
+  has_many :languages 
+
+  accepts_nested_attributes_for :profile
+  accepts_nested_attributes_for :languages
+
 end

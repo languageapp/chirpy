@@ -1,0 +1,22 @@
+
+
+<%= form_for @language, html:{class: 'chirpy-form'}  do |f| %>
+<div class="field">
+  <%= f.label :language_name %>
+</div>
+<div class="field input-field">
+  <%= f.text_field :language_name %>
+  </div>
+<div class="field">
+  <%= f.label :proficiency %>
+
+</div>
+ <div class="field input-field">
+  <%= f.text_field :proficiency %>
+  </div>
+  <div class="actions">
+  <%= f.submit "Create language", class: 'waves-effect waves-light btn log-in-button' %>
+  </div>
+
+
+<% end %>

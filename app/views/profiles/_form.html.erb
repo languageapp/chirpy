@@ -25,8 +25,36 @@
   <div class="field input-field">
   <%= f.select :gender,%w{Male Female}, required: true, placeholder: 'Gender', class: 'form-control' %>
 </div>
+
+
+<%= fields_for @language, html:{class: 'chirpy-form', id: 'lang-form'}  do |f| %>
+<div class="field input-field">
+  <%= f.label :language_name %>
+</div>
+<div class="field input-field" id="lang">
+  <%= f.text_field :language_name %>
+  </div>
+<div class="field input-field">
+  <%= f.label :proficiency %>
+</div>
+ <div class="field input-field" id="prof">
+  <%= f.text_field :proficiency %>
+  </div>
+
+<% end %>
+
+  <button type="button" onclick="addLanguageFunction()">Add another language</button>
+  <script>
+  function addLanguageFunction(){
+  $("#lang").after( "<div>Language name</div>");
+    $("#prof").after( "<div>Proficiency</div>");
+  }
+  </script>
+
  <div class="actions">
   <%= f.submit "Create Profile", class: 'waves-effect waves-light btn log-in-button' %>
   </div>
 
 <% end %>
+
+

@@ -14,11 +14,13 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
+    @language = Language.new
   end
   
   def create
     @profile = current_user.build_profile(profile_params)
-    if @profile.save  
+    @language = current_user.languages.build(language_params)
+    if @profile.save && @language.save  
       flash[:notice] = 'Profile added successfully'
       redirect_to profile_path(@profile)
     else
@@ -26,16 +28,30 @@ class ProfilesController < ApplicationController
     end    
   end
 
-  def profile_params
-    params.require(:profile).permit(:name, :image, :age, :bio, :gender)
-  end  
-
   def show
     @profile = current_user.profile
+    @language = current_user.languages
   end  
 
   def edit
-    @profile = Profile.find(params[:id])
+    @profile = current_user.profile
+    @language = current_user.languages
   end
+
+ def update
+    @profile = current_user.profile
+    @profile.update(profile_params)
+    @language = current_user.languages
+    @language.update_all(params.permit(:language_name, :proficiency))
+    redirect_to profile_path(@profile)
+  end
+
+  def language_params
+    params.require(:language).permit(:language_name, :proficiency)
+  end  
+
+  def profile_params
+    params.require(:profile).permit(:name, :image, :age, :bio, :gender)
+  end  
 
 end

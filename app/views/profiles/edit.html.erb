@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <main class="col s6 z-depth-3 profile-main">
+
+<%= form_for @profile do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+  <%= f.label :bio %>
+  <%= f.text_field :bio %>
+  <%= f.label :gender %>
+  <%= f.select :gender,%w{Male Female}, required: true, placeholder: 'Gender', class: 'form-control' %>
+
+  <ul>
+    <% @language.each do |lang| %>
+      <li>
+        Language: <%= text_field_tag "language_name", lang.language_name %>
+        Proficiency: <%= select_tag(:proficiency, options_for_select([1,2,3], selected: lang.proficiency)) %>
+      </li>
+    <% end %>
+  </ul>
+
+
+  <%= f.submit "Update Profile", class: 'waves-effect waves-light btn log-in-button'%>
+<% end %>
+
+   </main>
+  </div>
+</div>
+
+
+

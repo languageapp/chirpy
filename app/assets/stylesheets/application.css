@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ select{
+  display: inline-block !important;
+ }
+
 .login-button{
   position: absolute;
   float: right;
