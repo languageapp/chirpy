@@ -20,7 +20,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = current_user.build_profile(profile_params)
     @language = current_user.languages.build(language_params)
-    if @profile.save && @language.save  
+    if @profile.save && @language.save
       flash[:notice] = 'Profile added successfully'
       redirect_to profile_path(@profile)
     else
@@ -33,7 +33,7 @@ class ProfilesController < ApplicationController
     @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
     @profile = current_user.profile
     @language = current_user.languages
-  end  
+  end
 
   def edit
     @profile = current_user.profile
@@ -50,11 +50,11 @@ class ProfilesController < ApplicationController
 
   def language_params
     params.require(:language).permit(:language_native, :language_target,:proficiency)
-  end  
+  end
 
   def profile_params
     params.require(:profile).permit(:name, :image, :age, :bio, :gender)
-  end  
+  end
 
 end
 
