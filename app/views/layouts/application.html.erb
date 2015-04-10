@@ -17,7 +17,11 @@
   </head>
   <body>
   <header class="col s12">
-    <div class="header-logo"></div>
+    <%= link_to root_path do%>
+      <div class="header-logo">
+      </div>
+    <% end %>
+
     <h5 class="logo-font">Chirpy</h5>
       <% if user_signed_in? %>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'waves-effect waves-light btn sign-out-button'   %>
