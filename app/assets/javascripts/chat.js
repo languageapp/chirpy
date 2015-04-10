@@ -175,7 +175,7 @@ var ready = function () {
                 var message = chatboxtextarea.val();
                 console.log(message);
                 console.log($.post("/conversations/" + conversation_id + "/messages"));
-                $.post("/conversations/" + conversation_id + "/messages", { body: message, "conversation_id": conversation_id, "authenticity_token": "<%= form_authenticity_token %>" }, function (data) {
+                $.post("/conversations/" + conversation_id + "/messages", { body: message, "conversation_id": conversation_id }, function (data) {
                   console.log(data)
                 });
                 $(chatboxtextarea).val('');

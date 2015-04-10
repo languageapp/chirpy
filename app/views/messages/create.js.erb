@@ -1,18 +1,11 @@
-<% puts "___*_____" * 300 %>
+console.log("Checkpoint A!");
+
 <% current_user.profile.id == @conversation.recipient_id ? reciever = @conversation.sender_id : reciever = @conversation.recipient_id %>
 
-<% puts "publishing to /ping_listener#{reciever}" %>
-
 <% publish_to "/ping_listener#{reciever}" do %>
-
-<% session[:new_recipient].delete %>
-console.log("-----------------------------");
-console.log("Convo ID: "+<%= @conversation.id %>);
-chatBox.chatWith(<%= @conversation.id %>);
-
-
+  chatBox.chatWith(<%= @conversation.id %>);
+console.log("Checkpoint B!");
 <% end %>
-
 
 <% publish_to @path do %>
     var id = "<%= @conversation.id %>";
@@ -23,6 +16,8 @@ chatBox.chatWith(<%= @conversation.id %>);
     chatbox.append("<%= j render( partial: @message ) %>");
     chatbox.scrollTop(chatbox[0].scrollHeight);
 
+    console.log("Checkpoint C!");
+
     if(sender_id != reciever_id){
       chatBox.chatWith(id);
         chatbox.children().last().removeClass("self").addClass("other");
@@ -30,3 +25,5 @@ chatBox.chatWith(<%= @conversation.id %>);
         chatBox.notify();
     }
 <% end %>
+
+console.log("Checkpoint D!");
