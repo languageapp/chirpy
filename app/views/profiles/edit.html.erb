@@ -4,24 +4,24 @@
       <h4>Edit Profile</h4>
 
 <%= form_for @profile, html:{class: 'chirpy-form'} do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :age %>
-  <%= f.text_field :age %>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-  <%= f.label :bio %>
-  <%= f.text_field :bio %>
-  <%= f.label :gender %>
-  <%= f.select :gender,%w{Male Female}, required: true, placeholder: 'Gender', class: 'form-control' %>
+  <p><%= f.label :name %></p>
+  <p><%= f.text_field :name %></p>
+  <p><%= f.label :age %></p>
+  <p><%= f.text_field :age %></p>
+  <p><%= f.label :image %></p>
+  <p><%= f.file_field :image %></p>
+  <p><%= f.label :bio %></p>
+  <p><%= f.text_field :bio %></p>
+  <p><%= f.label :gender %></p>
+  <p><%= f.select :gender,%w{Male Female}, required: true, placeholder: 'Gender', class: 'form-control' %></p>
 
 
   <ul>
     <% @language.each do |lang| %>
       <li>
-        Native language: <%= text_field_tag "language_native", lang.language_native %>
-        Language to learn: <%= text_field_tag "language_target", lang.language_target %>
-        Current proficiency: <%= select_tag(:proficiency, options_for_select([1,2,3], selected: lang.proficiency)) %>
+        <p>Native language: <%= text_field_tag "language_native", lang.language_native %></p>
+        <p>Language to learn: <%= text_field_tag "language_target", lang.language_target %></p>
+        <p>Current Level: <%= select_tag(:proficiency, options_for_select([1,2,3], selected: lang.proficiency)) %></p>
       </li>
     <% end %>
   </ul>

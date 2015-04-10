@@ -13,11 +13,12 @@
     <%= csrf_meta_tag %>
     <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
     <meta name="google-translate-customization" content="838253ce8325d05-2793fdcc698d5f5c-g9d6648fd4da037e9-1c"></meta>
-
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
   <body>
   <header class="col s12">
+    <div class="header-logo"></div>
+    <h5 class="logo-font">Chirpy</h5>
       <% if user_signed_in? %>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'waves-effect waves-light btn sign-out-button'   %>
       <% else %>

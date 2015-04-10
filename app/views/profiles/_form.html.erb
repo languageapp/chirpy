@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <main class="col s6 offset-s3 z-depth-3 signup-details">
-      <h4>Enter Details</h4>
+      <h4 class="signup-center">Enter Details</h4>
         <%= form_for @profile, html:{class: 'chirpy-form'}  do |f| %>
         <div class="field input-field">
           <%= f.label :name %>
@@ -26,30 +26,24 @@
         </div>
 
         <%= fields_for @language, html:{class: 'chirpy-form'}  do |f| %>
-          <div class="field input-field">
-            <%= f.label "Native language" %>
-          </div>
           <div class="field input-field" id="lang">
+            <%= f.label "Native language" %>
             <%= f.text_field :language_native %>
             </div>
-            <div class="field input-field">
+            <div class="field input-field" id="lang">
             <%= f.label "Language to learn" %>
-          </div>
-          <div class="field input-field" id="lang">
             <%= f.text_field :language_target %>
             </div>
-          <div class="field input-field">
-            <%= f.label "Current proficiency" %>
-          </div>
+
            <div class="field input-field" id="prof">
-            <%= f.select :proficiency, [1,2,3], required: true, placeholder: 1, class: 'form-control' %>
+            <%= f.select :proficiency, [1,2,3], required: true, class: 'form-control' %>
             </div>
         <% end %>
 
 
- <div class="actions">
-  <%= f.submit "Create Profile", class: 'waves-effect waves-light btn log-in-button' %>
-  </div>
+      <div class="actions">
+        <%= f.submit "Create Profile", class: 'waves-effect waves-light btn log-in-button' %>
+      </div>
 
 <% end %>
 
