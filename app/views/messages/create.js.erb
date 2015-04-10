@@ -1,5 +1,10 @@
-<% publish_to '/ping_listener' do %>
-      console.log('Si señor');
+<% publish_to "/ping_listener#{@message.conversation.recipient.id}" do %>
+
+console.log("-----------------------------");
+console.log(<%= @conversation.id %>);
+chatBox.chatWith(<%= @conversation.id %>);
+
+
 <% end %>
 
 

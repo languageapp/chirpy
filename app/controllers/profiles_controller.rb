@@ -34,6 +34,7 @@ class ProfilesController < ApplicationController
     @conversations = Conversation.involving(current_user).order("created_at DESC")
     @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
     @profile = current_user.profile
+    @my_id = @profile.id
   end
 
   def edit
