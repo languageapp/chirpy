@@ -11,7 +11,13 @@
         <p class="profile-description">Learn: <%= lang.language_target %></p>
         <p class="profile-description">Level: <%= lang.proficiency %></p>
       <% end %>
-      <%= link_to 'edit your profile', edit_profile_path(@profile), class: 'waves-effect waves-light btn edit-profile-button'  %>
+
+      <% if current_user.id == @profile.user_id %>
+        <%= link_to 'edit your profile', edit_profile_path(@profile), class: 'waves-effect waves-light btn-xs sign-up-button' %>
+      <% else %>
+        <%= link_to 'edit your profile', edit_profile_path(@profile), class: 'waves-effect waves-light btn sign-up-button', :style => "display: none;" %>
+        <%= link_to 'return to your profile', profile_path(current_user.id), class: 'waves-effect waves-light btn-xs sign-up-button' %>
+      <% end %>
     </div>
   </div>
 </div>

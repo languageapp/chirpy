@@ -12,7 +12,6 @@ end
 def create_profile
   fill_in('Name', with: 'Kev')
   fill_in('Age', with: '21')
-  attach_file 'Image', 'spec/british_flag.png'
   fill_in('Bio', with: 'Please teach me Swedish!')
   select('Male', from: 'profile[gender]')
   click_button('Create Profile')
@@ -39,7 +38,6 @@ context 'a profile has been created' do
     create_profile
     expect(page).to have_content 'Kev'
     expect(page).to have_content '21'
-    expect(page).to have_css("img[src*='british_flag.png']")
     expect(page).to have_content 'Please teach me Swedish!'
     expect(page).to have_content 'Male'
   end
