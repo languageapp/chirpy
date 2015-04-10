@@ -33,11 +33,8 @@ class ProfilesController < ApplicationController
     @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
     @language = current_user.languages
     @profiles = Profile.all
-    # @languages = Language.all
     @profile = @profiles.find(params[:id])
-    # @language = @languages.find(params[:id])
-    # @language = @profile.languages
-
+    @my_id = @profile.id
   end
 
   def edit
