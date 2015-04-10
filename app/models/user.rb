@@ -5,8 +5,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :profile   
+  has_many :languages 
 
   has_many :conversations, :foreign_key => :sender_id 
+  
+  accepts_nested_attributes_for :profile
+  accepts_nested_attributes_for :languages
 
   after_create :create_default_conversation
 

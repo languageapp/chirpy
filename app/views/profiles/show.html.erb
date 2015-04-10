@@ -6,45 +6,45 @@
       <h6>About Me</h6>
       <p class="profile-description"><%= @profile.bio %></p>
       <p class="profile-description gender-age"><%= @profile.age %>, <%= @profile.gender %></p>
+      <% @language.uniq.each do |lang| %>
+        <p>Native language: <%= lang.language_native %></p>
+        <p>Language to learn: <%= lang.language_target %></p>
+        <p>Current proficiency: <%= lang.proficiency %></p>
+      <% end %>
       <%= link_to 'edit your profile', edit_profile_path(@profile), class: 'waves-effect waves-light btn sign-up-button'  %>
     </div>
   </div>
 </div>
 
-  <div class="row">
-    <div class="col s3 online-users z-depth-3">
-    <div class="panel-heading">
-      <h5>Registered Users</h5>
-    </div>
-      <table class="table striped responsive-table">
-        <thead>
-          <tr>
-            <th>
-              <h6>Name</h6>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @users.each_with_index do |user, index| %>
-          <tr>
-            <td>
-              <p class="user-email"><%= user.email %><p>
-            </td>
-            <td>
-              <%= link_to " Send Message", '#', class: "mdi-communication-message btn-success btn-xs start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %>
-            </td>
-          </tr>
-            <% end %>
-        </tbody>
-      </table>
-    </div>
-    </div>
+<div class="row">
+  <div class="col s3 online-users z-depth-3">
+  <div class="panel-heading">
+    <h5>Registered Users</h5>
   </div>
+    <table class="table striped responsive-table">
+      <thead>
+        <tr>
+          <th>
+            <h6>Name</h6>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each_with_index do |user, index| %>
+        <tr>
+          <td>
+            <p class="user-email"><%= user.email %><p>
+          </td>
+          <td>
+            <%= link_to " Send Message", '#', class: "mdi-communication-message btn-success btn-xs start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %>
+          </td>
+        </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
 
 
-
-<!-- <div class="container online">
-<div class="row"> -->
-<!-- </div>
-</div> -->
 

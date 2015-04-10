@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150409110503) do
+ActiveRecord::Schema.define(version: 20150410103236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,14 +27,15 @@ ActiveRecord::Schema.define(version: 20150409110503) do
   add_index "conversations", ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
 
   create_table "languages", force: :cascade do |t|
-    t.string   "name"
+    t.string   "language_native"
+    t.string   "language_target"
     t.integer  "proficiency"
-    t.integer  "profile_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "user_id"
   end
 
-  add_index "languages", ["profile_id"], name: "index_languages_on_profile_id", using: :btree
+  add_index "languages", ["user_id"], name: "index_languages_on_user_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.text     "body"
@@ -87,7 +88,7 @@ ActiveRecord::Schema.define(version: 20150409110503) do
   add_index "users", ["profile_id"], name: "index_users_on_profile_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "languages", "profiles"
+  add_foreign_key "languages", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "profiles", "users"

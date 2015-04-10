@@ -3,7 +3,7 @@
     <main class="col s6 z-depth-3 update-profile">
       <h4>Edit Profile</h4>
 
-<%= form_for @profile do |f| %>
+<%= form_for @profile, html:{class: 'chirpy-form'} do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :age %>
@@ -15,9 +15,24 @@
   <%= f.label :gender %>
   <%= f.select :gender,%w{Male Female}, required: true, placeholder: 'Gender', class: 'form-control' %>
 
+
+  <ul>
+    <% @language.each do |lang| %>
+      <li>
+        Native language: <%= text_field_tag "language_native", lang.language_native %>
+        Language to learn: <%= text_field_tag "language_target", lang.language_target %>
+        Current proficiency: <%= select_tag(:proficiency, options_for_select([1,2,3], selected: lang.proficiency)) %>
+      </li>
+    <% end %>
+  </ul>
+
+
   <%= f.submit "Update Profile", class: 'waves-effect waves-light btn log-in-button'%>
 <% end %>
 
    </main>
   </div>
 </div>
+
+
+

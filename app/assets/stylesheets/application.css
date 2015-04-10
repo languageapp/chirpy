@@ -14,7 +14,11 @@
  *= require_self
  */
 
- @import url(http://fonts.googleapis.com/css?family=Comfortaa);
+@import url(http://fonts.googleapis.com/css?family=Comfortaa);
+
+select{
+  display: inline-block !important;
+}
 
 h3{
   color: #4db6ac;
@@ -180,7 +184,7 @@ td{
   position: relative;
   background-color: #fafafa;
   height: 30em;
-  margin-top: 90px;
+  margin-top: 2em;
 }
 
 .profile-picture{

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'profiles#index'
   resources :profiles
+  resources :languages
  
   resources :conversations do
     resources :messages
