@@ -74,14 +74,11 @@ select#profile_gender{
 }
 
 header{
-  background-color: #ffffff;
-  background-image: url('http://cdn.animals-pics.com/pictures/www.bluebirdfinance.com/wp-content/uploads/2011/10/Original-Blue-Bird-Logo1.jpg');
+  background-color: #64b5f6;
+  background-image: url('http://moises.zonaweb1.com/wp-content/uploads/2014/07/Owl-smaller.png');
   background-repeat: no-repeat;
   background-size: 90px 90px;
-  height: 90px;
-  position: fixed;
-  top: 0;
-  z-index: 2;
+  height: 80px;
   width: 100%;
 }
 
@@ -91,7 +88,7 @@ body{
 
 .home-page{
   position: relative;
-  background-color: #fafafa;
+  background-color: #64b5f6;
   height: 28em;
   margin-top: 90px;
 }
@@ -99,15 +96,22 @@ body{
 .flags{
   display: inline-block;
   padding: 4em;
+  margin-left: 20px;
 }
 
 .welcome{
   font-family: 'Comfortaa', cursive;
   text-align: center;
   font-weight: bold;
-  color: #4db6ac;
+  color: #ffffff;;
 }
 
+
+.choose-language{
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Comfortaa', cursive;
+}
 .user-email{
   font-size: 12px;
 }
@@ -154,7 +158,7 @@ td{
   position: relative;
   background-color: #fafafa;
   height: 34em;
-  margin-top: 90px;
+  margin-top: 30px;
 }
 
 .profile-description{
