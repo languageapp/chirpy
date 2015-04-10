@@ -1,7 +1,13 @@
-<% publish_to "/ping_listener#{@message.conversation.recipient.id}" do %>
+<% puts "___*_____" * 300 %>
+<% current_user.profile.id == @conversation.recipient_id ? reciever = @conversation.sender_id : reciever = @conversation.recipient_id %>
 
+<% puts "publishing to /ping_listener#{reciever}" %>
+
+<% publish_to "/ping_listener#{reciever}" do %>
+
+<% session[:new_recipient].delete %>
 console.log("-----------------------------");
-console.log(<%= @conversation.id %>);
+console.log("Convo ID: "+<%= @conversation.id %>);
 chatBox.chatWith(<%= @conversation.id %>);
 
 
