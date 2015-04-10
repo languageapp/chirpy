@@ -57,6 +57,7 @@ h6{
 .login-button{
   position: absolute;
   float: right;
+  bottom: 3.5em;
 }
 
 .login-center{
@@ -66,6 +67,8 @@ h6{
 .sign-up-button{
   position: absolute;
   float: right;
+  bottom: 3.5em;
+
 }
 
 .signup-center{
@@ -158,6 +161,12 @@ body{
   background-color: #fafafa;
   height: 34em;
   overflow: hidden;
+}
+
+.other-user-pics{
+  height: 5em;
+  width: 5em;
+  border-radius: 100px;
 }
 
 .online-users:hover {

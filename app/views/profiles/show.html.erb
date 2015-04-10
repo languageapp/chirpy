@@ -11,7 +11,7 @@
         <p class="profile-description">Learn: <%= lang.language_target %></p>
         <p class="profile-description">Level: <%= lang.proficiency %></p>
       <% end %>
-      <%= link_to 'edit your profile', edit_profile_path(@profile), class: 'waves-effect waves-light btn sign-up-button'  %>
+      <%= link_to 'edit your profile', edit_profile_path(@profile), class: 'waves-effect waves-light btn edit-profile-button'  %>
     </div>
   </div>
 </div>
@@ -34,12 +34,12 @@
           <% @users.each_with_index do |user, index| %>
           <tr>
             <td>
-              <p class="user-email"><%= user.id %>
-                  <%= link_to 'view profile', profile_path(user.id), class: 'waves-effect waves-light btn sign-up-button'  %>
-              <p>
+              <%= image_tag user.profile.image.url(:thumb), class: 'other-user-pics' %>
+              <p><%= link_to 'view profile', profile_path(user.id), class: 'waves-effect waves-light btn-xs view-profile-button'  %>
+              </p>
             </td>
             <td>
-              <%= link_to " Send Message", '#', class: "mdi-communication-message btn-success btn-xs start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %>
+              <%= link_to "Message", '#', class: "mdi-communication-message btn-success btn-xs start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %>
             </td>
           </tr>
             <% end %>
