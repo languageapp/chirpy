@@ -1,10 +1,7 @@
-console.log("Checkpoint A!");
-
 <% current_user.profile.id == @conversation.recipient_id ? reciever = @conversation.sender_id : reciever = @conversation.recipient_id %>
 
 <% publish_to "/ping_listener#{reciever}" do %>
   chatBox.chatWith(<%= @conversation.id %>);
-console.log("Checkpoint B!");
 <% end %>
 
 <% publish_to @path do %>
@@ -16,8 +13,6 @@ console.log("Checkpoint B!");
     chatbox.append("<%= j render( partial: @message ) %>");
     chatbox.scrollTop(chatbox[0].scrollHeight);
 
-    console.log("Checkpoint C!");
-
     if(sender_id != reciever_id){
       chatBox.chatWith(id);
         chatbox.children().last().removeClass("self").addClass("other");
@@ -26,4 +21,3 @@ console.log("Checkpoint B!");
     }
 <% end %>
 
-console.log("Checkpoint D!");
