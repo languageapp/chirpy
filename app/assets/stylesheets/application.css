@@ -107,7 +107,7 @@ header{
 }
 
 .header-logo{
-  background-image: url('http://moises.zonaweb1.com/wp-content/uploads/2014/07/Owl-smaller.png');
+  background-image: url('logo.png');
   background-repeat: no-repeat;
   background-size: 90px 90px;
   height: 80px;
@@ -127,8 +127,9 @@ body{
 
 .flags{
   display: inline-block;
-  padding: 4em;
-  margin-left: 20px;
+  padding: 6em;
+  /*margin-left: 20px;*/
+  text-align: center;
 }
 
 .welcome{
