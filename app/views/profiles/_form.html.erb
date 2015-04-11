@@ -5,38 +5,40 @@
       <h4 class="signup-center">Enter Details</h4>
         <%= form_for @profile, html:{class: 'chirpy-form'}  do |f| %>
         <div class="field input-field">
-          <%= f.label :name %>
+         <p>Name</p>
           <%= f.text_field :name %>
         </div>
         <div class="field input-field">
-          <%= f.label :age %>
+          <p>Age</p>
           <%= f.text_field :age %>
           </div>
         <div class="field input-field ">
+          <p>Profile Photo</p>
         <%= f.file_field :image %>
         </div>
         <div class="field input-field">
-        <%= f.label :bio %>
-        </div>
-        <div class="field input-field">
+        <p>About Me</p>
+
         <%= f.text_field :bio %>
         </div>
         <div class="field input-field">
+          <p>Gender</p>
         <%= f.select :gender,%w{Male Female}, required: true, placeholder: 'Gender', class: 'form-control' %>
         </div>
 
         <%= fields_for @language, html:{class: 'chirpy-form'}  do |f| %>
           <div class="field input-field" id="lang">
-            <%= f.label "Native language" %>
-            <%= f.text_field :language_native %>
+            <p>Native Language</p>
+            <%= f.select :language_native, ['English', 'French', 'German', 'Spanish'], required: true, class: 'form-control' %>
             </div>
             <div class="field input-field" id="lang">
-            <%= f.label "Language to learn" %>
-            <%= f.text_field :language_target %>
+              <p>Language to Learn</p>
+            <%= f.select :language_target, ['English', 'French', 'German', 'Spanish'], required: true, class: 'form-control'  %>
             </div>
 
            <div class="field input-field" id="prof">
-            <%= f.select :proficiency, [1,2,3], required: true, class: 'form-control' %>
+            <p>Level</p>
+            <%= f.select :proficiency, ['Beginner', 'Average', 'Fluent'], required: true, class: 'form-control' %>
             </div>
         <% end %>
 
