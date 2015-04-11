@@ -2,7 +2,6 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
 
   def index
-
     if current_user
       if current_user.profile
         redirect_to profile_path(current_user.profile)
@@ -28,14 +27,14 @@ class ProfilesController < ApplicationController
     end
   end
 
- def show
-   @conversations = Conversation.involving(current_user).order("created_at DESC")
-   @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
-   users_all = User.all
-   profiles = Profile.all
-   @profile = profiles.find(params[:id])
-   @language = users_all.find(params[:id]).languages
- end
+  def show
+    @conversations = Conversation.involving(current_user).order("created_at DESC")
+    @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
+    @language = current_user.languages
+    @profiles = Profile.all
+    @profile = @profiles.find(params[:id])
+    @my_id = @profile.id
+  end
 
   def edit
     @profile = current_user.profile
