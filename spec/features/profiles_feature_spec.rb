@@ -10,10 +10,13 @@ def sign_up
 end
 
 def create_profile
-  fill_in('Name', with: 'Kev')
-  fill_in('Age', with: '21')
-  fill_in('Bio', with: 'Please teach me Swedish!')
+  fill_in('profile_name', with: 'Kev')
+  fill_in('profile_age', with: '21')
+  fill_in('profile_bio', with: 'Please teach me Swedish!')
   select('Male', from: 'profile[gender]')
+  select('English', from: 'language_language_native')
+  select('French', from: 'language_language_target')
+  select('Beginner', from: 'language_proficiency')
   click_button('Create Profile')
 end
 
