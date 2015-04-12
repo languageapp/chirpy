@@ -40,10 +40,9 @@
           <% @users.each_with_index do |user, index| %>
           <tr>
             <td>
-              <p><%= user.profile.name %></p>
               <%= image_tag user.profile.image.url(:thumb), class: 'other-user-pics' %>
-              <p><%= link_to 'view profile', profile_path(user.id), class: 'waves-effect waves-light btn-xs view-profile-button'  %>
-              </p>
+              <%= user.profile.name %>
+              <%= link_to 'view profile', profile_path(user.id), class: 'waves-effect waves-light btn-xs view-profile-button'  %>
             </td>
             <td>
               <%= link_to "Message", '#', class: "mdi-communication-message btn-success btn-xs start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %>

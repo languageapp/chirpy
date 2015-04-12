@@ -149,6 +149,11 @@ header{
   width: 8%;
 }
 
+td{
+  display: inline-block;
+  position: relative;
+}
+
 body{
   background-color: #64b5f6;
 }
