@@ -67,7 +67,6 @@ h6{
 .sign-up-button{
   position: absolute;
   float: right;
-
 }
 
 .signup-center{
@@ -77,6 +76,7 @@ h6{
 .sign-out-button{
   position: absolute;
   float: right;
+  bottom: 3.5em;
 }
 
 select#profile_gender{
