@@ -90,7 +90,6 @@ select#profile_gender{
 
 .chirpy-form .input-field label{
   font-size: 16px;
-  margin-top: -10px;
   color: #4db6ac;
 }
 
@@ -102,6 +101,38 @@ select#profile_gender{
 .chirpy-form .input-field input[type=password]:focus {
   border-bottom: 1px solid #4db6ac;
   box-shadow: 0 1px 0 0 #4db6ac;
+}
+
+#profile_name{
+  margin-top: 0 !important;
+}
+
+#profile_age{
+  margin-top: 0 !important;
+}
+
+#profile_image{
+  margin-top: 0 !important;
+}
+
+#profile_bio{
+  margin-top: 0 !important;
+}
+
+#profile_gender{
+  margin-top: 0 !important;
+}
+
+#language_language_native{
+  width: 25%
+}
+
+#language_language_target{
+  width: 25%
+}
+
+#language_proficiency{
+  width:25%
 }
 
 header{
@@ -191,7 +222,7 @@ td{
 .signup-details{
   position: relative;
   background-color: #fafafa;
-  height: 47em;
+  height: 58em;
   margin-top: 30px;
 }
 
