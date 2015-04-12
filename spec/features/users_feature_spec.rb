@@ -2,6 +2,12 @@ require 'rails_helper'
 
 context 'user not signed in and lands on home page' do
 
+  it 'should be be able to choose a language to learn' do
+    visit('/')
+    click_link('Norway')
+    expect(page).to have_css('input[type="email"]')
+  end
+
   it 'should see a "login" form and a "sign up" link' do
     visit('/')
     click_link('Sign up')
