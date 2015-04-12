@@ -67,6 +67,7 @@ h6{
 .sign-up-button{
   position: absolute;
   float: right;
+  bottom: 3.5em;
 }
 
 .signup-center{
