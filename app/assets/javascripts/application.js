@@ -18,7 +18,6 @@
 //= require_tree .
 
 $(document).ready(function(){
-  console.log("hi")
 
   $('.flags').mouseenter(function(){
     $(this).css('opacity', 0.5)
@@ -27,5 +26,10 @@ $(document).ready(function(){
     $(this).css('opacity', 1)
   })
 
-})
+  $('.flags').click(function(){
+    console.log($(this).attr('id'))
+  });
+});
+
+
 

@@ -1,22 +1,39 @@
-    <main class="col s12 home-page">
-      <h1 class="welcome">Welcome</h1>
-      <h3 class="choose-language">Choose Your Language</h3>
-      <div class="flags">
+<main class="col s12 home-page">
+  <h1 class="welcome">Welcome</h1>
+  <h3 class="choose-language">Choose Your Language</h3>
+
+  <%= link_to new_user_registration_path do%>
+    <div class="flags" id="Swedish">
       <%= image_tag("Sweden.png") %>
-      </div>
-      <div class="flags">
+    </div>
+  <% end %>
+
+  <%= link_to new_user_registration_path do%>
+    <div class="flags" id="Norwegian">
       <%= image_tag("Norway.png") %>
-      </div>
-      <div class="flags">
+    </div>
+  <% end %>
+
+  <%= link_to new_user_registration_path do%>
+    <div class="flags" id="English">
       <%= image_tag("United-Kingdom.png") %>
-     </div>
-     <div class="flags">
+    </div>
+  <% end %>
+
+  <%= link_to new_user_registration_path do%>
+    <div class="flags" id="Spanish">
       <%= image_tag("Spain.png") %>
-     </div>
-     <div class="flags">
+    </div>
+  <% end %>
+  <%= link_to new_user_registration_path do%>
+    <div class="flags" id="German">
       <%= image_tag("Germany.png") %>
-     </div>
-    </main>
+    </div>
+  <% end %>
+</main>
+
+
+
 
 
 
