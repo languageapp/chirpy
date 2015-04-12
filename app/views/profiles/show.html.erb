@@ -42,6 +42,9 @@
             <td>
               <%= image_tag user.profile.image.url(:thumb), class: 'other-user-pics' %>
               <%= user.profile.name %>
+              <p>Speak: <%= user.languages[0].language_native %></p>
+              <p>Learn: <%= user.languages[0].language_target %></p>
+
               <%= link_to 'view profile', profile_path(user.id), class: 'waves-effect waves-light btn-xs view-profile-button'  %>
             </td>
             <td>
