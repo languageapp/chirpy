@@ -80,6 +80,10 @@ h6{
   bottom: 3.5em;
 }
 
+.btn{
+  color: #4db6ac !important;
+}
+
 select#profile_gender{
   display: inline-block;
 }
