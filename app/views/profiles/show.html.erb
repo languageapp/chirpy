@@ -10,7 +10,7 @@
         <p class="profile-description">Speak : <%= lang.language_native %></p>
         <p class="profile-description">Learn: <%= lang.language_target %></p>
         <p class="profile-description">Level: <%= lang.proficiency %></p>
-       
+
       <% end %>
 
       <% if current_user.id == @profile.user_id %>
@@ -24,10 +24,11 @@
 </div>
 
 
-  <div class="row">
+  <div class="row" ng-controller="LanguageFilterController as filterCtrl">
     <div class="col s3 online-users z-depth-3">
     <div class="panel-heading">
       <h5>Registered Users</h5>
+      <h6>{{filterCtrl.test}}</h6>
     </div>
       <table class="table striped responsive-table">
         <thead>
