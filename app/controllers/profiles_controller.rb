@@ -20,6 +20,7 @@ class ProfilesController < ApplicationController
     @profile = current_user.build_profile(profile_params)
     @language = current_user.languages.build(language_params)
     if @profile.save && @language.save
+      puts "Profile added successfully"
       flash[:notice] = 'Profile added successfully'
       redirect_to profile_path(@profile)
     else
@@ -29,7 +30,13 @@ class ProfilesController < ApplicationController
 
   def show
     @conversations = Conversation.involving(current_user).order("created_at DESC")
-    @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
+    temp_users = User.where.not("id = ?",current_user.id).order("created_at DESC")
+    @users = [];
+    temp_users.each do |user|
+      if user.profile != nil
+        @users << user
+      end
+    end
     @language = current_user.languages
     @profiles = Profile.all
     @profile = @profiles.find(params[:id])
