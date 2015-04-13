@@ -8,12 +8,12 @@
  */
 
 
-var chatboxFocus = new Array[];
-var chatBoxes = new Array[];
+var chatboxFocus = [];
+var chatBoxes = [];
 
 var ready = function () {
 
-    var chatBox = {
+    chatBox = {
 
         /**
          * creates an inline chatbox on the page by calling the
@@ -121,7 +121,7 @@ var ready = function () {
             chatBoxes.push(conversation_id);
 
             if (minimizeChatBox == 1) {
-                minimizedChatBoxes = new Array[];
+                minimizedChatBoxes = [];
 
                 if ($.cookie('chatbox_minimized')) {
                     minimizedChatBoxes = $.cookie('chatbox_minimized').split(/\|/);
@@ -170,11 +170,11 @@ var ready = function () {
          */
 
         checkInputKey: function (event, chatboxtextarea, conversation_id) {
-            if (event.keyCode === 13 && event.shiftKey === 0) {
+            if (event.keyCode == 13 && event.shiftKey == 0) {
                 event.preventDefault();
                 var message = chatboxtextarea.val();
                 $.post("/conversations/" + conversation_id + "/messages", { body: message, "conversation_id": conversation_id }, function (data) {
-                  console.log(data)
+                  console.log(data);
                 });
                 $(chatboxtextarea).val('');
                 $(chatboxtextarea).focus();
@@ -205,7 +205,7 @@ var ready = function () {
         toggleChatBoxGrowth: function (conversation_id) {
             if ($('#chatbox_' + conversation_id + ' .chatboxcontent').css('display') == 'none') {
 
-                var minimizedChatBoxes = new Array[];
+                var minimizedChatBoxes = [];
 
                 if ($.cookie('chatbox_minimized')) {
                     minimizedChatBoxes = $.cookie('chatbox_minimized').split(/\|/);
@@ -300,7 +300,7 @@ var ready = function () {
     };
 
 
-}
+};
 
 $(document).ready(ready);
 $(document).on("page:load", ready);
