@@ -14,6 +14,10 @@ class User < ActiveRecord::Base
 
   after_create :create_default_conversation
 
+  default_scope { order(created_at: :desc) }
+
+  scope :with_profile, -> { joins(:profile).where.not(profiles: {id: nil}) }
+
   private
 
   # for demo purposes
