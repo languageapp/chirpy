@@ -28,13 +28,12 @@
     <div class="col s3 online-users z-depth-3">
     <div class="panel-heading">
       <h5>Registered Users</h5>
-      <h6>{{filterCtrl.test}}</h6>
-      <input type="text" ng-model="filterCtrl.selectedLanguage" />
+      <input type="text" ng-model="filterCtrl.selectedLanguage" placeholder="Search Language..." />
     </div>
-      <table class="table striped responsive-table">
+      <table class="table striped responsive-table" >
         <tbody>
           <% @users.each_with_index do |user, index| %>
-          <tr ng-show="filterCtrl.selectedLanguage == '<%= user.languages[0].language_native %>' || filterCtrl.selectedLanguage == ''">
+          <tr ng-show="'<%= user.languages[0].language_native %>'.toLowerCase().indexOf(filterCtrl.selectedLanguage.toLowerCase()) > -1 || filterCtrl.selectedLanguage == ''">
             <td>
               <%= image_tag user.profile.image.url(:thumb), class: 'other-user-pics z-depth-3' %>
               <p><%= user.profile.name %></p>

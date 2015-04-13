@@ -39,7 +39,7 @@ app.controller('LanguageFilterController', function() {
 
   this.test = "Hello, world.";
 
-  this.selectedLanguage = "Spanish";
+  this.selectedLanguage = "";
 
 });
 
