@@ -16,20 +16,37 @@
 //= require private_pub
 //= require turbolinks
 //= require_tree .
+//= require angular
 
 $(document).ready(function(){
 
   $('.flags').mouseenter(function(){
-    $(this).css('opacity', 0.5)
-  })
+    $(this).css('opacity', 0.5);
+  });
   $('.flags').mouseleave(function(){
-    $(this).css('opacity', 1)
-  })
+    $(this).css('opacity', 1);
+  });
 
   $('.flags').click(function(){
-    console.log($(this).attr('id'))
+    console.log($(this).attr('id'));
   });
 });
+
+
+var app = angular.module('chirpy', []);
+
+app.controller('LanguageFilterController', function() {
+
+  this.test = "Hello, world.";
+
+  this.selectedLanguage = "";
+
+});
+
+
+
+
+
 
 
 
