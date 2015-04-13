@@ -32,5 +32,20 @@
   </header>
     <%= notice %>
     <%= yield %>
+
   </body>
+      <% if current_user.profile %>
+        <script type="text/javascript">
+            $(document).ready(function(){
+              var doPoll = function(){
+                $.post('/online/'+'<%= current_user.profile.id %>', function(data) {
+                  console.log('Success.');
+                  setTimeout(doPoll,3000);
+                });
+              }
+              doPoll();
+            });
+
+        </script>
+      <% end %>
 </html>

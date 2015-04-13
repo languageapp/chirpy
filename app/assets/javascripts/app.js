@@ -1,11 +1,13 @@
 (function() {
   var app = angular.module('chirpy', []);
 
-  app.controller('LanguageFilterController', function() {
+  app.controller('LanguageFilterController', ['$window',function($window) {
 
-    this.test = "Hello, world.";
 
     this.selectedLanguage = "";
-  });
+
+    this.onlineUsers = "";
+
+  }]);
 
 }());

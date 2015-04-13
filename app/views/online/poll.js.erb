@@ -1,0 +1,20 @@
+<% puts "Hello." %>
+
+<% publish_to "/onlinecheck" do %>
+
+    <% puts "==="* 30 %>
+    <% p @users_online %>
+
+    var users_online = [];
+
+    <% @users_online.each do |id| %>
+
+      users_online.push(<%=id%>);
+
+    <% end %>
+
+
+
+
+
+<% end %>

@@ -28,6 +28,12 @@
     <div class="col s3 online-users z-depth-3">
     <div class="panel-heading">
       <h5>Registered Users</h5>
+
+
+      <input id="erik" type="text" ng-model="filterCtrl.onlineUsers" value="5" />
+      Hey its {{filterCtrl.onlineUsers}}.
+
+
       <input type="text" ng-model="filterCtrl.selectedLanguage" placeholder="Search Language..." />
     </div>
       <table class="table striped responsive-table" >
@@ -52,5 +58,7 @@
     </div>
     </div>
 
+
+    <%= subscribe_to "/onlinecheck" %>
     <%= subscribe_to "/ping_listener#{@my_id}" %>
     <% puts "subscribed to listener at /ping_listener#{@my_id}" %>

@@ -6,10 +6,15 @@ Rails.application.routes.draw do
   root to: 'profiles#index'
   resources :profiles
   resources :languages
- 
+
   resources :conversations do
     resources :messages
   end
+
+
+  post '/online/:profile_id' => 'online#poll'
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
