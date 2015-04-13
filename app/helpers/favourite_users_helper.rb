@@ -1,0 +1,2 @@
+module FavouriteUsersHelper
+end

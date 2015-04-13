@@ -1,0 +1,2 @@
+class FavouriteUsersController < ApplicationController
+end

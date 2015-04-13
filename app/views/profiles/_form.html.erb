@@ -8,10 +8,14 @@
          <p>Name</p>
           <%= f.text_field :name %>
         </div>
+
         <div class="field input-field">
+
           <p>Age</p>
-          <%= f.text_field :age %>
-          </div>
+    <%= f.select :age, (18..80).map {|i| [i,i] }, required: true, class: 'form-control' %>
+            </div>
+
+
         <div class="field input-field ">
           <p>Profile Photo</p>
         <%= f.file_field :image %>
@@ -34,12 +38,10 @@
               <p>Language to Learn</p>
             <%= f.select :language_target, ['English', 'French', 'German', 'Spanish'], required: true, class: 'form-control'  %>
             </div>
-
            <div class="field input-field" id="prof">
             <p>Level</p>
-            <%= f.select :proficiency, ['Beginner', 'Average', 'Fluent'], required: true, class: 'form-control' %>
-            </div>
-        <% end %>
+            <%= f.collection_select :proficiency, Language.proficiencies, :first, :last %>
+          <% end %>
 
 
       <div class="actions">
