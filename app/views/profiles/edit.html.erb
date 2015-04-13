@@ -21,7 +21,8 @@
       <li>
         <p>Native language: <%= text_field_tag "language_native", lang.language_native %></p>
         <p>Language to learn: <%= text_field_tag "language_target", lang.language_target %></p>
-        <p>Current Level: <%= select_tag(:proficiency, options_for_select([1,2,3], selected: lang.proficiency)) %></p>
+
+        <p>Current Level: <%= select_tag(:proficiency, options_for_select(['Beginner', 'Average', 'Fluent'], selected: lang.proficiency)) %></p>
       </li>
     <% end %>
   </ul>
