@@ -46,7 +46,7 @@
               <p>Speak: <%= user.languages[0].language_native %></p>
               <p>Learn: <%= user.languages[0].language_target %></p>
 
-              <%= link_to 'view profile', profile_path(user.id), class: 'waves-effect waves-light btn-xs view-profile-button'  %>
+              <%= link_to 'view profile', profile_path(user.profile), class: 'waves-effect waves-light btn-xs view-profile-button'  %>
             </td>
             <td>
               <%= link_to "Message", '#', class: "mdi-communication-message btn-success btn-xs start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %>
