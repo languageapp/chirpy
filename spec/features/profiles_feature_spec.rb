@@ -11,7 +11,7 @@ end
 
 def create_profile
   fill_in('profile_name', with: 'Kev')
-  fill_in('profile_age', with: '21')
+  select('21', from: 'profile_age')
   fill_in('profile_bio', with: 'Please teach me Swedish!')
   select('Male', from: 'profile[gender]')
   select('English', from: 'language_language_native')
