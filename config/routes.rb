@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   # You can have the root of your site routed with "root"
-  scope "(:locale)", :locale => /en|es|de|sv|nb|fr|it/ do
-    devise_for :users
-    root :to => "profiles#index"
-  end
+
+
+   scope "(:locale)", :locale => /en|es|de|sv|nb|fr|it/ do
+     devise_for :users
+     root :to => "profiles#index"
+   end
+
 
   resources :profiles
   resources :languages
