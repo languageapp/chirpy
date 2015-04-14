@@ -1,0 +1,313 @@
+@import url(http://fonts.googleapis.com/css?family=Comfortaa);
+
+select{
+  display: inline-block !important;
+}
+
+p{
+  font-family: 'Comfortaa', cursive;
+}
+
+h3{
+  color: #4db6ac;
+  font-family: 'Comfortaa', cursive;
+}
+
+ h4{
+  position: relative;
+  color: #4db6ac;
+  font-family: 'Comfortaa', cursive;
+}
+
+
+h5{
+  position: relative;
+  color: #4db6ac;
+  font-family: 'Comfortaa', cursive;
+}
+
+h6{
+  color: #4db6ac;
+  font-family: 'Comfortaa', cursive;
+}
+
+.logo-font{
+  color: #fafafa;
+  position: absolute;
+  left: 3.5em;
+  top: 1em;
+}
+
+.login-button{
+  position: absolute;
+  float: right;
+  bottom: 3.5em;
+}
+
+.login-center{
+  text-align: center;
+}
+
+.sign-up-button{
+  position: absolute;
+  float: right;
+  bottom: 3.5em;
+}
+
+.signup-center{
+  text-align: center;
+}
+
+.sign-out-button{
+  position: absolute;
+  float: right;
+  bottom: 3.5em;
+}
+
+.btn{
+  color: #4db6ac !important;
+}
+
+select#profile_gender{
+  display: inline-block;
+}
+
+.chirpy-form .input-field label{
+  font-size: 16px;
+  color: #4db6ac;
+}
+
+.chirpy-form .input-field input[type=email]:focus {
+  border-bottom: 1px solid #4db6ac;
+  box-shadow: 0 1px 0 0 #4db6ac;
+}
+
+.chirpy-form .input-field input[type=password]:focus {
+  border-bottom: 1px solid #4db6ac;
+  box-shadow: 0 1px 0 0 #4db6ac;
+}
+
+#profile_name{
+  margin-top: 0 !important;
+}
+
+#profile_age{
+  margin-top: 0 !important;
+}
+
+#profile_image{
+  margin-top: 0 !important;
+}
+
+#profile_bio{
+  margin-top: 0 !important;
+}
+
+#profile_gender{
+  margin-top: 0 !important;
+}
+
+#language_language_native{
+  width: 25%
+}
+
+#language_language_target{
+  width: 25%
+}
+
+#language_proficiency{
+  width:25%
+}
+
+header{
+  background-color: #64b5f6;
+  height: 80px;
+  width: 100%;
+}
+
+.header-logo{
+  background-image: url('logo.png');
+  background-repeat: no-repeat;
+  background-size: 90px 90px;
+  height: 80px;
+  width: 8%;
+}
+
+td{
+  display: inline-block;
+  position: relative;
+}
+
+body{
+  background-color: #64b5f6;
+}
+
+.home-page{
+  position: relative;
+  background-color: #64b5f6;
+  height: 28em;
+  margin-top: 60px;
+}
+
+.flags{
+  display: inline-block;
+  padding: 6em;
+  text-align: center;
+}
+
+.welcome{
+  font-family: 'Comfortaa', cursive;
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff;;
+}
+
+.choose-language{
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Comfortaa', cursive;
+}
+.user-email{
+  font-size: 12px;
+}
+
+.mdi-communication-message{
+  color: #64b5f6;
+  font-size: 12px;
+}
+
+.online{
+  position: absolute;
+}
+
+.online-users{
+  margin-top: -530px;
+  background-color: #fafafa;
+  height: 34em;
+  overflow: hidden;
+}
+
+.other-user-pics{
+  height: 4em;
+  width: 4em;
+  border-radius: 100px;
+}
+
+.online-users:hover {
+  overflow-y:scroll;
+}
+
+td{
+  color: #4db6ac;
+}
+
+.signup-main{
+  position: relative;
+  background-color: #fafafa;
+  height: 28em;
+  margin-top: 90px;
+}
+
+.signup-details{
+  position: relative;
+  background-color: #fafafa;
+  height: 58em;
+  margin-top: 30px;
+}
+
+.signup-center{
+  text-align: center;
+}
+
+.profile-main{
+  position: relative;
+  background-color: #fafafa;
+  height: 34em;
+  margin-top: 30px;
+}
+
+.profile-description{
+  border-bottom-style: solid;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #4db6ac;
+}
+
+.profile-name{
+  text-align: center;
+}
+
+.gender-age{
+  font-weight: bold;
+}
+
+.update-profile{
+  position: relative;
+  background-color: #fafafa;
+  height: 50em;
+  margin-top: 2em;
+}
+
+.profile-picture{
+  position: relative;
+  height: 25%;
+  width: 30%;
+  border-radius: 100px;
+  left: 35%;
+}
+
+#profile_name{
+  margin-top: 15px;
+}
+
+#profile_age{
+  margin-top: 15px;
+}
+
+#profile_image{
+  margin-top: 15px;
+}
+
+#profile_bio{
+  margin-top: 15px;
+}
+
+.forgotten-password-main{
+  position: relative;
+  background-color: #fafafa;
+  height: 18em;
+}
+
+#profile_gender{
+  width: 20%;
+}
+
+.forgot_password{
+  position: relative;
+  float: right;
+  font-size: 15px;
+  color: #4db6ac;
+  text-decoration: underline;
+}
+
+.remember-me{
+  position:absolute;
+  top: 5em;
+}
+
+.field{
+  color: #4db6ac;
+}
+
+.password_reset_button{
+  left: 30%;
+}
+
+#error_explanation h2{
+  display: none;
+}
+
+#error_explanation li{
+  color: #4db6ac;
+  font-weight: bold;
+}
