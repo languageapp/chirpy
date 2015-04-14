@@ -19,8 +19,8 @@
     <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
-  <body ng-controller="ApplicationController as appCtrl">
-  <header class="col s12">
+  <body class="container" ng-controller="ApplicationController as appCtrl">
+  <header class="">
     <%= link_to root_path do%>
       <div class="header-logo">
       </div>
@@ -28,10 +28,10 @@
 
     <h5 class="logo-font">Chirpy</h5>
       <% if user_signed_in? %>
-      <%= link_to t('.My_Profile'), new_user_session_path, class: 'waves-effect waves-light btn log-in-button login-button white'   %>
-        <%= link_to t('.Sign_Out'), destroy_user_session_path, method: :delete, class: 'waves-effect waves-light btn sign-out-button white'   %>
+      <%= link_to t('.My_Profile'), new_user_session_path, class: 'login-button white'   %>
+        <%= link_to t('.Sign_Out'), destroy_user_session_path, method: :delete, class: 'btn sign-out-button white'   %>
       <% else %>
-        <%= link_to 'Log in', "/en/users/sign_in", class: 'waves-effect waves-light btn log-in-button login-button white'   %>
+        <%= link_to 'Log in', "/en/users/sign_in", class: 'btn login-button white'   %>
       <% end %>
   </header>
     <%= notice %>
