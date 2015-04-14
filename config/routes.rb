@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post '/online/:profile_id' => 'online#poll'
 
 
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
