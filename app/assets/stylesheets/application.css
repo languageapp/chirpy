@@ -11,319 +11,244 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require reset
+ *= require grid
+ *= require pf
  *= require_self
+
  */
 
 @import url(http://fonts.googleapis.com/css?family=Comfortaa);
 
-select{
-  display: inline-block !important;
+html{
+  background-color: #BAF8FF;
+  background-image: url('sky.png');
+  font-size: 10px;
+  background-position: left;
+  -webkit-animation: sky 60s linear infinite;
 }
 
-p{
+a:link,
+a:visited{
+  text-decoration: none;
+  color: inherit;
+}
+ 
+body{
+  font-family: 'Fredoka One', cursive;
+  background-color: none;
+}
+
+main.home-page{
   font-family: 'Comfortaa', cursive;
+  color: #574331;
+  text-align: center; 
+}
+main.home-page h1{
+  margin-top: 0;
+}
+h1{
+  font-size: 40px;
+  font-size: 4rem;
+  margin: 20px;
+  color: #574331;
+}
+h2{
+  font-size: 30px;
+  font-size: 3rem;
+  margin: 20px;
 }
 
 h3{
-  color: #4db6ac;
-  font-family: 'Comfortaa', cursive;
+  font-size: 25px;
+  font-size: 2.5rem;
+  margin: 20px;
 }
 
- h4{
-  position: relative;
-  color: #4db6ac;
-  font-family: 'Comfortaa', cursive;
-}
-
-
-h5{
-  position: relative;
-  color: #4db6ac;
-  font-family: 'Comfortaa', cursive;
-}
-
-h6{
-  color: #4db6ac;
-  font-family: 'Comfortaa', cursive;
-}
-
-.logo-font{
-  color: #fafafa;
-  position: absolute;
-  left: 3.5em;
-  top: 1em;
-}
-
-.login-button{
-  position: absolute;
-  float: right;
-  bottom: 3.5em;
-}
-
-.login-center{
-  text-align: center;
-}
-
-.sign-up-button{
-  position: absolute;
-  float: right;
-  bottom: 3.5em;
-}
-
-.signup-center{
-  text-align: center;
-}
-
-.sign-out-button{
-  position: absolute;
-  float: right;
-  bottom: 3.5em;
-}
-
-.btn{
-  color: #4db6ac !important;
-}
-
-select#profile_gender{
+main section{
+  width: 20%;
+  float: left;
   display: inline-block;
-}
-
-.chirpy-form .input-field label{
-  font-size: 16px;
-  color: #4db6ac;
-}
-
-.chirpy-form .input-field input[type=email]:focus {
-  border-bottom: 1px solid #4db6ac;
-  box-shadow: 0 1px 0 0 #4db6ac;
-}
-
-.chirpy-form .input-field input[type=password]:focus {
-  border-bottom: 1px solid #4db6ac;
-  box-shadow: 0 1px 0 0 #4db6ac;
-}
-
-#profile_name{
-  margin-top: 0 !important;
-}
-
-#profile_age{
-  margin-top: 0 !important;
-}
-
-#profile_image{
-  margin-top: 0 !important;
-}
-
-#profile_bio{
-  margin-top: 0 !important;
-}
-
-#profile_gender{
-  margin-top: 0 !important;
-}
-
-#language_language_native{
-  width: 25%
-}
-
-#language_language_target{
-  width: 25%
-}
-
-#language_proficiency{
-  width:25%
+  margin-top: 30px;
 }
 
 header{
-  background-color: #64b5f6;
-  height: 80px;
-  width: 100%;
+  padding: 20px;
 }
 
-.header-logo{
+header h2{
+  color: #fff;
+  text-shadow: 2px 2px 2px #574331;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  margin: 0;
+}
+
+header h2 a{
   background-image: url('logo.png');
+  background-size: 85px 80px;
   background-repeat: no-repeat;
-  background-size: 90px 90px;
-  height: 80px;
-  width: 8%;
+  padding-left: 80px;
 }
 
-td{
-  display: inline-block;
-  position: relative;
-}
-
-body{
-  background-color: #64b5f6;
-}
-
-.home-page{
-  position: relative;
-  background-color: #64b5f6;
-  height: 28em;
-  margin-top: 60px;
-}
-
-.flags{
-  display: inline-block;
-  padding: 6em;
-  text-align: center;
-}
-
-.welcome{
-  font-family: 'Comfortaa', cursive;
-  text-align: center;
-  font-weight: bold;
-  color: #ffffff;;
-}
-
-.choose-language{
-  color: #ffffff;
-  text-align: center;
-  font-family: 'Comfortaa', cursive;
-}
-.user-email{
-  font-size: 12px;
-}
-
-.mdi-communication-message{
-  color: #64b5f6;
-  font-size: 12px;
-}
-
-.online{
-  position: absolute;
-}
-
-.online-users{
-  margin-top: -530px;
-  background-color: #fafafa;
-  height: 34em;
-  overflow: hidden;
-}
-
-.other-user-pics{
-  height: 4em;
-  width: 4em;
-  border-radius: 100px;
-}
-
-.online-users:hover {
-  overflow-y:scroll;
-}
-
-td{
-  color: #4db6ac;
-}
-
-.signup-main{
-  position: relative;
-  background-color: #fafafa;
-  height: 28em;
-  margin-top: 90px;
-}
-
-.signup-details{
-  position: relative;
-  background-color: #fafafa;
-  height: 58em;
-  margin-top: 30px;
-}
-
-.signup-center{
-  text-align: center;
-}
-
-.profile-main{
-  position: relative;
-  background-color: #fafafa;
-  height: 34em;
-  margin-top: 30px;
-}
-
-.profile-description{
-  border-bottom-style: solid;
-  border-bottom-style: solid;
-  border-width: 1px;
-  border-color: #4db6ac;
-}
-
-.profile-name{
-  text-align: center;
-}
-
-.gender-age{
-  font-weight: bold;
-}
-
-.update-profile{
-  position: relative;
-  background-color: #fafafa;
-  height: 50em;
-  margin-top: 2em;
-}
-
-.profile-picture{
-  position: relative;
-  height: 25%;
-  width: 30%;
-  border-radius: 100px;
-  left: 35%;
-}
-
-#profile_name{
-  margin-top: 15px;
-}
-
-#profile_age{
-  margin-top: 15px;
-}
-
-#profile_image{
-  margin-top: 15px;
-}
-
-#profile_bio{
-  margin-top: 15px;
-}
-
-.forgotten-password-main{
-  position: relative;
-  background-color: #fafafa;
-  height: 18em;
-}
-
-#profile_gender{
-  width: 20%;
-}
-
-.forgot_password{
-  position: relative;
+header section{
   float: right;
-  font-size: 15px;
-  color: #4db6ac;
-  text-decoration: underline;
+  text-align: right;
+  color: #574331;
+  font-size: 20px;
+  font-size: 2rem;
 }
 
-.remember-me{
-  position:absolute;
-  top: 5em;
+header a{
+  padding: 20px;
 }
 
-.field{
-  color: #4db6ac;
+.container .row.signup-main{
+  width: 50%;
+  margin: 0 auto;
 }
 
-.password_reset_button{
-  left: 30%;
+input[type=text],
+input[type=email],
+input[type=password]{
+  font-family: 'Comfortaa', cursive;
+  font-size: 20px;
+  font-size: 2rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.input-field label{
+  position: static;
+  text-transform: uppercase;
+  font-family: 'Comfortaa', cursive;
+  margin-bottom: 10px;
+  display: block;
+  color: #000;
 }
 
-#error_explanation h2{
-  display: none;
+input[type=submit]{
+  display: inline;
 }
 
-#error_explanation li{
-  color: #4db6ac;
-  font-weight: bold;
+#devise-shared{
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  color: #574331;  
+}
+.btn{
+  margin-top: 10px;
+}
+
+.chirpy-form{
+  padding: 20px;
+}
+
+#show-row{
+  height: 80%;
+}
+
+#show-row h2{
+  color: #574331; 
+}
+
+
+main.signup-main{
+  background-image: url('birds.png');
+  background-size: cover;
+}
+
+@-webkit-keyframes clouds{
+  0%{
+    margin-left: -100%;
+  }
+  100%{
+    margin-left: 50%;
+  }
+}
+
+@-webkit-keyframes sky{
+  0%{
+    background-position: left;
+  }
+  50%{
+    background-position: right;
+  }
+  100%{
+    background-position: left;
+  }
+}
+
+
+@media (max-width: 1000px){
+  .container .row.signup-main{
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 600px){
+  html{
+    font-size: 50%;
+  }
+  header section {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+  header.row{
+    margin-bottom: 0;
+  }
+  main section{
+    width: 100%;
+  }
+  .container{
+    width: 100%;
+    padding: 0;
+    border-top: 1px black;
+  }
+  h1.login-center{
+    margin-top: 0;
+  }
+  h2{
+    width: 100%;
+    text-align: center;
+  }
+  main.signup-main{
+    height: 100%;
+    box-shadow: none;
+    background: none;
+  }
+  #devise-shared{
+    width: 100%;
+    display: block;
+    position: static;
+    text-align: center;
+  }
+  .btn{
+    position: relative;
+  }
+  .forgot_password{
+    float: none;
+    text-align: center;
+  }
+  a:link{
+    color: #574331;
+  }
+  a:visited{
+    color: #574331; 
+  }
+  .chirpy-form{
+    margin-top: 30px;
+  }
+  main.home-page{
+    padding: 0;
+  }
+  #logo-h2{
+    color: #fff;
+  }
+
 }
