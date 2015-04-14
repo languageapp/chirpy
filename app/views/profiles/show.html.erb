@@ -29,17 +29,19 @@
     <div class="panel-heading">
       <h5>Registered Users</h5>
 
-      Users online:
-      <ul ng-repeat="id in appCtrl.usersOnline">
-        {{id}}
-      </ul>
+
+      <p>
+        <input type="checkbox" ng-model="appCtrl.onlineOnly" id="onlineOnly" />
+        <label for="onlineOnly">Only Online Users</label>
+      </p>
+
 
       <input type="text" ng-model="filterCtrl.selectedLanguage" placeholder="Search Language..." />
     </div>
       <table class="table striped responsive-table" >
         <tbody>
           <% @users.each_with_index do |user, index| %>
-          <tr ng-show="'<%= user.languages[0].language_native %>'.toLowerCase().indexOf(filterCtrl.selectedLanguage.toLowerCase()) > -1 || filterCtrl.selectedLanguage == ''">
+          <tr ng-show="(appCtrl.isUserOnline(<%= user.profile.id %>)) && ('<%= user.languages[0].language_native %>'.toLowerCase().indexOf(filterCtrl.selectedLanguage.toLowerCase()) > -1 || filterCtrl.selectedLanguage == '')">
             <td>
               <%= image_tag user.profile.image.url(:thumb), class: 'other-user-pics z-depth-3' %>
               <p><%= user.profile.name %></p>
@@ -52,6 +54,7 @@
               <%= link_to "Message", '#', class: "mdi-communication-message btn-success btn-xs start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %>
             </td>
           </tr>
+          </div>
             <% end %>
         </tbody>
       </table>

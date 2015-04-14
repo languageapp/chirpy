@@ -4,6 +4,7 @@ class OnlineController < ApplicationController
   @@timeout_hash ||= {};
 
   def poll
+    return if params[:profile_id] == "undefined"
     addOnlineUser(params[:profile_id])
     checkLogout
     puts "Users online: #{@@users_online}"
