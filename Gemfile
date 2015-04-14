@@ -6,6 +6,7 @@ gem 'rails', '4.2.1'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'rails_12factor'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
