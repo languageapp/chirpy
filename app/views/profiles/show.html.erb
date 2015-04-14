@@ -24,22 +24,20 @@
 </div>
 
 
-  <div class="row">
+    <div class="row" ng-controller="LanguageFilterController as filterCtrl">
     <div class="col s3 online-users z-depth-3">
     <div class="panel-heading">
       <h5><%= t('.Registered_Users')%></h5>
+      <p>
+        <input type="checkbox" ng-model="appCtrl.onlineOnly" id="onlineOnly" />
+        <label for="onlineOnly">Only Online Users</label>
+      </p>
+     <input type="text" ng-model="filterCtrl.selectedLanguage" placeholder="Search Language..." />
     </div>
       <table class="table striped responsive-table">
-        <thead>
-          <tr>
-            <th>
-              <h6><%= t('.Name')%></h6>
-            </th>
-          </tr>
-        </thead>
         <tbody>
           <% @users.each_with_index do |user, index| %>
-          <tr>
+          <tr ng-show="(appCtrl.isUserOnline(<%= user.profile.id %>)) && ('<%= user.languages[0].language_native %>'.toLowerCase().indexOf(filterCtrl.selectedLanguage.toLowerCase()) > -1 || filterCtrl.selectedLanguage == '')">
             <td>
               <%= image_tag user.profile.image.url(:thumb), class: 'other-user-pics z-depth-3' %>
               <p><%= user.profile.name %></p>
