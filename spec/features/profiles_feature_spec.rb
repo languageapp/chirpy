@@ -53,6 +53,6 @@ context 'a profile has been created' do
     fill_in('Name', with: 'Joe')
     click_button('Update Profile')
     expect(page).to have_content 'Joe'
-    expect(current_path).to eq '/profiles/3'
+    expect(current_path).to eq '/profiles/2'
   end
 end
