@@ -34,7 +34,7 @@ class ProfilesController < ApplicationController
     @language = current_user.languages
     @profiles = Profile.all
     @profile = @profiles.find(params[:id])
-    @my_id = @profile.id
+    @my_id = current_user.profile.id
   end
 
   def edit
