@@ -8,29 +8,30 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chirpy</title>
+    <link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="http://cdn.animals-pics.com/pictures/www.bluebirdfinance.com/wp-content/uploads/2011/10/Original-Blue-Bird-Logo1.jpg"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
-
     <%= csrf_meta_tag %>
     <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
   <body class="container" ng-controller="ApplicationController as appCtrl">
-  <header class="row">
+  <header class="row clearfix">
 
-    <h2 class="col-xs-12"><%= link_to 'Chirpy' root_path %></h2>
+    <h2 class="col-xs-12 col-sm-6"><%= link_to 'Chirpy', root_path %></h2>
 
-    <div
+    <section class="col-xs-12 col-sm-6">
         <% if user_signed_in? %>
         <%= link_to t('.My_Profile'), new_user_session_path %>
           <%= link_to t('.Sign_Out'), destroy_user_session_path, method: :delete  %>
         <% else %>
           <%= link_to 'Log in', "/en/users/sign_in"   %>
         <% end %>
+    </section>    
   </header>
     <%= notice %>
     <%= yield %>
