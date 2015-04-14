@@ -20,19 +20,17 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
   <body class="container" ng-controller="ApplicationController as appCtrl">
-  <header class="">
-    <%= link_to root_path do%>
-      <div class="header-logo">
-      </div>
-    <% end %>
+  <header class="row">
 
-    <h5 class="logo-font">Chirpy</h5>
-      <% if user_signed_in? %>
-      <%= link_to t('.My_Profile'), new_user_session_path, class: 'login-button white'   %>
-        <%= link_to t('.Sign_Out'), destroy_user_session_path, method: :delete, class: 'btn sign-out-button white'   %>
-      <% else %>
-        <%= link_to 'Log in', "/en/users/sign_in", class: 'btn login-button white'   %>
-      <% end %>
+    <h2 class="col-xs-12"><%= link_to 'Chirpy' root_path %></h2>
+
+    <div
+        <% if user_signed_in? %>
+        <%= link_to t('.My_Profile'), new_user_session_path %>
+          <%= link_to t('.Sign_Out'), destroy_user_session_path, method: :delete  %>
+        <% else %>
+          <%= link_to 'Log in', "/en/users/sign_in"   %>
+        <% end %>
   </header>
     <%= notice %>
     <%= yield %>
