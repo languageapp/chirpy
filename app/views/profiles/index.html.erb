@@ -1,39 +1,36 @@
 <main class="col s12 home-page">
   <h1 class="welcome">Welcome</h1>
-  <h3 class="choose-language">Choose Your Language</h3>
+  <h3 class="choose-language">Choose Your Native Language</h3>
 
-  <%= link_to new_user_registration_path do%>
-    <div class="flags" id="Swedish">
-      <%= image_tag("Sweden.png") %>
-    </div>
-  <% end %>
-
-  <%= link_to new_user_registration_path do%>
-    <div class="flags" id="Norwegian">
-      <%= image_tag("Norway.png") %>
-    </div>
-  <% end %>
-
-  <%= link_to new_user_registration_path do%>
+  <%= link_to "/en/users/sign_up", :locale => 'en' do%>
     <div class="flags" id="English">
       <%= image_tag("United-Kingdom.png") %>
     </div>
   <% end %>
 
-  <%= link_to new_user_registration_path do%>
+  <%= link_to "/es/users/sign_up", :locale => 'es' do%>
     <div class="flags" id="Spanish">
       <%= image_tag("Spain.png") %>
+
     </div>
   <% end %>
-  <%= link_to new_user_registration_path do%>
+
+  <%= link_to "/de/users/sign_up", :locale => 'de' do%>
     <div class="flags" id="German">
       <%= image_tag("Germany.png") %>
     </div>
   <% end %>
+
+    <%= link_to "/fr/users/sign_up", :locale => 'fr' do%>
+    <div class="flags" id="French">
+      <%= image_tag("France.png") %>
+    </div>
+  <% end %>
+
+    <%= link_to "/it/users/sign_up", :locale => 'it' do%>
+    <div class="flags" id="Italian">
+      <%= image_tag("Italy.png") %>
+    </div>
+  <% end %>
+
 </main>
-
-
-
-
-
-

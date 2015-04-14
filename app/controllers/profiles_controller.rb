@@ -1,9 +1,14 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
 
+
+  helper ProfilesHelper
+
   def index
     if current_user
       if current_user.profile
+        user_locale = current_user.languages[0].language_native
+        I18n.locale = user_locale
         redirect_to profile_path(current_user.profile)
       else
         redirect_to new_profile_path
@@ -14,6 +19,7 @@ class ProfilesController < ApplicationController
   def new
     @profile = Profile.new
     @language = Language.new
+    @language.language_native = I18n.locale
   end
 
   def create
@@ -28,6 +34,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    I18n.locale = current_user.languages[0].language_native
     @conversations = Conversation.involving(current_user).order("created_at DESC")
     # @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
     @users = User.where.not("user_id = ?",current_user.id).with_profile

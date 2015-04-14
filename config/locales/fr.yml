@@ -1,0 +1,38 @@
+fr:
+  layouts:
+    application:
+      My_Profile: "Mon profil"
+      Sign_Out: "Déconnecter"
+  profiles:
+    form:
+      Enter_Details: "Entrez les détails"
+      Name: "Nom"
+      Age: "Âge"
+      Profile_Photo: "Photo De Profil"
+      About_Me: "A propos de moi"
+      Gender: "Sexe"
+      Native_Language: "Langue maternelle"
+      Language_To_Learn: "Langue d'apprendre"
+      Level: "Niveau"
+      Create_Profile: "Créer le profil"
+    show:
+      About_Me: "A propos de moi"
+      Speak: "Parler"
+      Learn: "Apprendre"
+      Level: "Niveau"
+      Registered_Users: "Utilisateurs enregistrés"
+      Name: "Nom"
+      Edit_Your_Profile: "Modifier votre profil"
+      Message: "Message"
+      View_Profile: "Vue profil"
+    edit:
+      Edit_Profile: "Modifier votre profil"
+      Name: "Nom"
+      Age: "Âge"
+      Profile_Photo: "Photo De Profil"
+      About_Me: "A propos de moi"
+      Gender: "Sexe"
+      Native_Language: "Langue maternelle"
+      Language_To_Learn: "Langue d'apprendre"
+      Current_Level: "Niveau actuel"
+      Update_Profile: "Profil de mise à jour"
