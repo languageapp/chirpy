@@ -1,35 +1,18 @@
-<div class="container">
-  <div class="row">
-    <main class="col s6 offset-s3 z-depth-3 signup-main">
+<h2><%= t('.sign_up', :default => "Sign up") %></h2>
 
-<h4 class="signup-center">Sign up</h4>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html:{class: 'chirpy-form'}) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field input-field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
 
-  <div class="field input-field">
-    <%= f.label :password %>
-    <% if @validatable %>
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
 
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
 
-  <div class="field input-field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up", class: 'waves-effect waves-light btn log-in-button white' %>
-  </div>
+  <div><%= f.submit t('.sign_up', :default => "Sign up") %></div>
 <% end %>
 
-   </main>
-  </div>
-</div>
+<%= render "devise/shared/links" %>
