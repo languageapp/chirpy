@@ -28,11 +28,10 @@
 
     <h5 class="logo-font">Chirpy</h5>
       <% if user_signed_in? %>
-      <%= link_to 'My Profile', new_user_session_path, class: 'waves-effect waves-light btn log-in-button login-button white'   %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'waves-effect waves-light btn sign-out-button white'   %>
+      <%= link_to t('.My_Profile'), new_user_session_path, class: 'waves-effect waves-light btn log-in-button login-button white'   %>
+        <%= link_to t('.Sign_Out'), destroy_user_session_path, method: :delete, class: 'waves-effect waves-light btn sign-out-button white'   %>
       <% else %>
-        <%= link_to 'Log in', new_user_session_path, class: 'waves-effect waves-light btn log-in-button login-button white'   %>
-        <%= link_to 'Sign up', new_user_registration_path, class: 'waves-effect waves-light btn sign-up-button white'  %>
+        <%= link_to 'Log in', "/en/users/sign_in", class: 'waves-effect waves-light btn log-in-button login-button white'   %>
       <% end %>
   </header>
     <%= notice %>

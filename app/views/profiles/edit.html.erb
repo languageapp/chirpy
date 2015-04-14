@@ -1,39 +1,36 @@
 <div class="container">
   <div class="row">
     <main class="col s6 offset-s2 z-depth-3 update-profile">
-      <h4>Edit Profile</h4>
+      <h4><%= t('.Edit_Profile')%></h4>
 
 <%= form_for @profile, html:{class: 'chirpy-form'} do |f| %>
-  <p><%= f.label :name %></p>
+  <p><%= t('.Name')%></p>
   <p><%= f.text_field :name %></p>
-  <p><%= f.label :age %></p>
+  <p><%= t('.Age')%></p>
   <p><%= f.text_field :age %></p>
-  <p><%= f.label :image %></p>
+  <p><%= t('.Profile_Photo')%></p>
   <p><%= f.file_field :image %></p>
-  <p><%= f.label :bio %></p>
+  <p> <%= t('.About_Me')%></p>
   <p><%= f.text_field :bio %></p>
-  <p><%= f.label :gender %></p>
+  <p><%= t('.Gender')%></p>
   <p><%= f.select :gender,%w{Male Female}, required: true, placeholder: 'Gender', class: 'form-control' %></p>
 
 
   <ul>
     <% @language.each do |lang| %>
       <li>
-        <p>Native language: <%= text_field_tag "language_native", lang.language_native %></p>
-        <p>Language to learn: <%= text_field_tag "language_target", lang.language_target %></p>
 
-        <p>Current Level: <%= select_tag(:proficiency, options_for_select(['Beginner', 'Average', 'Fluent'], selected: lang.proficiency)) %></p>
+        <p><%= t('.Language_To_Learn')%>: <%= text_field_tag "language_target", lang.language_target %></p>
+
+        <p><%= t('.Current_Level')%>: <%= select_tag(:proficiency, options_for_select(['Beginner', 'Average', 'Fluent'], selected: lang.proficiency)) %></p>
       </li>
     <% end %>
   </ul>
 
 
-  <%= f.submit "Update Profile", class: 'waves-effect waves-light btn update-profile-button'%>
+  <%= f.submit t(".Update_Profile"), class: 'waves-effect waves-light btn update-profile-button'%>
 <% end %>
 
    </main>
   </div>
 </div>
-
-
-
