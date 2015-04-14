@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html ng-app="chirpy">
   <head>
+    <script type="text/javascript">
+      <% if current_user && current_user.profile %>
+      window.currentUser =  '<%= current_user.profile.id %>';
+      <% end %>
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chirpy</title>
     <link rel="shortcut icon" href="http://cdn.animals-pics.com/pictures/www.bluebirdfinance.com/wp-content/uploads/2011/10/Original-Blue-Bird-Logo1.jpg"/>
@@ -14,7 +19,7 @@
     <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
-  <body>
+  <body ng-controller="ApplicationController as appCtrl">
   <header class="col s12">
     <%= link_to root_path do%>
       <div class="header-logo">
@@ -32,5 +37,6 @@
   </header>
     <%= notice %>
     <%= yield %>
+
   </body>
 </html>

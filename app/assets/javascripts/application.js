@@ -10,38 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require angular
 //= require jquery
 //= require jquery_ujs
 //= require chat
 //= require private_pub
-//= require turbolinks
 //= require_tree .
-//= require angular
-
-$(document).ready(function(){
-
-  $('.flags').mouseenter(function(){
-    $(this).css('opacity', 0.5);
-  });
-  $('.flags').mouseleave(function(){
-    $(this).css('opacity', 1);
-  });
-
-  $('.flags').click(function(){
-    console.log($(this).attr('id'));
-  });
-});
-
-
-var app = angular.module('chirpy', []);
-
-app.controller('LanguageFilterController', function() {
-
-  this.test = "Hello, world.";
-
-  this.selectedLanguage = "";
-
-});
 
 
 
