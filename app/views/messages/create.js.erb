@@ -1,11 +1,16 @@
 <% current_user.profile.id == @conversation.recipient_id ? reciever = @conversation.sender_id : reciever = @conversation.recipient_id %>
 
+<% puts "outside of publish ++++++++++++++++++++++++#{@path}" %>
+
 <% publish_to "/ping_listener#{reciever}" do %>
   chatBox.chatWith(<%= @conversation.id %>);
 <% end %>
 
 
 <% publish_to @path do %>
+  
+    <% puts "inside of publish ++++++++++++++++++++++++#{@path}" %>
+
     var id = "<%= @conversation.id %>";
     var chatbox = $("#chatbox_" + id + " .chatboxcontent");
     var sender_id = "<%= @message.user.id %>";

@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
     @conversation = Conversation.find(params[:conversation_id])
     @message = @conversation.messages.build(body: params[:body], user: current_user)
     @message.save! 
-    @path = conversation_path(@conversation)
+    @path = conversation_path(@conversation).partition("?").first
   end
   
 end

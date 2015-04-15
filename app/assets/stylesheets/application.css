@@ -18,7 +18,7 @@
 
  */
 
-@import url(https://fonts.googleapis.com/css?family=Comfortaa);
+@import url(http://fonts.googleapis.com/css?family=Comfortaa);
 
 
 
@@ -27,13 +27,20 @@ html{
   background-image: url('sky.png');
   font-size: 70%;
   background-position: left;
-  -webkit-animation: sky 90s linear infinite;
+/*  -webkit-animation: sky 80s linear infinite;*/
 }
 
 select{
   width: 20%;
 }
 
+
+
+.panel-heading{
+
+    background-color: #F4F5ED;
+    z-index: 10;
+}
 
 .flags{
   -webkit-transition: all .5s; /* Safari */
@@ -215,14 +222,20 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
 }
 
 #main-app{
-  height: 80%;
     -webkit-box-shadow: 1px 1px 17px 0px rgba(65, 40, 11, 0.75);
   -moz-box-shadow:    1px 1px 17px 0px rgba(65, 40, 11, 0.75);
   box-shadow:         1px 1px 17px 0px rgba(65, 40, 11, 0.75);
+  background-color: #F4F5ED;
+  position: relative;
+  margin-bottom: 3rem;
 }
 
 #main-app label{
   display: block;
+}
+
+img.user-lang-flag{
+  padding-left: 10px;
 }
 
 table.striped label{

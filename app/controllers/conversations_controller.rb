@@ -22,7 +22,7 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
     @receiver = interlocutor(@conversation)
     @messages = @conversation.messages
-    @message = Message.new
+    @message = Message.new  
   end
 
   private

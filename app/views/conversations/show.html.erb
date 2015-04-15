@@ -2,7 +2,7 @@
   <div class="chatboxtitle">
     <i class="fa fa-comments"></i>
 
-    <h1><%= @receiver.email %> </h1>
+    <h1><%= @receiver.profile.name %> </h1>
   </div>
   <div class="chatboxoptions">
     <%= link_to "<i class='fa  fa-minus'></i> ".html_safe, "#", class: "toggleChatBox", "data-cid" => @conversation.id %>
@@ -23,3 +23,5 @@
 </div>
 
 <%= subscribe_to conversation_path(@conversation) %>
+
+<%= puts conversation_path(@conversation) %>

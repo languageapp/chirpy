@@ -14,8 +14,6 @@
     var onlinePoll = function() {
       (function checkIn() {
         $http.post('/online/'+$window.currentUser).success(function(data,status) {
-          console.log('Post online success: '+status);
-          console.log(data.users);
           self.usersOnline = data.users;
           $timeout(checkIn, 2997);
         }).error(function(data, status) {
@@ -35,10 +33,6 @@
       }
 
     };
-
-
-
-
 
    }]);
 
