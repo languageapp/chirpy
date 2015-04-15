@@ -3,7 +3,7 @@
     <div class="panel-heading">
       <h4><%= t('.Registered_Users')%></h4>
       <div>
-        <input type="checkbox" ng-model="appCtrl.onlineOnly" id="onlineOnly" />
+        <input type="checkbox" ng-model="appCtrl.onlineOnly" id="onlineOnly" checked="unchecked" />
         <label for="onlineOnly"><%= t('.Only_Online_Users') %></label>
       </div>
      <input type="text" ng-model="filterCtrl.selectedLanguage" placeholder=<%= t('.Search_Language') %> "..." />
@@ -17,6 +17,7 @@
               <label class="other-users-name"><%= user.profile.name %></label>
               <label><%= t('.Speak')%>: <%= image_tag("#{format_language(user.languages[0].language_native)}.png", :class=>"user-lang-flag") %></label>
               <label><%= t('.Learn')%>: <%= image_tag("#{format_language(user.languages[0].language_target)}.png", :class=>"user-lang-flag") %></label>
+              <label id="placeholder-div"></label>
 
               <%= link_to t('.View_Profile'), profile_path(user.id), class: 'white btn'  %>
             </td>
@@ -50,6 +51,13 @@
       <% end %>
     </div>
 </div>
+
+    <script>
+    gapi.hangout.render('placeholder-div', {
+      'render': 'createhangout',
+      'widget_size': 72
+    });
+      </script>
 
     <%= subscribe_to "/ping_listener#{@my_id}" %>
     <% puts "subscribed to listener at /ping_listener#{@my_id}" %>
