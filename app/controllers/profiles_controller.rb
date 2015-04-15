@@ -23,11 +23,9 @@ class ProfilesController < ApplicationController
     @language.language_native = I18n.locale
     lang = @language.language_native
     @lang_native = @language.format_from_locale(lang)
-    
-    
+    langArray = ['English', 'French', 'German', 'Italian', 'Spanish']
     langArray.delete(@lang_native)
     @languagesArray = langArray
-
   end
 
   def create
