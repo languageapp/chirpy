@@ -1,4 +1,6 @@
+       <p id="hangouts"></p>
 <div class="chatboxhead z-depth-3">
+
   <div class="chatboxtitle">
     <i class="fa fa-comments"></i>
 
@@ -22,6 +24,11 @@
   <% end %>
 </div>
 
-
+  <script>
+  gapi.hangout.render('hangouts', {
+  'render': 'createhangout',
+  'widget_size': 72
+  });
+</script>
 <%= subscribe_to conversation_path(@conversation).partition('?').first %>
 

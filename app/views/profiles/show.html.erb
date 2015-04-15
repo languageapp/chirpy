@@ -1,7 +1,7 @@
 <div class="row clearfix" id="main-app">
   <div class="col-xs-12 col-sm-6 online-users" ng-controller="LanguageFilterController as filterCtrl">
     <div class="panel-heading">
-       <p id="hangouts"</p>
+
       <h4><%= t('.Registered_Users')%></h4>
       <div>
         <input type="checkbox" ng-model="appCtrl.onlineOnly" id="onlineOnly"/>
@@ -53,12 +53,7 @@
     </div>
 </div>
 
-    <script>
-    gapi.hangout.render('hangouts', {
-      'render': 'createhangout',
-      'widget_size': 72
-    });
-      </script>
+
 
     <%= subscribe_to "/ping_listener#{@my_id}" %>
 
