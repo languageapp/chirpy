@@ -38,7 +38,7 @@
       <% @language.uniq.each do |lang| %>
         <p class="profile-description green-font"><%= t('.Speak')%>: <%= image_tag("#{format_language(lang.language_native)}.png", :class => 'user-lang-flag') %></p>
         <p class="profile-description green-font"><%= t('.Learn')%>: <%= image_tag("#{format_language(lang.language_target)}.png", :class => 'user-lang-flag') %></p>
-        <p class="profile-description"><%= t('.Level')%>: <%= <%= I18n.t('profiles.form.' + lang.proficiency) %></p>
+        <p class="profile-description"><%= t('.Level')%>: <%= I18n.t('profiles.form.' + lang.proficiency) %></p>
 
       <% end %>
 

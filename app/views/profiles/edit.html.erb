@@ -5,15 +5,15 @@
 <%= form_for @profile, html:{class: 'chirpy-form'} do |f| %>
 
   <label><%= t('.Name')%></label>
-  <p><%= f.text_field :name %></p>
-  <p><%= t('.Age')%></p>
-  <p><%= f.text_field :age %></p>
-  <p><%= t('.Profile_Photo')%></p>
-  <p><%= f.file_field :image %></p>
-  <p> <%= t('.About_Me')%></p>
-  <p><%= f.text_field :bio %></p>
-  <p><%= t('.Gender')%></p>
-  <p><%= f.select(:gender, @genderArray, class: 'form-control', selected: @profile.gender) %></p>
+  <label><%= f.text_field :name %></label>
+  <label><%= t('.Age')%></label>
+  <label><%= f.text_field :age %></label>
+  <label><%= t('.Profile_Photo')%></label>
+  <label><%= f.file_field :image %></label>
+  <label> <%= t('.About_Me')%></label>
+  <label><%= f.text_field :bio %></label>
+  <label><%= t('.Gender')%></label>
+  <label><%= f.select(:gender, @genderArray, class: 'form-control', selected: @profile.gender) %></label>
 
 
 
