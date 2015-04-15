@@ -14,8 +14,6 @@
         <p><%= t('.Age')%></p>
         <%= f.select :age, (18..80).map {|i| [i,i] }, required: true, class: 'form-control' %>
             </div>
-
-
         <div class="field input-field ">
           <p><%= t('.Profile_Photo')%></p>
           <%= f.file_field :image  %>

@@ -79,8 +79,8 @@ Rails.application.configure do
 
 
   config.i18n.enforce_available_locales = false
-config.i18n.available_locales = [:en, :es, :de, :sv, :nb, :fr, :it]
-config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
+  config.i18n.available_locales = [:en, :es, :de, :sv, :nb, :fr, :it]
+  config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
 
 
 
