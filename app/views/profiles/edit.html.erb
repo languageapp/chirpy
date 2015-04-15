@@ -1,7 +1,6 @@
-<div class="container">
-  <div class="row">
-    <main class="update-profile">
-      <h4><%= t('.Edit_Profile')%></h4>
+
+<main class="chirpy-form form-page">
+      <h2><%= t('.Edit_Profile')%></h2>
 
 <%= form_for @profile, html:{class: 'chirpy-form'} do |f| %>
   <label><%= t('.Name')%></label>
@@ -28,9 +27,8 @@
   </ul>
 
 
-  <%= f.submit t(".Update_Profile"), class: 'waves-effect waves-light btn update-profile-button'%>
+  <%= f.submit t(".Update_Profile"), class: 'btn white update-profile-button'%>
 <% end %>
 
    </main>
-  </div>
-</div>
+

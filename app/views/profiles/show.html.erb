@@ -1,37 +1,12 @@
-<div class="container">
-  <div class="row">
-    <div class="col s6 offset-s3 z-depth-3 profile-main">
-      <h3 class="profile-name"><%= @profile.name %></h3>
-      <%= image_tag @profile.image.url(:thumb, timestamp: false), class: 'profile-picture z-depth-3' %>
-      <h6><%= t('.About_Me')%></h6>
-      <p class="profile-description"><%= @profile.bio %></p>
-      <p class="profile-description gender-age"><%= @profile.age %>, <%= @profile.gender %></p>
-      <% @language.uniq.each do |lang| %>
-        <p class="profile-description"><%= t('.Speak')%>: <%= image_tag("#{format_language(lang.language_native)}.png") %></p>
-        <p class="profile-description"><%= t('.Learn')%>: <%= image_tag("#{format_language(lang.language_target)}.png") %></p>
-        <p class="profile-description"><%= t('.Level')%>: <%= lang.proficiency %></p>
 
-      <% end %>
-
-      <% if current_user.id == @profile.user_id %>
-        <%= link_to t('.Edit_Your_Profile'), edit_profile_path(@profile), class: 'waves-effect waves-light btn-xs sign-up-button' %>
-      <% else %>
-        <%= link_to 'edit your profile', edit_profile_path(@profile), class: 'waves-effect waves-light btn sign-up-button', :style => "display: none;" %>
-        <%= link_to 'return to your profile', profile_path(current_user.id), class: 'waves-effect waves-light btn-xs sign-up-button' %>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-
-    <div class="row" ng-controller="LanguageFilterController as filterCtrl">
-    <div class="col s3 online-users z-depth-3">
+<div class="row clearfix" id="main-app">
+  <div class="col-xs-12 col-sm-6 online-users" ng-controller="LanguageFilterController as filterCtrl">
     <div class="panel-heading">
-      <h5><%= t('.Registered_Users')%></h5>
-      <p>
+      <h4><%= t('.Registered_Users')%></h4>
+      <div>
         <input type="checkbox" ng-model="appCtrl.onlineOnly" id="onlineOnly" />
         <label for="onlineOnly">Only Online Users</label>
-      </p>
+      </div>
      <input type="text" ng-model="filterCtrl.selectedLanguage" placeholder="Search Language..." />
     </div>
       <table class="table striped responsive-table">
@@ -40,21 +15,42 @@
           <tr ng-show="(appCtrl.isUserOnline(<%= user.profile.id %>)) && ('<%= user.languages[0].language_native %>'.toLowerCase().indexOf(filterCtrl.selectedLanguage.toLowerCase()) > -1 || filterCtrl.selectedLanguage == '')">
             <td>
               <%= image_tag user.profile.image.url(:thumb), class: 'other-user-pics z-depth-3' %>
-              <p><%= user.profile.name %></p>
-              <p><%= t('.Speak')%>: <%= image_tag("#{format_language(user.languages[0].language_native)}.png") %></p>
-              <p><%= t('.Learn')%>: <%= image_tag("#{format_language(user.languages[0].language_target)}.png") %></p>
+              <label class="other-users-name"><%= user.profile.name %></label>
+              <label><%= t('.Speak')%>: <%= image_tag("#{format_language(user.languages[0].language_native)}.png", :class=>"user-lang-flag") %></label>
+              <label><%= t('.Learn')%>: <%= image_tag("#{format_language(user.languages[0].language_target)}.png", :class=>"user-lang-flag") %></label>
 
-              <%= link_to t('.View_Profile'), profile_path(user.id), class: 'waves-effect waves-light btn-xs view-profile-button'  %>
+              <%= link_to t('.View_Profile'), profile_path(user.id), class: 'white btn'  %>
             </td>
             <td>
-              <%= link_to t(".Message"), '#', class: "mdi-communication-message btn-success btn-xs start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %>
+              <%= link_to t(".Message"), '#', class: "mdi-communication-message btn-success btn white start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %>
             </td>
           </tr>
             <% end %>
         </tbody>
       </table>
     </div>
+     <div class="col-xs-12 col-sm-6 profile-main">
+      <h4>You are viewing...</h4>
+      <h3 class="profile-name"><%= @profile.name %></h3>
+      <%= image_tag @profile.image.url(:thumb, timestamp: false), class: 'profile-picture z-depth-3' %>
+      <h4><%= t('.About_Me')%></h4>
+      <p class="profile-description"><%= @profile.bio %></p>
+      <p class="profile-description gender-age"><%= @profile.age %>, <%= @profile.gender %></p>
+      <% @language.uniq.each do |lang| %>
+        <p class="profile-description green-font"><%= t('.Speak')%>: <%= image_tag("#{format_language(lang.language_native)}.png", :class => 'user-lang-flag') %></p>
+        <p class="profile-description green-font"><%= t('.Learn')%>: <%= image_tag("#{format_language(lang.language_target)}.png", :class => 'user-lang-flag') %></p>
+        <p class="profile-description"><%= t('.Level')%>: <%= lang.proficiency %></p>
+
+      <% end %>
+
+      <% if current_user.id == @profile.user_id %>
+        <%= link_to t('.Edit_Your_Profile'), edit_profile_path(@profile), class: 'white btn' %>
+      <% else %>
+        <%= link_to 'edit your profile', edit_profile_path(@profile), class: 'btn white', :style => "display: none;" %>
+        <%= link_to 'return to your profile', profile_path(current_user.id), class: 'white btn' %>
+      <% end %>
     </div>
+</div>
 
     <%= subscribe_to "/ping_listener#{@my_id}" %>
     <% puts "subscribed to listener at /ping_listener#{@my_id}" %>

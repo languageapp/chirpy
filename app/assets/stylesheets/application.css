@@ -27,7 +27,7 @@ html{
   background-image: url('sky.png');
   font-size: 70%;
   background-position: left;
-  -webkit-animation: sky 90s linear infinite;
+/*  -webkit-animation: sky 90s linear infinite;*/
 }
 
 select{
@@ -130,8 +130,8 @@ header section{
   float: right;
   text-align: right;
   color: #00a09d;
-  font-size: 25px;
-  font-size: 2.5rem;
+  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 header a{
@@ -151,6 +151,7 @@ input[type=password]{
   font-size: 1.7rem;
   overflow: hidden;
   box-sizing: border-box;
+  color: #000;
 }
 .chirpy-form label{
   position: static;
@@ -209,7 +210,46 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
   color: #41280b; 
 }
 
+.user-lang-flag{
+  width: 10%;
+}
 
+#main-app{
+  height: 80%;
+    -webkit-box-shadow: 1px 1px 17px 0px rgba(65, 40, 11, 0.75);
+  -moz-box-shadow:    1px 1px 17px 0px rgba(65, 40, 11, 0.75);
+  box-shadow:         1px 1px 17px 0px rgba(65, 40, 11, 0.75);
+}
+
+#main-app label{
+  display: block;
+}
+
+table.striped label{
+  font-size: 2rem;
+    color: #41280b;
+    padding: 10px;
+}
+
+table.striped tr{
+  padding: 10px;
+}
+
+#main-app table td{
+  padding: 20px;
+}
+
+td img.user-lang-flag{
+  width: 30%;
+  padding-left: 10px;
+}
+
+#main-app h4{
+  font-size: 2rem;
+  color: #00a09d;
+    font-family: 'Comfortaa', cursive;
+  padding: 20px 0;
+}
 
 @-webkit-keyframes clouds{
   0%{
