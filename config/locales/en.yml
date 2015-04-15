@@ -28,3 +28,8 @@ en:
       German: "German"
       Italian: "Italian"
       Spanish: "Spanish"
+      Male: "Male"
+      Female: "Female"
+      Beginner: "Beginner"
+      Average: "Average"
+      Fluent: "Fluent"

@@ -24,7 +24,7 @@
         </div>
         <div class="field input-field">
         <p><%= t('.Gender')%></p>
-        <%= f.select :gender,%w{Male Female}, required: true, placeholder: 'Gender', class: 'form-control' %>
+        <%= f.select(:gender, @genderArray, required: true, class: 'form-control') %>
         </div>
 
         <%= fields_for @language, html:{class: 'chirpy-form'}  do |f| %>
@@ -41,7 +41,7 @@
            <div class="field input-field" id="prof">
             <p><%=t('.Level')%></p>
 
-            <%= f.select :proficiency, ['Beginner', 'Average', 'Fluent'], required: true, class: 'form-control' %>
+            <%= f.select(:proficiency, @proficiencyArray, required: true, class: 'form-control') %>
             </div>
         <% end %>
 

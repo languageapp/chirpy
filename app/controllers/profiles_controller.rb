@@ -20,6 +20,13 @@ class ProfilesController < ApplicationController
   def new
     @profile = Profile.new
     @language = Language.new
+
+    @genderArray = {I18n.t('profiles.form.Male', :default => 'Male') => 'Male', 
+                I18n.t('profiles.form.Female', :default => 'Female') => 'Female'}
+    @proficiencyArray = {I18n.t('profiles.form.Beginner', :default => 'Beginner') => 'Beginner', 
+                I18n.t('profiles.form.Average', :default => 'Average') => 'Average',
+               I18n.t('profiles.form.Fluent', :default => 'Fluent') => 'Fluent'}
+
     @language.language_native = I18n.locale
     lang = @language.language_native
     @lang_native = @language.format_from_locale(lang)
@@ -46,7 +53,9 @@ class ProfilesController < ApplicationController
   def show
     @conversations = Conversation.involving(current_user).order("created_at DESC")
     @users = User.where.not("user_id = ?",current_user.id).with_profile
-    @language = current_user.languages
+    users_all = User.all
+    selected_user = users_all.find(params[:id])
+    @language = selected_user.languages
     @profiles = Profile.all
     @profile = @profiles.find(params[:id])
     @my_id = current_user.profile.id
@@ -56,7 +65,12 @@ class ProfilesController < ApplicationController
     @profile = current_user.profile
     @language = current_user.languages
     @lang_target = current_user.languages[0].language_target
- langArray = {I18n.t('profiles.form.English', :default => 'English') => 'English', 
+    @genderArray = {I18n.t('profiles.form.Male', :default => 'Male') => 'Male', 
+                I18n.t('profiles.form.Female', :default => 'Female') => 'Female'}
+    @proficiencyArray = {I18n.t('profiles.form.Beginner', :default => 'Beginner') => 'Beginner', 
+                I18n.t('profiles.form.Average', :default => 'Average') => 'Average',
+               I18n.t('profiles.form.Fluent', :default => 'Fluent') => 'Fluent'}
+    langArray = {I18n.t('profiles.form.English', :default => 'English') => 'English', 
                 I18n.t('profiles.form.French', :default => 'French') => 'French', 
                 I18n.t('profiles.form.German', :default => 'German') => 'German', 
                 I18n.t('profiles.form.Italian', :default => 'Italian') => 'Italian', 
@@ -65,7 +79,7 @@ class ProfilesController < ApplicationController
     @languagesArray = langArray
   end
 
- def update
+  def update
     @profile = current_user.profile
     @profile.update(profile_params)
     @language = current_user.languages

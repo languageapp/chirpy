@@ -20,6 +20,11 @@ de:
       German: "Deutsch"
       Italian: "Italienisch"
       Spanish: "Spanisch"
+      Male: "Männlich"
+      Female: "Weiblich"
+      Beginner: "Anfänger"
+      Average: "Durchschnitt"
+      Fluent: "Fließend"
     show:
       About_Me: "über mich"
       Speak: "Sprechen"

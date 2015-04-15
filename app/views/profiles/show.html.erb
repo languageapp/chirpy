@@ -5,11 +5,13 @@
       <%= image_tag @profile.image.url(:thumb, timestamp: false), class: 'profile-picture z-depth-3' %>
       <h6><%= t('.About_Me')%></h6>
       <p class="profile-description"><%= @profile.bio %></p>
-      <p class="profile-description gender-age"><%= @profile.age %>, <%= @profile.gender %></p>
+      <p class="profile-description gender-age"><%= @profile.age %>, <%= I18n.t('profiles.form.' + @profile.gender) %></p>
       <% @language.uniq.each do |lang| %>
         <p class="profile-description"><%= t('.Speak')%>: <%= image_tag("#{format_language(lang.language_native)}.png") %></p>
         <p class="profile-description"><%= t('.Learn')%>: <%= image_tag("#{format_language(lang.language_target)}.png") %></p>
-        <p class="profile-description"><%= t('.Level')%>: <%= lang.proficiency %></p>
+        <p class="profile-description"><%= t('.Level')%>: <%= I18n.t('profiles.form.' + lang.proficiency) %></p>
+
+
 
       <% end %>
 
