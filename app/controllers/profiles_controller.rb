@@ -7,8 +7,10 @@ class ProfilesController < ApplicationController
   def index
     if current_user
       if current_user.profile
-        user_locale = current_user.languages[0].language_native
-        I18n.locale = user_locale
+        user_lang = current_user.languages[0]
+        user_lang_native = current_user.languages[0].language_native
+        formatted_locale = user_lang.format_to_locale(user_lang_native)
+        I18n.locale = formatted_locale
         redirect_to profile_path(current_user.profile)
       else
         redirect_to new_profile_path
@@ -20,6 +22,8 @@ class ProfilesController < ApplicationController
     @profile = Profile.new
     @language = Language.new
     @language.language_native = I18n.locale
+    lang = @language.language_native
+    @lang_native = @language.format_from_locale(lang)
   end
 
   def create
@@ -34,9 +38,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    I18n.locale = current_user.languages[0].language_native
     @conversations = Conversation.involving(current_user).order("created_at DESC")
-    # @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
     @users = User.where.not("user_id = ?",current_user.id).with_profile
     @language = current_user.languages
     @profiles = Profile.all

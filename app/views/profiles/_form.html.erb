@@ -30,8 +30,8 @@
         <%= fields_for @language, html:{class: 'chirpy-form'}  do |f| %>
           <div class="field input-field" id="lang">
           <p><%= t('.Native_Language')%></p>
-            <%= image_tag("#{format_language(@language.language_native)}.png") %>
-            <%= f.hidden_field :language_native, :value => @language.language_native%>
+            <%= image_tag("#{format_language(@lang_native)}.png") %>
+            <%= f.hidden_field :language_native, :value => @lang_native%>
           </div>
             <div class="field input-field" id="lang">
               <p><%= t('.Language_To_Learn')%></p>
