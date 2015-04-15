@@ -6,7 +6,7 @@
 
     var self = this;
 
-    self.onlineOnly = true;
+    self.onlineOnly = false;
 
     self.usersOnline = [];
 
