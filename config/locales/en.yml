@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+  profiles:
+    form:
+      English: "English"
+      French: "French"
+      German: "German"
+      Italian: "Italian"
+      Spanish: "Spanish"
