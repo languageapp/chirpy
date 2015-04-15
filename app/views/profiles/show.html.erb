@@ -4,9 +4,9 @@
       <h4><%= t('.Registered_Users')%></h4>
       <div>
         <input type="checkbox" ng-model="appCtrl.onlineOnly" id="onlineOnly" />
-        <label for="onlineOnly">Only Online Users</label>
+        <label for="onlineOnly"><%= t('.Only_Online_Users') %></label>
       </div>
-     <input type="text" ng-model="filterCtrl.selectedLanguage" placeholder="Search Language..." />
+     <input type="text" ng-model="filterCtrl.selectedLanguage" placeholder=<%= t('.Search_Language') %> "...">
     </div>
       <table class="table striped responsive-table">
         <tbody>
@@ -29,7 +29,7 @@
       </table>
     </div>
      <div class="col-xs-12 col-sm-6 profile-main">
-      <h4>You are viewing...</h4>
+      <h4><%= t('.You_Are_Viewing')%>...</h4>
       <h3 class="profile-name"><%= @profile.name %></h3>
       <%= image_tag @profile.image.url(:thumb, timestamp: false), class: 'profile-picture z-depth-3' %>
       <h4><%= t('.About_Me')%></h4>
@@ -46,7 +46,7 @@
         <%= link_to t('.Edit_Your_Profile'), edit_profile_path(@profile), class: 'white btn' %>
       <% else %>
         <%= link_to 'edit your profile', edit_profile_path(@profile), class: 'btn white', :style => "display: none;" %>
-        <%= link_to 'return to your profile', profile_path(current_user.id), class: 'white btn' %>
+        <%= link_to t('.Return_To_Your_Profile'), profile_path(current_user.id), class: 'white btn' %>
       <% end %>
     </div>
 </div>

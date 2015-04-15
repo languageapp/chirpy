@@ -35,6 +35,10 @@ de:
       Edit_Your_Profile: "Bearbeite dein profil"
       Message: "Nachricht"
       View_Profile: "Profil anzeigen"
+      You_Are_Viewing: "Du siehst"
+      Return_To_Your_Profile: "Kehren Sie zu Ihrem Profil"
+      Only_Online_Users: "Nur Online-Benutzer"
+      Search_Language: "Suche nach Sprache"
     edit:
       Edit_Profile: "Profil bearbeiten"
       Name: "Name"    

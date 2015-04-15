@@ -35,6 +35,10 @@ fr:
       Edit_Your_Profile: "Modifier votre profil"
       Message: "Message"
       View_Profile: "Vue profil"
+      You_Are_Viewing: "Vous regardez"
+      Return_To_Your_Profile: "Retour à votre profil"
+      Only_Online_Users: "Uniquement Utilisateurs en ligne"
+      Search_Language: "Recherche Langue"      
     edit:
       Edit_Profile: "Modifier votre profil"
       Name: "Nom"
