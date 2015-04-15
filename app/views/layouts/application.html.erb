@@ -22,15 +22,15 @@
   <body class="container" ng-controller="ApplicationController as appCtrl">
   <header class="row clearfix">
 
-    <h2 class="col-xs-12 col-sm-6"><%= link_to 'Chirpy', root_path %></h2>
+    <h2 class="col-xs-12 col-sm-6"><%= link_to 'Chirpy', root_path, class: 'enlarge' %></h2>
 
     <section class="col-xs-12 col-sm-6">
-        <% if user_signed_in? %>
-        <%= link_to t('.My_Profile'), new_user_session_path %>
-          <%= link_to t('.Sign_Out'), destroy_user_session_path, method: :delete  %>
-        <% else %>
-          <%= link_to 'Log in', "/en/users/sign_in"   %>
-        <% end %>
+      <% if user_signed_in? %>
+      <%= link_to t('.My_Profile'), new_user_session_path, class: 'enlarge'%>
+      <%= link_to t('.Sign_Out'), destroy_user_session_path, method: :delete,   class: 'enlarge' %>
+      <% else %>
+        <%= link_to 'Log in', "/en/users/sign_in", class: 'enlarge'%>
+      <% end %>
     </section>    
   </header>
     <%= notice %>

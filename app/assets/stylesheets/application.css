@@ -23,9 +23,20 @@
 html{
   background-color: #BAF8FF;
   background-image: url('sky.png');
-  font-size: 10px;
+  font-size: 70%;
   background-position: left;
-  -webkit-animation: sky 60s linear infinite;
+  -webkit-animation: sky 90s linear infinite;
+}
+
+
+.flags{
+  -webkit-transition: all .5s; /* Safari */
+  transition: all .5s;
+}
+
+.flags:hover{
+  opacity: .5;
+  -webkit-transform: scale3d(1.1,1.1,1.1);
 }
 
 a:link,
@@ -46,22 +57,32 @@ main.home-page{
 }
 main.home-page h1{
   margin-top: 0;
+  letter-spacing: 7px;
+  color: #574331;
+
+  margin-bottom: 50px;
 }
+
+main.home-page h2{
+
+  color: #4db6ac;
+}  
+
 h1{
-  font-size: 40px;
-  font-size: 4rem;
+  font-size: 50px;
+  font-size: 5rem;
   margin: 20px;
   color: #574331;
 }
 h2{
-  font-size: 30px;
-  font-size: 3rem;
+  font-size: 40px;
+  font-size: 4rem;
   margin: 20px;
 }
 
 h3{
-  font-size: 25px;
-  font-size: 2.5rem;
+  font-size: 30px;
+  font-size: 3rem;
   margin: 20px;
 }
 
@@ -82,6 +103,7 @@ header h2{
   text-transform: uppercase;
   letter-spacing: 7px;
   margin: 0;
+  font-size: 3rem;
 }
 
 header h2 a{
@@ -95,8 +117,8 @@ header section{
   float: right;
   text-align: right;
   color: #574331;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 25px;
+  font-size: 2.5rem;
 }
 
 header a{
@@ -249,6 +271,9 @@ main.signup-main{
   }
   #logo-h2{
     color: #fff;
+  }
+  .flags{
+    margin-top: 2rem;
   }
 
 }

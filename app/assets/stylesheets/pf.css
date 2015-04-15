@@ -149,12 +149,10 @@ td{
   margin-top: 60px;
 }*/
 
-/*.flags{
-  display: inline-block;
-  padding: 6em;
-  text-align: center;
+.flags{
+  margin-top: 7rem;
 }
-*/
+
 .welcome{
   font-family: 'Comfortaa', cursive;
   text-align: center;
