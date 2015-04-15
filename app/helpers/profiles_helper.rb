@@ -1,5 +1,7 @@
 module ProfilesHelper
 
+@languagesArray = ['English', 'French', 'German', 'Italian', 'Spanish']
+
   def format_language(lang)
     case lang
       when 'de', 'German'

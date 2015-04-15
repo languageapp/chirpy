@@ -21,3 +21,15 @@
 
 en:
   hello: "Hello world"
+  profiles:
+    form:
+      English: "English"
+      French: "French"
+      German: "German"
+      Italian: "Italian"
+      Spanish: "Spanish"
+      Male: "Male"
+      Female: "Female"
+      Beginner: "Beginner"
+      Average: "Average"
+      Fluent: "Fluent"

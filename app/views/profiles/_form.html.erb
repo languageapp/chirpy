@@ -12,8 +12,6 @@
         <label><%= t('.Age')%></label>
         <%= f.select :age, (18..80).map {|i| [i,i] }, required: true, class: 'form-control' %>
             </div>
-
-
         <div class="field input-field ">
           <label><%= t('.Profile_Photo')%></label>
           <%= f.file_field :image %>
@@ -24,24 +22,28 @@
         </div>
         <div class="field input-field">
         <label><%= t('.Gender')%></label>
-        <%= f.select :gender,%w{Male Female}, required: true, placeholder: 'Gender', class: 'form-control' %>
+        <%= f.select(:gender, @genderArray, required: true, class: 'form-control') %>
+
         </div>
 
         <%= fields_for @language, html:{class: 'chirpy-form'}  do |f| %>
           <div class="field input-field" id="lang">
+
           <label><%= t('.Native_Language')%></label>
-            <%= image_tag("#{format_language(@language.language_native)}.png", :class => 'user-lang-flag') %>
-            <%= f.hidden_field :language_native, :value => @language.language_native%>
+            <%= image_tag("#{format_language(@lang_native)}.png") %>
+            <%= f.hidden_field :language_native, :value => @lang_native%>
           </div>
             <div class="field input-field" id="lang">
+
               <label><%= t('.Language_To_Learn')%></label>
-              <%= f.select :language_target, ['English', 'French', 'German', 'Italian', 'Spanish'], required: true, class: 'form-control'  %>
+              <%= f.select(:language_target, @languagesArray, required: true, class: 'form-control')  %>
+
             </div>
 
            <div class="field input-field" id="prof">
             <label><%=t('.Level')%></label>
 
-            <%= f.select :proficiency, ['Beginner', 'Average', 'Fluent'], required: true, class: 'form-control' %>
+            <%= f.select(:proficiency, @proficiencyArray, required: true, class: 'form-control') %>
             </div>
         <% end %>
 

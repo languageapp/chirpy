@@ -1,4 +1,3 @@
-
 <div class="row clearfix" id="main-app">
   <div class="col-xs-12 col-sm-6 online-users" ng-controller="LanguageFilterController as filterCtrl">
     <div class="panel-heading">
@@ -35,11 +34,11 @@
       <%= image_tag @profile.image.url(:thumb, timestamp: false), class: 'profile-picture z-depth-3' %>
       <h4><%= t('.About_Me')%></h4>
       <p class="profile-description"><%= @profile.bio %></p>
-      <p class="profile-description gender-age"><%= @profile.age %>, <%= @profile.gender %></p>
+      <p class="profile-description gender-age"><%= @profile.age %>, <%= I18n.t('profiles.form.' + @profile.gender) %></p>
       <% @language.uniq.each do |lang| %>
         <p class="profile-description green-font"><%= t('.Speak')%>: <%= image_tag("#{format_language(lang.language_native)}.png", :class => 'user-lang-flag') %></p>
         <p class="profile-description green-font"><%= t('.Learn')%>: <%= image_tag("#{format_language(lang.language_target)}.png", :class => 'user-lang-flag') %></p>
-        <p class="profile-description"><%= t('.Level')%>: <%= lang.proficiency %></p>
+        <p class="profile-description"><%= t('.Level')%>: <%= <%= I18n.t('profiles.form.' + lang.proficiency) %></p>
 
       <% end %>
 
