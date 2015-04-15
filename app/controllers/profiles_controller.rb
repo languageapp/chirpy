@@ -23,8 +23,12 @@ class ProfilesController < ApplicationController
     @language.language_native = I18n.locale
     lang = @language.language_native
     @lang_native = @language.format_from_locale(lang)
-    langArray = ['English', 'French', 'German', 'Italian', 'Spanish']
-    langArray.delete(@lang_native)
+    langArray = {I18n.t('profiles.form.English') => 'English', 
+                I18n.t('profiles.form.French') => 'French', 
+                I18n.t('profiles.form.German') => 'German', 
+                I18n.t('profiles.form.Italian') => 'Italian', 
+                I18n.t('profiles.form.Spanish') => 'Spanish'}
+    langArray.delete(I18n.t('profiles.form.' + @lang_native))
     @languagesArray = langArray
   end
 
@@ -51,10 +55,14 @@ class ProfilesController < ApplicationController
   def edit
     @profile = current_user.profile
     @language = current_user.languages
-    langArray = ['English', 'French', 'German', 'Italian', 'Spanish']
-    langArray.delete(current_user.languages[0].language_native)
+    @lang_target = current_user.languages[0].language_target
+    langArray = {I18n.t('profiles.form.English') => 'English', 
+                I18n.t('profiles.form.French') => 'French', 
+                I18n.t('profiles.form.German') => 'German', 
+                I18n.t('profiles.form.Italian') => 'Italian', 
+                I18n.t('profiles.form.Spanish') => 'Spanish'}
+    langArray.delete(I18n.t('profiles.form.' + current_user.languages[0].language_native))
     @languagesArray = langArray
-
   end
 
  def update

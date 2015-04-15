@@ -15,6 +15,11 @@ de:
       Language_To_Learn: "Sprache zu lernen"
       Level: "Höhe"
       Create_Profile: "Neues profil"
+      English: "Englisch"
+      French: "Französisch"
+      German: "Deutsch"
+      Italian: "Italienisch"
+      Spanish: "Spanisch"
     show:
       About_Me: "über mich"
       Speak: "Sprechen"
@@ -36,9 +41,6 @@ de:
       Language_To_Learn: "Sprache zu lernen"
       Current_Level: "Höhe"
       Update_Profile: "Profil aktualisieren"
-
-
-
 
 
 

@@ -15,6 +15,11 @@ it:
       Language_To_Learn: "Lingua da imparare"
       Level: "Livello"
       Create_Profile: "Crea profilo"
+      English: "Inglese"
+      French: "Francese"
+      German: "Tedesco"
+      Italian: "Italiano"
+      Spanish: "Spagnolo"
     show:
       About_Me: "Su di me"
       Speak: "Parlare"
