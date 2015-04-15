@@ -21,8 +21,22 @@
 
 en:
   hello: "Hello world"
+  layouts:
+    application:  
+      My_Profile: "My profile" 
+      Sign_Out: "Sign out"
   profiles:
     form:
+      Enter_Details: "Enter details"
+      Name: "Name"    
+      Age: "Age"
+      Profile_Photo: "Profile photo"
+      About_Me: "About me"
+      Gender: "Gender"
+      Native_Language: "Native language"
+      Language_To_Learn: "Language to learn"
+      Level: "Level"
+      Create_Profile: "Create profile"
       English: "English"
       French: "French"
       German: "German"
@@ -33,3 +47,28 @@ en:
       Beginner: "Beginner"
       Average: "Average"
       Fluent: "Fluent"
+    show:
+      About_Me: "About me"
+      Speak: "Speak"
+      Learn: "Learn"
+      Level: "Level"
+      Registered_Users: "Registered users"
+      Name: "Name"
+      Edit_Your_Profile: "Edit your profile"
+      Message: "Message"
+      View_Profile: "View profile"
+      You_Are_Viewing: "Your are viewing"
+      Return_To_Your_Profile: "Return to your profile"
+      Only_Online_Users: "Only online users"
+      Search_Language: "Search language"
+    edit:
+      Edit_Profile: "Edit profile"
+      Name: "Name"    
+      Age: "Age"
+      Profile_Photo: "Profile photo"
+      About_Me: "About me"
+      Gender: "Gender"
+      Native_Language: "Native language"
+      Language_To_Learn: "Language to learn"
+      Current_Level: "Level"
+      Update_Profile: "Update profile"
