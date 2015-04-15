@@ -20,12 +20,18 @@
 
 @import url(http://fonts.googleapis.com/css?family=Comfortaa);
 
+
+
 html{
   background-color: #BAF8FF;
   background-image: url('sky.png');
   font-size: 70%;
   background-position: left;
   -webkit-animation: sky 90s linear infinite;
+}
+
+select{
+  width: 20%;
 }
 
 
@@ -35,7 +41,6 @@ html{
 }
 
 .flags:hover{
-  opacity: .5;
   -webkit-transform: scale3d(1.1,1.1,1.1);
 }
 
@@ -52,32 +57,40 @@ body{
 
 main.home-page{
   font-family: 'Comfortaa', cursive;
-  color: #574331;
+  color: #41280b;
   text-align: center; 
 }
 main.home-page h1{
   margin-top: 0;
-  letter-spacing: 7px;
-  color: #574331;
-
+  color: #41280b;
+    font-family: 'Fredoka One', cursive;
   margin-bottom: 50px;
 }
 
 main.home-page h2{
 
-  color: #4db6ac;
+  color: #00A09D
 }  
+
+input[type="checkbox"]:not(:checked),
+input[type="checkbox"]:checked{
+  display: inline-block;
+  position: static;
+  left: 0;
+  display: none;
+}
 
 h1{
   font-size: 50px;
   font-size: 5rem;
   margin: 20px;
-  color: #574331;
+  color: #41280b;
 }
 h2{
   font-size: 40px;
   font-size: 4rem;
   margin: 20px;
+  color: #41280b;
 }
 
 h3{
@@ -99,7 +112,7 @@ header{
 
 header h2{
   color: #fff;
-  text-shadow: 2px 2px 2px #574331;
+  text-shadow: 2px 2px 2px #41280b;
   text-transform: uppercase;
   letter-spacing: 7px;
   margin: 0;
@@ -116,7 +129,7 @@ header h2 a{
 header section{
   float: right;
   text-align: right;
-  color: #574331;
+  color: #00a09d;
   font-size: 25px;
   font-size: 2.5rem;
 }
@@ -134,22 +147,24 @@ input[type=text],
 input[type=email],
 input[type=password]{
   font-family: 'Comfortaa', cursive;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 17px;
+  font-size: 1.7rem;
   overflow: hidden;
   box-sizing: border-box;
 }
-.input-field label{
+.chirpy-form label{
   position: static;
   text-transform: uppercase;
   font-family: 'Comfortaa', cursive;
   margin-bottom: 10px;
   display: block;
-  color: #000;
+  color: #00a09d;
+  font-size: 1.5rem;
 }
 
 input[type=submit]{
   display: inline;
+  color: #41280b;
 }
 
 #devise-shared{
@@ -158,7 +173,7 @@ input[type=submit]{
   bottom: 0;
   right: 0;
   padding: 20px;
-  color: #574331;  
+  color: #41280b;  
 }
 .btn{
   margin-top: 10px;
@@ -168,19 +183,33 @@ input[type=submit]{
   padding: 20px;
 }
 
+.chirpy-form h2{
+  text-align: center;
+}
+
+.form-page{
+  background-color: #fff;
+  background-size: cover;
+  width: 50%;
+  margin: 0 auto;
+  -webkit-box-shadow: 1px 1px 17px 0px rgba(65, 40, 11, 0.75);
+  -moz-box-shadow:    1px 1px 17px 0px rgba(65, 40, 11, 0.75);
+  box-shadow:         1px 1px 17px 0px rgba(65, 40, 11, 0.75);
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
+  background-color: #acacac;
+}
+
 #show-row{
   height: 80%;
 }
 
 #show-row h2{
-  color: #574331; 
+  color: #41280b; 
 }
 
 
-main.signup-main{
-  background-image: url('birds.png');
-  background-size: cover;
-}
 
 @-webkit-keyframes clouds{
   0%{
@@ -258,10 +287,10 @@ main.signup-main{
     text-align: center;
   }
   a:link{
-    color: #574331;
+    color: #41280b;
   }
   a:visited{
-    color: #574331; 
+    color: #41280b; 
   }
   .chirpy-form{
     margin-top: 30px;
