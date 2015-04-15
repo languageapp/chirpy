@@ -17,7 +17,7 @@
     <%= csrf_meta_tags %>
     <%= csrf_meta_tag %>
     <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body class="container" ng-controller="ApplicationController as appCtrl">
   <header class="row clearfix">
@@ -31,10 +31,11 @@
       <% else %>
         <%= link_to 'Log in', "/en/users/sign_in", class: 'enlarge'%>
       <% end %>
-    </section>    
+    </section>
   </header>
     <%= notice %>
     <%= yield %>
+
 
   </body>
 </html>

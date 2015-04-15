@@ -1,23 +1,23 @@
 <div class="row clearfix" id="main-app">
   <div class="col-xs-12 col-sm-6 online-users" ng-controller="LanguageFilterController as filterCtrl">
     <div class="panel-heading">
+       <p id="hangouts"</p>
       <h4><%= t('.Registered_Users')%></h4>
       <div>
-        <input type="checkbox" ng-model="appCtrl.onlineOnly" id="onlineOnly" />
+        <input type="checkbox" ng-model="appCtrl.onlineOnly" id="onlineOnly"/>
         <label for="onlineOnly"><%= t('.Only_Online_Users') %></label>
       </div>
-     <input type="text" ng-model="filterCtrl.selectedLanguage" placeholder=<%= t('.Search_Language') %> "..." />
+     <input type="text" ng-model="filterCtrl.selectedLanguage" placeholder="<%= t('.Search_Language') %> ..." />
     </div>
       <table class="table striped responsive-table">
         <tbody>
           <% @users.each_with_index do |user, index| %>
-          <tr ng-show="(appCtrl.isUserOnline(<%= user.profile.id %>)) && ('<%= user.languages[0].language_native %>'.toLowerCase().indexOf(filterCtrl.selectedLanguage.toLowerCase()) > -1 || filterCtrl.selectedLanguage == '')">
+          <tr ng-show="(appCtrl.isUserOnline(<%= user.profile.id %>)) && ('<%= user.languages[0].language_target %>'.toLowerCase().indexOf(filterCtrl.selectedLanguage.toLowerCase()) > -1 || filterCtrl.selectedLanguage == '')">
             <td>
               <%= image_tag user.profile.image.url(:thumb), class: 'other-user-pics z-depth-3' %>
               <label class="other-users-name"><%= user.profile.name %></label>
               <label><%= t('.Speak')%>: <%= image_tag("#{format_language(user.languages[0].language_native)}.png", :class=>"user-lang-flag") %></label>
               <label><%= t('.Learn')%>: <%= image_tag("#{format_language(user.languages[0].language_target)}.png", :class=>"user-lang-flag") %></label>
-
               <%= link_to t('.View_Profile'), profile_path(user.id), class: 'white btn'  %>
             </td>
             <td>
@@ -52,6 +52,13 @@
       </div>  
     </div>
 </div>
+
+    <script>
+    gapi.hangout.render('hangouts', {
+      'render': 'createhangout',
+      'widget_size': 72
+    });
+      </script>
 
     <%= subscribe_to "/ping_listener#{@my_id}" %>
 
