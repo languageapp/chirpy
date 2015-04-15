@@ -1,7 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
 
-
   helper ProfilesHelper
 
   def index
@@ -24,6 +23,11 @@ class ProfilesController < ApplicationController
     @language.language_native = I18n.locale
     lang = @language.language_native
     @lang_native = @language.format_from_locale(lang)
+    
+    
+    langArray.delete(@lang_native)
+    @languagesArray = langArray
+
   end
 
   def create
@@ -49,6 +53,10 @@ class ProfilesController < ApplicationController
   def edit
     @profile = current_user.profile
     @language = current_user.languages
+    langArray = ['English', 'French', 'German', 'Italian', 'Spanish']
+    langArray.delete(current_user.languages[0].language_native)
+    @languagesArray = langArray
+
   end
 
  def update

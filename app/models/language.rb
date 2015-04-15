@@ -2,6 +2,10 @@ class Language < ActiveRecord::Base
 
   belongs_to :user
 
+ def translated_language
+    I18n.t(name, :scope => 'role')
+  end
+
 
   def format_from_locale(lang)
     case lang

@@ -35,7 +35,7 @@
           </div>
             <div class="field input-field" id="lang">
               <p><%= t('.Language_To_Learn')%></p>
-              <%= f.select :language_target, ['English', 'French', 'German', 'Italian', 'Spanish'], required: true, class: 'form-control'  %>
+              <%= f.select(:language_target, @languagesArray.map { |lang| [ lang, lang ] }, required: true, class: 'form-control')  %>
             </div>
 
            <div class="field input-field" id="prof">

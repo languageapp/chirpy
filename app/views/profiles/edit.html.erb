@@ -20,7 +20,7 @@
     <% @language.each do |lang| %>
       <li>
 
-        <p><%= t('.Language_To_Learn')%>: <%= select_tag(:language_target, options_for_select(['English', 'German', 'Spanish', 'French', 'Italian'], selected: lang.language_target)) %></p>
+        <p><%= t('.Language_To_Learn')%>: <%= select_tag(:language_target, options_for_select(@languagesArray.map { |lang| [ lang, lang ]}, selected: lang.language_target)) %></p>
 
         <p><%= t('.Current_Level')%>: <%= select_tag(:proficiency, options_for_select(['Beginner', 'Average', 'Fluent'], selected: lang.proficiency)) %></p>
       </li>
