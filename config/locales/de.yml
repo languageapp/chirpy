@@ -1,2 +1,45 @@
 de:
-  sign up: "Anmeldung"
+  layouts:
+    application:  
+      My_Profile: "Mein profil" 
+      Sign_Out: "Abmelden"
+  profiles:
+    form:
+      Enter_Details: "Geben sie die details"
+      Name: "Name"    
+      Age: "Alter"
+      Profile_Photo: "Profilfoto"
+      About_Me: "über mich"
+      Gender: "Geschlecht"
+      Native_Language: "Muttersprache"
+      Language_To_Learn: "Sprache zu lernen"
+      Level: "Höhe"
+      Create_Profile: "Neues profil"
+    show:
+      About_Me: "über mich"
+      Speak: "Sprechen"
+      Learn: "Lernen"
+      Level: "Höhe"
+      Registered_Users: "Registrierte benutzer"
+      Name: "Name"
+      Edit_Your_Profile: "Bearbeite dein profil"
+      Message: "Nachricht"
+      View_Profile: "Profil anzeigen"
+    edit:
+      Edit_Profile: "Profil bearbeiten"
+      Name: "Name"    
+      Age: "Alter"
+      Profile_Photo: "Profilfoto"
+      About_Me: "über mich"
+      Gender: "Geschlecht"
+      Native_Language: "Muttersprache"
+      Language_To_Learn: "Sprache zu lernen"
+      Current_Level: "Höhe"
+      Update_Profile: "Profil aktualisieren"
+
+
+
+
+
+
+

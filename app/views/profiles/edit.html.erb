@@ -20,7 +20,7 @@
     <% @language.each do |lang| %>
       <li>
 
-        <p><%= t('.Language_To_Learn')%>: <%= text_field_tag "language_target", lang.language_target %></p>
+        <p><%= t('.Language_To_Learn')%>: <%= select_tag(:language_target, options_for_select(@languagesArray.map { |lang| [ lang, lang ]}, selected: lang.language_target)) %></p>
 
         <p><%= t('.Current_Level')%>: <%= select_tag(:proficiency, options_for_select(['Beginner', 'Average', 'Fluent'], selected: lang.proficiency)) %></p>
       </li>
@@ -28,7 +28,7 @@
   </ul>
 
 
-  <%= f.submit t(".Update_Profile"), class: 'waves-effect waves-light btn update-profile-button'%>
+  <%= f.submit t(".Update_Profile", :default => "Update Profile"), class: 'waves-effect waves-light btn update-profile-button'%>
 <% end %>
 
    </main>

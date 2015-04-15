@@ -1,16 +1,45 @@
 es:
-  sign up: "Vontratar"
+  layouts:
+    application:  
+      My_Profile: "Mi perfil" 
+      Sign_Out: "Desconectar"
+  profiles:
+    form:
+      Enter_Details: "Ingrese detalles"
+      Name: "Nombre"    
+      Age: "Edad"
+      Profile_Photo: "Foto de perfil"
+      About_Me: "Acerca de mí"
+      Gender: "Género"
+      Native_Language: "Lengua materna"
+      Language_To_Learn: "Lenguaje para aprender"
+      Level: "Nivel"
+      Create_Profile: "Vrear perfil"
+    show:
+      About_Me: "Acerca de mí"
+      Speak: "Hablar"
+      Learn: "Aprender"
+      Level: "Nivel"
+      Registered_Users: "Los usuarios registrados"
+      Name: "Nombre"
+      Edit_Your_Profile: "Edite su perfil"
+      Message: "Mensaje"
+      View_Profile: "Ver perfil"
+    edit:
+      Edit_Profile: "Editar perfil"
+      Name: "Nombre"    
+      Age: "Edad"
+      Profile_Photo: "Foto de perfil"
+      About_Me: "Acerca de mí"
+      Gender: "Género"
+      Native_Language: "Lengua materna"
+      Language_To_Learn: "Lenguaje para aprender"
+      Current_Level: "Nivel"
+      Update_Profile: "Actualización del perfil"
 
-Enter details:
-Name:
-Age:
-Profile Photo:
-No file chosen:
-About me:
-Gender:
-Male:
-Female:
-Native language:
-Language to learn:
-Level:
-Create profile:
+
+
+
+
+
+

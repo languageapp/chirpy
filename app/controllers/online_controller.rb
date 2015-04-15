@@ -4,7 +4,10 @@ class OnlineController < ApplicationController
   @@timeout_hash ||= {};
 
   def poll
-    return if params[:profile_id] == "undefined"
+    if params[:profile_id] == "undefined"
+      render json: {}
+      return
+    end
     addOnlineUser(params[:profile_id])
     checkLogout
     puts "Users online: #{@@users_online}"
@@ -29,6 +32,5 @@ class OnlineController < ApplicationController
     @@users_online << user_id.to_i if !@@users_online.include? user_id.to_i
     @@timeout_hash[user_id.to_sym] = Time.now
   end
-
 
 end
