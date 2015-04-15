@@ -27,7 +27,7 @@ html{
   background-image: url('sky.png');
   font-size: 70%;
   background-position: left;
-/*  -webkit-animation: sky 90s linear infinite;*/
+  -webkit-animation: sky 90s linear infinite;
 }
 
 select{
@@ -251,14 +251,6 @@ td img.user-lang-flag{
   padding: 20px 0;
 }
 
-@-webkit-keyframes clouds{
-  0%{
-    margin-left: -100%;
-  }
-  100%{
-    margin-left: 50%;
-  }
-}
 
 @-webkit-keyframes sky{
   0%{
