@@ -61,6 +61,8 @@ group :development, :test do
 
   gem "codeclimate-test-reporter", group: :test, require: nil
 
+  gem 'protractor-rails'
+
 end
 
 group :test do
