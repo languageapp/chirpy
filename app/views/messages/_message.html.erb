@@ -5,11 +5,7 @@
   <div class="chatboxmessagecontent">
     <p><%= message.body %></p>
     <time datetime="<%= message.created_at %>" title="<%= message.created_at.strftime("%d %b  %Y at %I:%M%p") %>">
-      <% if message_interlocutor(message) == current_user %>    
-        Me • <%= message.created_at.strftime("%H:%M %p") %>
-      <% else %>
         <%= message_interlocutor(message).profile.name %> • <%= message.created_at.strftime("%H:%M %p")%> 
-      <% end %>
     </time>
   </div>
 </li>
