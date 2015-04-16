@@ -1,5 +1,4 @@
 <audio src="/mp3/click.mp3" type="audio/mpeg"> </audio>
-
 <p id="hangouts"></p>
 <div class="chatboxhead z-depth-3">
 
@@ -9,9 +8,9 @@
     <h1><%= @receiver.profile.name %> </h1>
   </div>
   <div class="chatboxoptions">
-    <%= link_to "<i class='fa  fa-minus'></i> ".html_safe, "#", class: "toggleChatBox", "data-cid" => @conversation.id %>
+    <%= link_to "<i class='fa fa-minus'></i> ".html_safe, "#", class: "toggleChatBox", "data-cid" => @conversation.id %>
     &nbsp;&nbsp;
-    <%= link_to "<i class='fa  fa-times'></i> ".html_safe, "#", class: "closeChat", "data-cid" => @conversation.id %>
+    <%= link_to "<i class='fa fa-times'></i> ".html_safe, "#", class: "closeChat", "data-cid" => @conversation.id %>
   </div>
   <br clear="all"/>
 </div>

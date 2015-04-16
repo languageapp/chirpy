@@ -39,6 +39,8 @@ gem 'private_pub'
 gem 'bower-rails'
 gem 'thin'
 
+gem 'launchy'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

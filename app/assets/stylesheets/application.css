@@ -27,7 +27,7 @@ html{
   background-image: url('sky.png');
   font-size: 70%;
   background-position: left;
-  -webkit-animation: sky 80s linear infinite;
+  background-size: cover;
 }
 
 select{
@@ -139,6 +139,10 @@ header section{
   color: #00a09d;
   font-size: 18px;
   font-size: 1.8rem;
+}
+
+header .profile-picture{
+  width: 10%;  
 }
 
 header a{
