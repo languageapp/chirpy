@@ -3,6 +3,12 @@ de:
     application:  
       My_Profile: "Mein profil" 
       Sign_Out: "Abmelden"
+  devise:
+    registrations:
+      new:  
+        Email: "E-mail"
+        Password: "Passwort"
+        Password_Confirmation: "Passwort bestätigung"
   profiles:
     form:
       Enter_Details: "Geben sie die details"
@@ -35,6 +41,10 @@ de:
       Edit_Your_Profile: "Bearbeite dein profil"
       Message: "Nachricht"
       View_Profile: "Profil anzeigen"
+      You_Are_Viewing: "Du siehst"
+      Return_To_Your_Profile: "Kehren Sie zu Ihrem Profil"
+      Only_Online_Users: "Nur Online-Benutzer"
+      Search_Language: "Suche nach Sprache"
     edit:
       Edit_Profile: "Profil bearbeiten"
       Name: "Name"    
