@@ -23,22 +23,17 @@
 
 
 html{
-  background-color: #BAF8FF;
+  background-color: #42a5f5;
   background-image: url('sky.png');
   font-size: 70%;
   background-position: left;
-/*  -webkit-animation: sky 80s linear infinite;*/
 }
 
 select{
   width: 20%;
 }
 
-
-
 .panel-heading{
-
-
     z-index: 10;
 }
 
@@ -58,7 +53,7 @@ a:visited{
 }
 
 body{
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Comfortaa', cursive;
   background-color: none;
 }
 
@@ -69,14 +64,14 @@ main.home-page{
 }
 main.home-page h1{
   margin-top: 0;
-  color: #41280b;
-    font-family: 'Fredoka One', cursive;
+  color: #ffffff;
+  font-family: 'Comfortaa', cursive;
   margin-bottom: 50px;
 }
 
 main.home-page h2{
-
-  color: #00A09D
+  font-family: 'Comfortaa', cursive;
+  color: color: #ffffff;
 }
 
 input[type="checkbox"]:not(:checked),
@@ -94,6 +89,7 @@ h1{
   color: #41280b;
 }
 h2{
+  font-family: 'Comfortaa', cursive;
   font-size: 40px;
   font-size: 4rem;
   margin: 20px;
@@ -119,9 +115,8 @@ header{
 
 header h2{
   color: #fff;
-  text-shadow: 2px 2px 2px #41280b;
-  text-transform: uppercase;
-  letter-spacing: 7px;
+  text-shadow: 0.3px 0.3px 0.3px #41280b;
+  letter-spacing: 1px;
   margin: 0;
   font-size: 3rem;
 }
@@ -162,7 +157,6 @@ input[type=password]{
 }
 .chirpy-form label{
   position: static;
-  text-transform: uppercase;
   font-family: 'Comfortaa', cursive;
   margin-bottom: 10px;
   display: block;
@@ -230,7 +224,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
 }
 
 #main-app{
-    -webkit-box-shadow: 1px 1px 17px 0px rgba(65, 40, 11, 0.75);
+  -webkit-box-shadow: 1px 1px 17px 0px rgba(65, 40, 11, 0.75);
   -moz-box-shadow:    1px 1px 17px 0px rgba(65, 40, 11, 0.75);
   box-shadow:         1px 1px 17px 0px rgba(65, 40, 11, 0.75);
   background-color: #F7F6F0;
@@ -272,7 +266,7 @@ td img.user-lang-flag{
 #main-app h4{
   font-size: 2rem;
   color: #00a09d;
-    font-family: 'Comfortaa', cursive;
+  font-family: 'Comfortaa', cursive;
   padding: 20px 0;
 }
 

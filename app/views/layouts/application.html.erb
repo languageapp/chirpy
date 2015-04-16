@@ -27,9 +27,9 @@
     <section class="col-xs-12 col-sm-6">
       <% if user_signed_in? %>
       <%= link_to t('.My_Profile'), new_user_session_path, class: 'enlarge'%>
-      <%= link_to t('.Sign_Out'), destroy_user_session_path, method: :delete,   class: 'enlarge' %>
+      <%= link_to t('.Sign_Out'), destroy_user_session_path, method: :delete,   class: 'btn white' %>
       <% else %>
-        <%= link_to 'Log in', "/en/users/sign_in", class: 'enlarge'%>
+        <%= link_to 'Log in', "/en/users/sign_in", class: 'btn white'%>
       <% end %>
     </section>
   </header>
