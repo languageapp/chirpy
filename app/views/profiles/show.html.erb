@@ -33,7 +33,7 @@
       <h4 class="panel-heading"><%= t('.You_Are_Viewing')%>...</h4>
       <div>
         <h3 class="profile-name"><%= @profile.name %></h3>
-        <%= image_tag @profile.image.url(:thumb, timestamp: false), class: 'profile-picture z-depth-3' %>
+        <%= image_tag @profile.image.url(:medium, timestamp: false), class: 'profile-picture z-depth-3' %>
         <h4><%= t('.About_Me')%></h4>
         <p class="profile-description"><%= @profile.bio %></p>
         <p class="profile-description gender-age"><%= @profile.age %>, <%= I18n.t('profiles.form.' + @profile.gender) %></p>
