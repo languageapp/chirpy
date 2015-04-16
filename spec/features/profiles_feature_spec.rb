@@ -2,8 +2,9 @@ require 'rails_helper'
 
 def sign_up
   visit('/')
-  click_link('Sign up')
-  fill_in('Email', with: 'test@example.com')
+  click_link('uk')
+  expect(page).to have_content 'Sign up'
+  fill_in("user_email", with: 'test1@example.com')
   fill_in('Password', with: 'testtest')
   fill_in('Password confirmation', with: 'testtest')
   click_button('Sign up')
@@ -14,17 +15,16 @@ def create_profile
   select('21', from: 'profile_age')
   fill_in('profile_bio', with: 'Please teach me Swedish!')
   select('Male', from: 'profile[gender]')
-  select('English', from: 'language_language_native')
   select('French', from: 'language_language_target')
   select('Beginner', from: 'language_proficiency')
-  click_button('Create Profile')
+  click_button('Create profile')
 end
 
 context 'creating a profile' do
 
   it 'the form has a name, age, bio, image and gender field' do
     sign_up
-    visit('/')
+    save_and_open_page
     expect(page).to have_css('#profile_name')
     expect(page).to have_css('#profile_age')
     expect(page).to have_css('input[type="file"]')
@@ -37,7 +37,6 @@ context 'a profile has been created' do
 
   it 'should display the users profile' do
     sign_up
-    visit('/')
     create_profile
     expect(page).to have_content 'Kev'
     expect(page).to have_content '21'
@@ -47,10 +46,9 @@ context 'a profile has been created' do
 
   it 'a profile can be updated' do
     sign_up
-    visit('/')
     create_profile
     click_link('edit your profile')
-    fill_in('Name', with: 'Joe')
+    fill_in('profile_name', with: 'Joe')
     click_button('Update Profile')
     expect(page).to have_content 'Joe'
     expect(current_path).to eq '/profiles/2'

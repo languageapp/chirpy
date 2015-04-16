@@ -48,6 +48,8 @@ var ready = function () {
  
         var id = $(this).data('cid');
         chatBox.checkInputKey(event, $(this), id);
+
+        
     });
  
     /**

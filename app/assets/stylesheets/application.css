@@ -18,7 +18,7 @@
 
  */
 
-@import url(http://fonts.googleapis.com/css?family=Comfortaa);
+@import url(https://fonts.googleapis.com/css?family=Comfortaa);
 
 
 html{
@@ -26,6 +26,10 @@ html{
   background-image: url('sky.png');
   font-size: 70%;
   background-position: left;
+<<<<<<< HEAD
+=======
+  background-size: cover;
+>>>>>>> c024fdef8480566d152b3a0174bbf45482488a3a
 }
 
 select{
@@ -133,6 +137,10 @@ header section{
   color: #00a09d;
   font-size: 18px;
   font-size: 1.8rem;
+}
+
+header .profile-picture{
+  width: 10%;  
 }
 
 header a{
