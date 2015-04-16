@@ -3,6 +3,12 @@ de:
     application:  
       My_Profile: "Mein profil" 
       Sign_Out: "Abmelden"
+  devise:
+    registrations:
+      new:  
+        Email: "E-mail"
+        Password: "Passwort"
+        Password_Confirmation: "Passwort bestätigung"
   profiles:
     form:
       Enter_Details: "Geben sie die details"

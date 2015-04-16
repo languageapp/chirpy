@@ -25,6 +25,12 @@ en:
     application:  
       My_Profile: "My profile" 
       Sign_Out: "Sign out"
+  devise:
+    registrations:
+      new:  
+        Email: "Email"
+        Password: "Password"
+        Password_Confirmation: "Password Confirmation"
   profiles:
     form:
       Enter_Details: "Enter details"
