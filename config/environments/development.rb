@@ -49,6 +49,10 @@ config.i18n.locale = :en
 
 
 
+
+
+
+
   # config.i18n.default_locale = :'en'
 
   # Raises error for missing translations
