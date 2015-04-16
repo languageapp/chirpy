@@ -141,6 +141,10 @@ header section{
   font-size: 1.8rem;
 }
 
+header .profile-picture{
+  width: 10%;  
+}
+
 header a{
   padding: 20px;
 }

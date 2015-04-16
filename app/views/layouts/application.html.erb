@@ -26,9 +26,8 @@
 
     <section class="col-xs-12 col-sm-6">
       <% if user_signed_in? %>
-      <%= image_tag current_user.profile.image.url(:thumb) %>
-      <%= link_to t('.My_Profile'), new_user_session_path, class: 'enlarge'%>
-      <%= link_to t('.Sign_Out'), destroy_user_session_path, method: :delete,   class: 'enlarge' %>
+        <%= link_to t('.My_Profile'), new_user_session_path, class: 'enlarge'%>
+        <%= link_to t('.Sign_Out'), destroy_user_session_path, method: :delete,   class: 'enlarge' %>
       <% else %>
         <%= link_to 'Log in', "/en/users/sign_in", class: 'enlarge'%>
       <% end %>
