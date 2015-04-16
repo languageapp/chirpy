@@ -44,8 +44,9 @@ var ready = function () {
          */
 
         notify: function () {
-            var audioplayer = $('#chatAudio')[0];
-            audioplayer.play();
+
+            var audio = $("audio")[0];
+            audio.play();
         },
 
         /**
@@ -176,6 +177,11 @@ var ready = function () {
                 $.post("/conversations/" + conversation_id + "/messages", { body: message, "conversation_id": conversation_id }, function (data) {
                   console.log(data);
                 });
+
+                var audio = $("audio")[0];
+                audio.play();
+
+
                 $(chatboxtextarea).val('');
                 $(chatboxtextarea).focus();
                 $(chatboxtextarea).css('height', '44px');
