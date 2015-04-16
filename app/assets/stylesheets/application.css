@@ -27,7 +27,7 @@ html{
   background-image: url('sky.png');
   font-size: 70%;
   background-position: left;
-  -webkit-animation: sky 80s linear infinite;
+  background-size: cover;
 }
 
 select{

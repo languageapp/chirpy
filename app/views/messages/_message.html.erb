@@ -1,19 +1,14 @@
-<% cond = self_or_other(message) %>
 <li class="<%=  self_or_other(message) %>">
-  <div class="avatar">  
-    <% if cond == "self" %> 
-      <%= image_tag current_user.profile.image.url(:thumb, timestamp: false) %>
-    <% elsif cond == "other" %>
-        <%= image_tag @conversation.recipient.profile.image.url(:thumb, timestamp: false) %>
-    <% end %>    
+  <div class="avatar"> 
+      <%= image_tag message_interlocutor(message).profile.image.url(:thumb) %>  
   </div>
   <div class="chatboxmessagecontent">
     <p><%= message.body %></p>
     <time datetime="<%= message.created_at %>" title="<%= message.created_at.strftime("%d %b  %Y at %I:%M%p") %>">
-      <% if cond == "self" %>    
+      <% if message_interlocutor(message) == current_user %>    
         Me • <%= message.created_at.strftime("%H:%M %p") %>
-      <% elsif cond == "other" %>
-        <%= message_interlocutor(message).profile.name %> • <%= message.created_at.strftime("%H:%M %p") %>
+      <% else %>
+        <%= message_interlocutor(message).profile.name %> • <%= message.created_at.strftime("%H:%M %p")%> 
       <% end %>
     </time>
   </div>
