@@ -11,7 +11,16 @@
       <table class="table striped responsive-table">
         <tbody>
           <% @users.each_with_index do |user, index| %>
-          <tr ng-show="(appCtrl.isUserOnline(<%= user.profile.id %>)) && ('<%= user.languages[0].language_native %>'.toLowerCase().indexOf(filterCtrl.selectedLanguage.toLowerCase()) > -1 || filterCtrl.selectedLanguage == '')">
+
+
+          <tr ng-show="(appCtrl.isUserOnline(<%= user.profile.id %>)) && 
+            (('<%= I18n.t('profiles.form.' + user.languages[0].language_native) %>'
+            .toLowerCase().indexOf(filterCtrl.selectedLanguage.toLowerCase()) > -1 || filterCtrl.selectedLanguage == '')
+            || 
+            ('<%= user.languages[0].language_native %>'
+            .toLowerCase().indexOf(filterCtrl.selectedLanguage.toLowerCase()) > -1 || filterCtrl.selectedLanguage == ''))">
+
+
             <td>
               <%= image_tag user.profile.image.url(:thumb), class: 'other-user-pics z-depth-3' %>
               <label class="other-users-name"><%= user.profile.name %></label>
@@ -46,7 +55,7 @@
         <%= link_to t('.Edit_Your_Profile'), edit_profile_path(@profile), class: 'white btn' %>
       <% else %>
         <%= link_to 'edit your profile', edit_profile_path(@profile), class: 'btn white', :style => "display: none;" %>
-        <%= link_to 'return to your profile', profile_path(current_user.id), class: 'white btn' %>
+        <%= link_to '.Return_To_Your profile', profile_path(current_user.id), class: 'white btn' %>
       <% end %>
     </div>
 </div>
