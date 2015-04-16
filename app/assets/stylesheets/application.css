@@ -27,13 +27,20 @@ html{
   background-image: url('sky.png');
   font-size: 70%;
   background-position: left;
-  -webkit-animation: sky 90s linear infinite;
+  background-size: cover;
 }
 
 select{
   width: 20%;
 }
 
+
+
+.panel-heading{
+
+
+    z-index: 10;
+}
 
 .flags{
   -webkit-transition: all .5s; /* Safari */
@@ -49,7 +56,7 @@ a:visited{
   text-decoration: none;
   color: inherit;
 }
- 
+
 body{
   font-family: 'Fredoka One', cursive;
   background-color: none;
@@ -58,7 +65,7 @@ body{
 main.home-page{
   font-family: 'Comfortaa', cursive;
   color: #41280b;
-  text-align: center; 
+  text-align: center;
 }
 main.home-page h1{
   margin-top: 0;
@@ -70,7 +77,7 @@ main.home-page h1{
 main.home-page h2{
 
   color: #00A09D
-}  
+}
 
 input[type="checkbox"]:not(:checked),
 input[type="checkbox"]:checked{
@@ -174,7 +181,7 @@ input[type=submit]{
   bottom: 0;
   right: 0;
   padding: 20px;
-  color: #41280b;  
+  color: #41280b;
 }
 .btn{
   margin-top: 10px;
@@ -186,6 +193,14 @@ input[type=submit]{
 
 .chirpy-form h2{
   text-align: center;
+}
+
+.chatboxhead{
+  height: 4rem;
+}
+
+.chatboxtitle h1{
+  font-size: 1.5rem;
 }
 
 .form-page{
@@ -207,7 +222,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
 }
 
 #show-row h2{
-  color: #41280b; 
+  color: #41280b;
 }
 
 .user-lang-flag{
@@ -215,14 +230,24 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
 }
 
 #main-app{
-  height: 80%;
     -webkit-box-shadow: 1px 1px 17px 0px rgba(65, 40, 11, 0.75);
   -moz-box-shadow:    1px 1px 17px 0px rgba(65, 40, 11, 0.75);
   box-shadow:         1px 1px 17px 0px rgba(65, 40, 11, 0.75);
+  background-color: #F7F6F0;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+table.striped tbody tr:nth-child(odd){
+  background-color: #F2F0E6;
 }
 
 #main-app label{
   display: block;
+}
+
+img.user-lang-flag{
+  padding-left: 10px;
 }
 
 table.striped label{
@@ -322,7 +347,7 @@ td img.user-lang-flag{
     color: #41280b;
   }
   a:visited{
-    color: #41280b; 
+    color: #41280b;
   }
   .chirpy-form{
     margin-top: 30px;

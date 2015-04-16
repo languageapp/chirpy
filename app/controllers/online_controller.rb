@@ -10,14 +10,13 @@ class OnlineController < ApplicationController
     end
     addOnlineUser(params[:profile_id])
     checkLogout
-    puts "Users online: #{@@users_online}"
     render json: {users: @@users_online}
   end
 
   def checkLogout
     timed_out = [];
     @@timeout_hash.each do |key, value|
-      if (Time.now - value) > 3
+      if (Time.now - value) > 6
         timed_out << key
       end
     end
@@ -26,7 +25,6 @@ class OnlineController < ApplicationController
       @@users_online.delete(key.to_s.to_i)
     end
   end
-
 
   def addOnlineUser(user_id)
     @@users_online << user_id.to_i if !@@users_online.include? user_id.to_i

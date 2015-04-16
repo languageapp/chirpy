@@ -1,13 +1,14 @@
 <div class="chatboxhead z-depth-3">
+
   <div class="chatboxtitle">
     <i class="fa fa-comments"></i>
 
-    <h1><%= @receiver.email %> </h1>
+    <h1><%= @receiver.profile.name %> </h1>
   </div>
   <div class="chatboxoptions">
-    <%= link_to "<i class='fa  fa-minus'></i> ".html_safe, "#", class: "toggleChatBox", "data-cid" => @conversation.id %>
+    <%= link_to "<i class='fa fa-minus'></i> ".html_safe, "#", class: "toggleChatBox", "data-cid" => @conversation.id %>
     &nbsp;&nbsp;
-    <%= link_to "<i class='fa  fa-times'></i> ".html_safe, "#", class: "closeChat", "data-cid" => @conversation.id %>
+    <%= link_to "<i class='fa fa-times'></i> ".html_safe, "#", class: "closeChat", "data-cid" => @conversation.id %>
   </div>
   <br clear="all"/>
 </div>
@@ -22,4 +23,11 @@
   <% end %>
 </div>
 
-<%= subscribe_to conversation_path(@conversation) %>
+<script>
+  gapi.hangout.render('hangouts', {
+  'render': 'createhangout',
+  'widget_size': 72
+  });
+</script>
+<%= subscribe_to conversation_path(@conversation).partition('?').first %>
+
