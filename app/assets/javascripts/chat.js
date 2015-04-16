@@ -44,8 +44,7 @@ var ready = function () {
          */
 
         notify: function () {
-
-            var audio = $("audio")[0];
+            var audio = $("audio")[1];
             audio.play();
         },
 
