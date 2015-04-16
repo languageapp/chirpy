@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
     if current_user
       if current_user.profile
         user_lang = current_user.languages[0]
-        user_lang_native = current_user.languages[0].language_native
+        user_lang_native = user_lang.language_native
         formatted_locale = user_lang.format_to_locale(user_lang_native)
         I18n.locale = formatted_locale
         redirect_to profile_path(current_user.profile)

@@ -13,12 +13,17 @@
       <table class="table striped responsive-table">
         <tbody>
           <% @users.each_with_index do |user, index| %>
+<<<<<<< HEAD
             <tr ng-show="(appCtrl.isUserOnline(<%= user.profile.id %>)) &&
             (('<%= I18n.t('profiles.form.' + user.languages[0].language_native) %>'
             .toLowerCase().indexOf(filterCtrl.selectedLanguage.toLowerCase()) > -1 || filterCtrl.selectedLanguage == '')
             ||
             ('<%= user.languages[0].language_native %>'
             .toLowerCase().indexOf(filterCtrl.selectedLanguage.toLowerCase()) > -1 || filterCtrl.selectedLanguage == ''))">
+=======
+          <tr ng-show="(appCtrl.isUserOnline(<%= user.profile.id %>)) &&
+            ('<%= I18n.t('profiles.form.' + user.languages[0].language_native) %>'.toLowerCase().indexOf(filterCtrl.selectedLanguage.toLowerCase()) > -1 || ('<%= I18n.t('profiles.form.' + user.languages[0].language_target) %>'.toLowerCase().indexOf(filterCtrl.selectedLanguage.toLowerCase()) > -1) || filterCtrl.selectedLanguage == '')">
+>>>>>>> c024fdef8480566d152b3a0174bbf45482488a3a
             <td>
               <%= image_tag user.profile.image.url(:thumb), class: 'other-user-pics z-depth-3' %>
               <label class="other-users-name"><%= user.profile.name %></label>
@@ -46,9 +51,7 @@
           <p class="profile-description green-font"><%= t('.Speak')%>: <%= image_tag("#{format_language(lang.language_native)}.png", :class => 'user-lang-flag') %></p>
           <p class="profile-description green-font"><%= t('.Learn')%>: <%= image_tag("#{format_language(lang.language_target)}.png", :class => 'user-lang-flag') %></p>
           <p class="profile-description"><%= t('.Level')%>: <%= I18n.t('profiles.form.' + lang.proficiency) %></p>
-
         <% end %>
-
         <% if current_user.id == @profile.user_id %>
           <%= link_to t('.Edit_Your_Profile'), edit_profile_path(@profile), class: 'white btn' %>
         <% else %>

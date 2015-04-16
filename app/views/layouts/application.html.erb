@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chirpy</title>
     <%= favicon_link_tag 'favicon.ico' %>
-    <link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
@@ -26,16 +26,18 @@
 
     <section class="col-xs-12 col-sm-6">
       <% if user_signed_in? %>
+<<<<<<< HEAD
       <%= link_to t('.My_Profile'), new_user_session_path, class: 'btn white'%>
       <%= link_to t('.Sign_Out'), destroy_user_session_path, method: :delete,   class: 'btn white' %>
+=======
+        <%= link_to t('.My_Profile'), new_user_session_path, class: 'enlarge'%>
+        <%= link_to t('.Sign_Out'), destroy_user_session_path, method: :delete,   class: 'enlarge' %>
+>>>>>>> c024fdef8480566d152b3a0174bbf45482488a3a
       <% else %>
         <%= link_to 'Log in', "/en/users/sign_in", class: 'btn white'%>
       <% end %>
     </section>
   </header>
-    <%= notice %>
     <%= yield %>
-
-
   </body>
 </html>

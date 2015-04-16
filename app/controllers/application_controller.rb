@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale
   def set_locale
-    # if params[:locale] is nil then I18n.default_locale will be used
     I18n.locale = params[:locale]
+    # if params[:locale] is nil then I18n.default_locale will be used
   end
 
   def default_url_options(options={})
@@ -15,13 +15,8 @@ class ApplicationController < ActionController::Base
 
   def available_locales; AVAILABLE_LOCALES; end
 
-
-
-
-
-  protect_from_forgery with: :null_session
-
-  before_action :configure_permitted_parameters, if: :devise_controller?
+    protect_from_forgery with: :null_session
+    before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
 
