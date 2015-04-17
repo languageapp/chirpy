@@ -55,7 +55,7 @@ var ready = function () {
 
       event.preventDefault();
       var id = $(this).data('cid');
-      chatbox.sendButtonClick($(this),id);
+      chatbox.sendButtonClick(event, $(this),id);
     });
 
 
