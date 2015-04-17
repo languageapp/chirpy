@@ -47,6 +47,8 @@ var ready = function () {
     $(document).on('keydown', '.chatboxtextarea', function (event) {
 
         var id = $(this).data('cid');
+        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!');
+        console.log(id);
         chatBox.checkInputKey(event, $(this), id);
     });
 
@@ -55,6 +57,9 @@ var ready = function () {
       e.preventDefault();
 
       var id = $(this).data('cid');
+      console.log('=========================================================');
+      console.log(id);
+
       chatbox.sendButtonClick($(this),id);
 
     });
