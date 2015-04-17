@@ -199,8 +199,9 @@ var ready = function () {
         sendButtonClick: function(chatboxtextarea, conversation_id) {
 
           var message = chatboxtextarea.val();
-          $.post("/conversations/" + conversation_id + "/messages", {body:message, "conversation_id": conversation_id }, function (data) {
-            console.log('Message sent!!!!');
+
+          $.post("/conversations/" + conversation_id + "/messages", { body: message, "conversation_id": conversation_id }, function (data) {
+                  console.log(data);
           });
           $(chatboxtextarea).val('');
           $(chatboxtextarea).focus();
