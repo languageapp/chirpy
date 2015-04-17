@@ -53,6 +53,14 @@ var ready = function () {
     });
 
 
+    $(document).on('click','.send-button', function(event) {
+
+      event.preventDefault();
+
+      console.log('============================================');
+
+    });
+
     $('.send-button').click(function(e) {
       e.preventDefault();
 
