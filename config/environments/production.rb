@@ -83,10 +83,18 @@ Rails.application.configure do
   config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
 
 
-
 # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
 config.i18n.default_locale = :en
 
 config.i18n.locale = :en
+
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['chirpy'],
+    :access_key_id => ENV['AKIAJ4IUGQAUTQYJZSZA'],
+    :secret_access_key => ENV['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']
+  }
+}
 
 end
