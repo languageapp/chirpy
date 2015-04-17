@@ -47,8 +47,6 @@ var ready = function () {
     $(document).on('keydown', '.chatboxtextarea', function (event) {
 
         var id = $(this).data('cid');
-        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!');
-        console.log(id);
         chatBox.checkInputKey(event, $(this), id);
     });
 
@@ -56,21 +54,11 @@ var ready = function () {
     $(document).on('click','.send-button', function(event) {
 
       event.preventDefault();
-
-      console.log('============================================');
-
-    });
-
-    $('.send-button').click(function(e) {
-      e.preventDefault();
-
       var id = $(this).data('cid');
-      console.log('=========================================================');
-      console.log(id);
-
       chatbox.sendButtonClick($(this),id);
-
     });
+
+
 
     /**
      * When a conversation link is clicked show up the respective
