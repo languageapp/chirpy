@@ -24,10 +24,13 @@
 
 html{
   background-color: #BAF8FF;
-  background-image: url('sky.png');
+  background: url('sky.png') no-repeat center center fixed;
+    background-color: #BAF8FF;
   font-size: 70%;
   background-position: left;
-  background-size: cover;
+  /*background-size: cover;*/
+  -webkit-animation: sky 90s linear infinite;
+  background-repeat: no-repeat;
 }
 
 select{
@@ -139,6 +142,10 @@ header section{
   color: #00a09d;
   font-size: 18px;
   font-size: 1.8rem;
+}
+
+header .profile-picture{
+  width: 10%;  
 }
 
 header a{
