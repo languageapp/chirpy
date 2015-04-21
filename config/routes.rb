@@ -14,13 +14,10 @@ Rails.application.routes.draw do
   resources :languages
 
   resources :conversations do
-    resources :messages
-  end
-
+  resources :messages
+end
 
   post '/online/:profile_id' => 'online#poll'
-
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

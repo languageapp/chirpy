@@ -1,4 +1,3 @@
-
 <main class="chirpy-form form-page">
       <h2><%= t('.Edit_Profile')%></h2>
 
@@ -15,13 +14,9 @@
   <label><%= t('.Gender')%></label>
   <label><%= f.select(:gender, @genderArray, class: 'form-control', selected: @profile.gender) %></label>
 
-
-
   <ul>
     <% @language.each do |lang| %>
       <li>
-
-
         <label><%= t('.Language_To_Learn')%>: <%= select_tag(:language_target, options_for_select(@languagesArray, selected: @lang_target)) %></label>
 
         <label><%= t('.Current_Level')%>: <%= select_tag(:proficiency, options_for_select(@proficiencyArray, selected: lang.proficiency)) %></label>
@@ -29,11 +24,7 @@
     <% end %>
   </ul>
 
-
-
   <%= f.submit t(".Update_Profile", :default => "Update Profile"), class: 'btn white' %>
 
-<% end %>
-
-   </main>
-
+  <% end %>
+</main>

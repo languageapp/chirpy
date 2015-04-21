@@ -22,5 +22,4 @@ module ProfilesHelper
       "missing"
     end
   end
-
 end

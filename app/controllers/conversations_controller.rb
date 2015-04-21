@@ -1,9 +1,8 @@
 class ConversationsController < ApplicationController
+
   skip_before_filter :verify_authenticity_token
-  # before_filter :authenticate_user!
 
   layout false
-
 
   def new
     @conversation = Conversation.new
@@ -22,10 +21,11 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
     @receiver = interlocutor(@conversation)
     @messages = @conversation.messages
-    @message = Message.new  
+    @message = Message.new
   end
 
   private
+
   def conversation_params
     params.permit(:sender_id, :recipient_id)
   end
