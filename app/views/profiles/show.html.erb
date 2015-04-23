@@ -19,7 +19,7 @@
               <label class="other-users-name"><%= user.profile.name %></label>
               <label><%= t('.Speak')%>: <%= image_tag("#{format_language(user.languages[0].language_native)}.png", :class=>"user-lang-flag") %></label>
               <label><%= t('.Learn')%>: <%= image_tag("#{format_language(user.languages[0].language_target)}.png", :class=>"user-lang-flag") %></label>
-              <%= link_to t('.View_Profile'), profile_path(user.id), class: 'white btn'  %>
+              <%= link_to t('.View_Profile'), profile_path(user.profile), class: 'white btn'  %>
             </td>
             <td>
               <%= link_to t(".Message"), '#', class: "mdi-communication-message btn-success btn white start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %>
@@ -33,7 +33,7 @@
       <h4 class="panel-heading"><%= t('.You_Are_Viewing')%>...</h4>
       <div>
         <h3 class="profile-name"><%= @profile.name %></h3>
-        <%= image_tag @profile.image.url(:thumb, timestamp: false), class: 'profile-picture z-depth-3' %>
+        <%= image_tag @profile.image.url(:medium, timestamp: false), class: 'profile-picture z-depth-3' %>
         <h4><%= t('.About_Me')%></h4>
         <p class="profile-description"><%= @profile.bio %></p>
         <p class="profile-description gender-age"><%= @profile.age %>, <%= I18n.t('profiles.form.' + @profile.gender) %></p>

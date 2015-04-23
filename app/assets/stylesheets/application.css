@@ -24,10 +24,13 @@
 
 html{
   background-color: #BAF8FF;
-  background-image: url('sky.png');
+  background: url('sky.png') no-repeat center center fixed;
+    background-color: #BAF8FF;
   font-size: 70%;
   background-position: left;
-  background-size: cover;
+  /*background-size: cover;*/
+  -webkit-animation: sky 90s linear infinite;
+  background-repeat: no-repeat;
 }
 
 select{
