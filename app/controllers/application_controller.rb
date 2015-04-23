@@ -1,11 +1,9 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
 
   before_filter :set_locale
+
   def set_locale
     I18n.locale = params[:locale]
-    # if params[:locale] is nil then I18n.default_locale will be used
   end
 
   def default_url_options(options={})
@@ -23,5 +21,4 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
   end
-
 end

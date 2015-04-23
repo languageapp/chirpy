@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+
   skip_before_filter :verify_authenticity_token
 
   def new
@@ -11,5 +12,4 @@ class MessagesController < ApplicationController
     @message.save!
     @path = conversation_path(@conversation).partition('?').first
   end
-
 end

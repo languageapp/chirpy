@@ -30,5 +30,4 @@ class OnlineController < ApplicationController
     @@users_online << user_id.to_i if !@@users_online.include? user_id.to_i
     @@timeout_hash[user_id.to_sym] = Time.now
   end
-
 end

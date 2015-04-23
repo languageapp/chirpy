@@ -36,24 +36,15 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
-config.i18n.enforce_available_locales = false
-config.i18n.available_locales = [:en, :es, :de, :sv, :nb, :fr, :it]
-config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
-
-
+  config.i18n.enforce_available_locales = false
+  config.i18n.available_locales = [:en, :es, :de, :sv, :nb, :fr, :it]
+  config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
 
 # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
-config.i18n.default_locale = :en
+  config.i18n.default_locale = :en
 
-config.i18n.locale = :en
+  config.i18n.locale = :en
 
-
-
-
-
-
-
-  # config.i18n.default_locale = :'en'
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
