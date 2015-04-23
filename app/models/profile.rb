@@ -5,4 +5,11 @@ class Profile < ActiveRecord::Base
 
   belongs_to :user
 
+  def display_proficiency
+    @proficiencyArray = {I18n.t('profiles.form.Beginner', :default => 'Beginner') => 'Beginner',
+                        I18n.t('profiles.form.Average', :default => 'Average') => 'Average',
+                        I18n.t('profiles.form.Fluent', :default => 'Fluent') => 'Fluent'}
+  end
+
+
 end

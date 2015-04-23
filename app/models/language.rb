@@ -37,4 +37,14 @@ class Language < ActiveRecord::Base
         'it'
     end
   end
+
+  def display_all
+    langArray = {I18n.t('profiles.form.English', :default => 'English') => 'English',
+                I18n.t('profiles.form.French', :default => 'French') => 'French',
+                I18n.t('profiles.form.German', :default => 'German') => 'German',
+                I18n.t('profiles.form.Italian', :default => 'Italian') => 'Italian',
+                I18n.t('profiles.form.Spanish', :default => 'Spanish') => 'Spanish'}
+  end
+
+
 end

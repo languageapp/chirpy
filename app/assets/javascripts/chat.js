@@ -58,7 +58,6 @@ var ready = function () {
             var align = 0;
             for (var x in chatBoxes) {
                 var chatbox_id = chatBoxes[x];
-
                 if ($("#chatbox_" + chatbox_id).css('display') !== 'none') {
                     if (align === 0) {
                         $("#chatbox_" + chatbox_id).css('right', '20px');
@@ -103,7 +102,8 @@ var ready = function () {
 
             $("#chatbox_" + conversation_id).css('bottom', '0px');
 
-            chatBoxeslength = 0;
+            var chatBoxeslength = 0;
+            var width
 
             for (var x in chatBoxes) {
                 if ($("#chatbox_" + chatBoxes[x]).css('display') !== 'none') {
@@ -120,7 +120,7 @@ var ready = function () {
 
             chatBoxes.push(conversation_id);
 
-            if (minimizeChatBox == 1) {
+            if (minimizeChatBox === 1) {
                 minimizedChatBoxes = [];
 
                 if ($.cookie('chatbox_minimized')) {
@@ -170,7 +170,7 @@ var ready = function () {
          */
 
         checkInputKey: function (event, chatboxtextarea, conversation_id) {
-            if (event.keyCode == 13 && event.shiftKey == 0) {
+            if (event.keyCode === 13 && event.shiftKey === 0) {
                 event.preventDefault();
                 var message = chatboxtextarea.val();
                 $.post("/conversations/" + conversation_id + "/messages", { body: message, "conversation_id": conversation_id }, function (data) {
@@ -195,11 +195,10 @@ var ready = function () {
                     adjustedHeight = Math.min(maxHeight, adjustedHeight);
                 if (adjustedHeight > chatboxtextarea.clientHeight)
                     $(chatboxtextarea).css('height', adjustedHeight + 8 + 'px');
-            } else {
+                } else {
                 $(chatboxtextarea).css('overflow', 'auto');
-            }
-
-        },
+                }
+            },
 
         sendButtonClick: function(chatboxtextarea, conversation_id) {
 

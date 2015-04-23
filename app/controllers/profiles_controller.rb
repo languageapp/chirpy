@@ -21,21 +21,16 @@ class ProfilesController < ApplicationController
   def new
     @profile = Profile.new
     @language = Language.new
-
     @genderArray = {I18n.t('profiles.form.Male', :default => 'Male') => 'Male',
                 I18n.t('profiles.form.Female', :default => 'Female') => 'Female'}
-    @proficiencyArray = {I18n.t('profiles.form.Beginner', :default => 'Beginner') => 'Beginner',
-                I18n.t('profiles.form.Average', :default => 'Average') => 'Average',
-               I18n.t('profiles.form.Fluent', :default => 'Fluent') => 'Fluent'}
-
+    @proficiencyArray = @profile.display_proficiency
+    # @proficiencyArray = {I18n.t('profiles.form.Beginner', :default => 'Beginner') => 'Beginner',
+    #             I18n.t('profiles.form.Average', :default => 'Average') => 'Average',
+    #            I18n.t('profiles.form.Fluent', :default => 'Fluent') => 'Fluent'}
     @language.language_native = I18n.locale
     lang = @language.language_native
     @lang_native = @language.format_from_locale(lang)
-    langArray = {I18n.t('profiles.form.English', :default => 'English') => 'English',
-                I18n.t('profiles.form.French', :default => 'French') => 'French',
-                I18n.t('profiles.form.German', :default => 'German') => 'German',
-                I18n.t('profiles.form.Italian', :default => 'Italian') => 'Italian',
-                I18n.t('profiles.form.Spanish', :default => 'Spanish') => 'Spanish'}
+    langArray = @language.display_all
     langArray.delete(I18n.t('profiles.form.' + @lang_native))
     @languagesArray = langArray
   end
@@ -67,17 +62,13 @@ class ProfilesController < ApplicationController
     @language = current_user.languages
     @lang_target = current_user.languages[0].language_target
     @genderArray = {I18n.t('profiles.form.Male', :default => 'Male') => 'Male',
-                I18n.t('profiles.form.Female', :default => 'Female') => 'Female'}
-    @proficiencyArray = {I18n.t('profiles.form.Beginner', :default => 'Beginner') => 'Beginner',
-                I18n.t('profiles.form.Average', :default => 'Average') => 'Average',
-               I18n.t('profiles.form.Fluent', :default => 'Fluent') => 'Fluent'}
-    langArray = {I18n.t('profiles.form.English', :default => 'English') => 'English',
-                I18n.t('profiles.form.French', :default => 'French') => 'French',
-                I18n.t('profiles.form.German', :default => 'German') => 'German',
-                I18n.t('profiles.form.Italian', :default => 'Italian') => 'Italian',
-                I18n.t('profiles.form.Spanish', :default => 'Spanish') => 'Spanish'}
+                    I18n.t('profiles.form.Female', :default => 'Female') => 'Female'}
+    lang = Language.new           
+    langArray = lang.display_all          
     langArray.delete(I18n.t('profiles.form.' + current_user.languages[0].language_native))
     @languagesArray = langArray
+    profs = Profile.new
+    @proficiencyArray = profs.display_proficiency
   end
 
   def update
