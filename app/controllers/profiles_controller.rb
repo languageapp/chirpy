@@ -20,10 +20,14 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
-    @language = Language.new
     @genderArray = {I18n.t('profiles.form.Male', :default => 'Male') => 'Male',
                 I18n.t('profiles.form.Female', :default => 'Female') => 'Female'}
-    @proficiencyArray = @profile.display_proficiency
+    @proficiencyArray = @profile.display_proficiencies
+    display_languages
+  end
+
+  def display_languages
+    @language = Language.new
     @language.language_native = I18n.locale
     lang = @language.language_native
     @lang_native = @language.format_from_locale(lang)
@@ -31,6 +35,7 @@ class ProfilesController < ApplicationController
     langArray.delete(I18n.t('profiles.form.' + @lang_native))
     @languagesArray = langArray
   end
+
 
   def create
     @profile = current_user.build_profile(profile_params)
@@ -46,6 +51,15 @@ class ProfilesController < ApplicationController
   def show
     @conversations = Conversation.involving(current_user).order("created_at DESC")
     @users = User.where.not("user_id = ?",current_user.id).with_profile
+    find_user
+  end
+
+  def edit
+    display_profile(current_user)
+    populate_select_boxes
+  end
+
+  def find_user
     users_all = User.all
     selected_user = users_all.find(params[:id])
     @language = selected_user.languages
@@ -54,10 +68,14 @@ class ProfilesController < ApplicationController
     @my_id = current_user.profile.id
   end
 
-  def edit
-    @profile = current_user.profile
-    @language = current_user.languages
-    @lang_target = current_user.languages[0].language_target
+
+  def display_profile(user)
+    @profile = user.profile
+    @language = user.languages
+    @lang_target = user.languages[0].language_target
+  end
+
+  def populate_select_boxes
     @genderArray = {I18n.t('profiles.form.Male', :default => 'Male') => 'Male',
                     I18n.t('profiles.form.Female', :default => 'Female') => 'Female'}
     lang = Language.new           
@@ -65,7 +83,7 @@ class ProfilesController < ApplicationController
     langArray.delete(I18n.t('profiles.form.' + current_user.languages[0].language_native))
     @languagesArray = langArray
     profs = Profile.new
-    @proficiencyArray = profs.display_proficiency
+    @proficiencyArray = profs.display_proficiencies 
   end
 
   def update
