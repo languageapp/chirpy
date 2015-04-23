@@ -24,9 +24,6 @@ class ProfilesController < ApplicationController
     @genderArray = {I18n.t('profiles.form.Male', :default => 'Male') => 'Male',
                 I18n.t('profiles.form.Female', :default => 'Female') => 'Female'}
     @proficiencyArray = @profile.display_proficiency
-    # @proficiencyArray = {I18n.t('profiles.form.Beginner', :default => 'Beginner') => 'Beginner',
-    #             I18n.t('profiles.form.Average', :default => 'Average') => 'Average',
-    #            I18n.t('profiles.form.Fluent', :default => 'Fluent') => 'Fluent'}
     @language.language_native = I18n.locale
     lang = @language.language_native
     @lang_native = @language.format_from_locale(lang)
