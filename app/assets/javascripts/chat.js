@@ -1,4 +1,3 @@
-
 var chatboxFocus = [];
 var chatBoxes = [];
 var chatBox;
@@ -78,7 +77,7 @@ var ready = function () {
 
             if (minimizeChatBox === 1) {
                 minimizedChatBoxes = [];
-
+                }
                 if ($.cookie('chatbox_minimized')) {
                     minimizedChatBoxes = $.cookie('chatbox_minimized').split(/\|/);
                 }

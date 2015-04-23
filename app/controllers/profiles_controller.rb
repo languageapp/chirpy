@@ -22,7 +22,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new
     @genderArray = {I18n.t('profiles.form.Male', :default => 'Male') => 'Male',
                 I18n.t('profiles.form.Female', :default => 'Female') => 'Female'}
-    @proficiencyArray = @profile.display_proficiencies
+    @proficiencyArray = @profile.proficiencies_array
     display_languages
   end
 
@@ -31,7 +31,7 @@ class ProfilesController < ApplicationController
     @language.language_native = I18n.locale
     lang = @language.language_native
     @lang_native = @language.format_from_locale(lang)
-    langArray = @language.display_all
+    langArray = @language.get_array
     langArray.delete(I18n.t('profiles.form.' + @lang_native))
     @languagesArray = langArray
   end
@@ -79,11 +79,11 @@ class ProfilesController < ApplicationController
     @genderArray = {I18n.t('profiles.form.Male', :default => 'Male') => 'Male',
                     I18n.t('profiles.form.Female', :default => 'Female') => 'Female'}
     lang = Language.new           
-    langArray = lang.display_all          
+    langArray = lang.get_array          
     langArray.delete(I18n.t('profiles.form.' + current_user.languages[0].language_native))
     @languagesArray = langArray
     profs = Profile.new
-    @proficiencyArray = profs.display_proficiencies 
+    @proficiencyArray = profs.proficiencies_array 
   end
 
   def update

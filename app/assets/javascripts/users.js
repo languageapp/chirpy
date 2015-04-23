@@ -1,3 +1,5 @@
+var chatBox;
+
 var ready = function () {
 
     /**
@@ -5,6 +7,7 @@ var ready = function () {
      * send an ajax request to our rails app with the sender_id and
      * recipient_id
      */
+    
 
     $('.start-conversation').click(function (e) {
         e.preventDefault();
