@@ -187,7 +187,6 @@ var ready = function () {
 
         },
 
-
         /**
          * Responsible for handling minimize and maximize of the chatbox
          *
