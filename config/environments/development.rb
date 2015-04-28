@@ -51,8 +51,8 @@ config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
     :bucket => 'chirpy',
-    :access_key_id => 'AKIAJ4IUGQAUTQYJZSZA',
-    :secret_access_key => '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'
+    :access_key_id => 'ENV[AWS_ACCESS_KEY_ID]',
+    :secret_access_key => 'ENV[AWS_SECRET_ACCESS_KEY]'
   }
 }
 
