@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-context 'user not signed in and lands on home page' do
+context 'user not signed up and lands on home page' do
 
   it 'should expect to see content "Welcome! What\'s your native language"' do
     visit('/')
@@ -55,19 +55,21 @@ context 'user\'s native language' do
   end
 end
 
-context 'user signed in and on the profile page' do
+context 'user signed up and on the create profile page' do
 
   before do
     visit('/')
-    click_link('Log in')
-    fill_in('user_email', with: 'test@example.com')
-    fill_in('Password', with: 'testtest')
-    click_button('Sign in')
+    click_link('uk')
+    expect(page).to have_content 'Sign up'
+    fill_in("user_email", with: 'test1@example.com')
+    fill_in('user_password', with: 'testtest')
+    fill_in('user_password_confirmation', with: 'testtest')
+    find(".btn").click
   end
 
-  it 'should see "sign out" link' do
+  it 'should see "Enter details"' do
     visit('/profiles')
-    expect(page).to have_link('Sign out')
+    expect(page).to have_content 'Enter details'
   end
 
   it 'should not see a "sign in" link and a "sign up" link' do

@@ -34,16 +34,6 @@ ActiveRecord::Schema.define(version: 20150413102034) do
 
   add_index "favourite_users", ["user_id"], name: "index_favourite_users_on_user_id", using: :btree
 
-  create_table "interests", force: :cascade do |t|
-    t.string   "body"
-    t.integer  "proficiency"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "user_id"
-  end
-
-  add_index "interests", ["user_id"], name: "index_interests_on_user_id", using: :btree
-
   create_table "languages", force: :cascade do |t|
     t.string   "language_native"
     t.string   "language_target"
@@ -107,7 +97,6 @@ ActiveRecord::Schema.define(version: 20150413102034) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "favourite_users", "users"
-  add_foreign_key "interests", "users"
   add_foreign_key "languages", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
