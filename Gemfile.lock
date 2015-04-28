@@ -100,6 +100,11 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.7)
     execjs (2.5.2)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     faye (1.1.1)
@@ -295,6 +300,7 @@ DEPENDENCIES
   devise-i18n
   devise-i18n-views
   dotenv-rails
+  factory_girl_rails (~> 4.0)
   jbuilder (~> 2.0)
   jquery-rails
   launchy

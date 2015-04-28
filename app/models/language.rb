@@ -25,7 +25,7 @@ class Language < ActiveRecord::Base
   end
 
 
-def format_to_locale(lang)
+  def format_to_locale(lang)
     case lang
       when 'German'
         'de'

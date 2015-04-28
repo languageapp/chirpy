@@ -10,16 +10,6 @@ def sign_up
   find(".btn").click
 end
 
-def create_profile
-  fill_in('profile_name', with: 'Kev')
-  select('21', from: 'profile_age')
-  fill_in('profile_bio', with: 'Please teach me Swedish!')
-  select('Male', from: 'profile[gender]')
-  select('French', from: 'language_language_target')
-  select('Beginner', from: 'language_proficiency')
-  find(".btn").click
-end
-
 context 'creating a profile' do
 
   it 'the form has a name, age, bio, image and gender field' do
@@ -35,9 +25,11 @@ end
 context 'a profile has been created' do
 
   it 'should display the users profile' do
-    sign_up
-    create_profile
-    save_and_open_page
+    user = create(:user, id: 1)
+    login_as(user, :scope => :user) 
+    profile = create(:profile, user: user)
+    language = create(:language, user: user)
+    visit '/'
     expect(page).to have_content 'Kev'
     expect(page).to have_content '21'
     expect(page).to have_content 'Please teach me Swedish!'
@@ -45,12 +37,14 @@ context 'a profile has been created' do
   end
 
   it 'a profile can be updated' do
-    sign_up
-    create_profile
-    click_link('edit your profile')
+    user = create(:user, id: 2)
+    login_as(user, :scope => :user) 
+    profile = create(:profile, user: user)
+    language = create(:language, user: user)
+    visit '/'
+    click_link('Edit your profile')
     fill_in('profile_name', with: 'Joe')
-    click_button('Update Profile')
+    click_button('Update profile')
     expect(page).to have_content 'Joe'
-    expect(current_path).to eq '/profiles/2'
   end
 end

@@ -7,6 +7,7 @@ require 'capybara/rails'
 require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
 require 'support/database_cleaner'
+require 'factory_girl_rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -29,6 +30,8 @@ require 'support/database_cleaner'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+
+  config.include FactoryGirl::Syntax::Methods
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   # config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -37,6 +40,14 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = false
 
+  config.include Warden::Test::Helpers
+    config.before :suite do
+    Warden.test_mode!
+  end
+
+  config.after :each do
+    Warden.test_reset!
+  end
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
