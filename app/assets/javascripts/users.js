@@ -50,16 +50,6 @@ var ready = function () {
         chatBox.checkInputKey(event, $(this), id);
     });
 
-
-    $(document).on('click','.send-button', function(event) {
-
-      event.preventDefault();
-      var id = $(this).data('cid');
-      chatBox.sendButtonClick($('.chatboxtextarea'),id);
-    });
-
-
-
     /**
      * When a conversation link is clicked show up the respective
      * conversation chatbox

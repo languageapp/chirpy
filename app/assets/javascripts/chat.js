@@ -187,34 +187,6 @@ var ready = function () {
 
         },
 
-        sendButtonClick: function(chatboxtextarea, conversation_id) {
-
-          var message = chatboxtextarea.val();
-
-          $.post("/conversations/" + conversation_id + "/messages", { body: message, "conversation_id": conversation_id }, function (data) {
-                  console.log(data);
-          });
-          $(chatboxtextarea).val('');
-          $(chatboxtextarea).focus();
-          $(chatboxtextarea).css('height','44px');
-
-
-          var adjustedHeight = chatboxtextarea.clientHeight;
-          var maxHeight = 94;
-
-          if (maxHeight > adjustedHeight) {
-            adjustedHeight = Math.max(chatboxtextarea.scrollHeight, adjustedHeight);
-            if (maxHeight)
-              adjustedHeight = Math.min(maxHeight, adjustedHeight);
-            if (adjustedHeight > chatboxtextarea.clientHeight)
-              $(chatboxtextarea).css('height', adjustedHeight + 8 + 'px');
-            }
-          else {
-                $(chatboxtextarea).css('overflow', 'auto');
-          }
-
-
-        },
 
         /**
          * Responsible for handling minimize and maximize of the chatbox
