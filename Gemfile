@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails', '4.2.1'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'devise-i18n'
@@ -41,7 +42,7 @@ gem 'thin'
 
 gem 'launchy'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

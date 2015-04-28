@@ -1,4 +1,3 @@
-/**
  * Chat logic
  *
  * Most of the js functionality is inspired from anatgarg.com

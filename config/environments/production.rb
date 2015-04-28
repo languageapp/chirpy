@@ -91,9 +91,9 @@ config.i18n.locale = :en
 config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => ENV['chirpy'],
-    :access_key_id => ENV['AKIAJ4IUGQAUTQYJZSZA'],
-    :secret_access_key => ENV['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']
+    :bucket => 'chirpy',
+    :access_key_id => 'AKIAJ4IUGQAUTQYJZSZA',
+    :secret_access_key => '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'
   }
 }
 
