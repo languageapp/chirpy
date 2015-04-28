@@ -1,19 +1,18 @@
 require 'rails_helper'
 
-def sign_up
-  visit('/')
-  click_link('uk')
-  expect(page).to have_content 'Sign up'
-  fill_in("user_email", with: 'test1@example.com')
-  fill_in('user_password', with: 'testtest')
-  fill_in('user_password_confirmation', with: 'testtest')
-  find(".btn").click
-end
-
 context 'creating a profile' do
 
+  before do
+    visit('/')
+    click_link('uk')
+    expect(page).to have_content 'Sign up'
+    fill_in("user_email", with: 'test1@example.com')
+    fill_in('user_password', with: 'testtest')
+    fill_in('user_password_confirmation', with: 'testtest')
+    find(".btn").click
+  end
+
   it 'the form has a name, age, bio, image and gender field' do
-    sign_up
     expect(page).to have_css('#profile_name')
     expect(page).to have_css('#profile_age')
     expect(page).to have_css('input[type="file"]')
