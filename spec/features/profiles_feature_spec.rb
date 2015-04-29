@@ -44,4 +44,22 @@ context 'a profile has been created' do
     click_button('Update profile')
     expect(page).to have_content 'Joe'
   end
+ 
+  scenario 'view other peoples profiles' do 
+    joe = create(:user, email: 'joe@joe.com', password: 'testtest')
+    joes_profile = create(:profile, user: joe, name: 'Joe', age: '21', bio: 'I want learn English', gender: 'Male')
+    language = create(:language, user: joe)
+    visit '/'
+    expect(page).to have_content 'Joe'
+  end
+
+  scenario 'view other peoples profiles on the main profile screen' do 
+    joe = create(:user, email: 'joe@joe.com', password: 'testtest')
+    joes_profile = create(:profile, user: joe, name: 'Joe', age: '21', bio: 'I want learn English', gender: 'Male')
+    language = create(:language, user: joe)
+    visit '/'
+    click_link('View profile', match: :first)
+    expect(page).to have_content 'Return to your profile'
+  end
+
 end
