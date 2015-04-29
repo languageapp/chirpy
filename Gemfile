@@ -36,7 +36,9 @@ gem 'paperclip'
 gem 'shoulda'
 
 gem 'private_pub'
+
 gem 'bower-rails'
+
 gem 'thin'
 
 gem 'launchy'

@@ -5,14 +5,12 @@ var chatBoxes = [];
 var ready = function () {
 
     chatBox = {
-
         /**
          * creates an inline chatbox on the page by calling the
          * createChatBox function passing along the unique conversation_id
          *
          * @param conversation_id
          */
-
         chatWith: function (conversation_id) {
 
             chatBox.createChatBox(conversation_id);
@@ -233,8 +231,6 @@ var ready = function () {
 
         }
 
-
-
     };
 
 
@@ -289,7 +285,6 @@ var ready = function () {
             return cookieValue;
         }
     };
-
 
 };
 

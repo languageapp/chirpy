@@ -20,8 +20,6 @@
 
 @import url(https://fonts.googleapis.com/css?family=Comfortaa);
 
-
-
 html{
   background-color: #BAF8FF;
   background: url('sky.png') no-repeat center center fixed;
@@ -37,10 +35,7 @@ select{
   width: 20%;
 }
 
-
-
 .panel-heading{
-
 
     z-index: 10;
 }
@@ -145,7 +140,7 @@ header section{
 }
 
 header .profile-picture{
-  width: 10%;  
+  width: 10%;
 }
 
 header a{
@@ -237,7 +232,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
 }
 
 #main-app{
-    -webkit-box-shadow: 1px 1px 17px 0px rgba(65, 40, 11, 0.75);
+  -webkit-box-shadow: 1px 1px 17px 0px rgba(65, 40, 11, 0.75);
   -moz-box-shadow:    1px 1px 17px 0px rgba(65, 40, 11, 0.75);
   box-shadow:         1px 1px 17px 0px rgba(65, 40, 11, 0.75);
   background-color: #F7F6F0;
@@ -283,7 +278,6 @@ td img.user-lang-flag{
   padding: 20px 0;
 }
 
-
 @-webkit-keyframes sky{
   0%{
     background-position: left;
@@ -296,14 +290,12 @@ td img.user-lang-flag{
   }
 }
 
-
 @media (max-width: 1000px){
   .container .row.signup-main{
     width: 80%;
     margin: 0 auto;
   }
 }
-
 
 @media (max-width: 600px){
   html{
@@ -368,5 +360,4 @@ td img.user-lang-flag{
   .flags{
     margin-top: 2rem;
   }
-
 }

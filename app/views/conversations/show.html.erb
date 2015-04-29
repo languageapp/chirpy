@@ -1,8 +1,6 @@
 <div class="chatboxhead z-depth-3">
-
   <div class="chatboxtitle">
     <i class="fa fa-comments"></i>
-
     <h1><%= @receiver.profile.name %> </h1>
   </div>
   <div class="chatboxoptions">
@@ -24,4 +22,3 @@
 </div>
 
 <%= subscribe_to conversation_path(@conversation).partition('?').first %>
-

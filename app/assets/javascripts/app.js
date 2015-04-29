@@ -1,7 +1,6 @@
 (function() {
   var app = angular.module('chirpy', []);
 
-
   app.controller('ApplicationController', ['$http','$timeout','$window', function($http,$timeout,$window) {
 
     var self = this;
@@ -9,7 +8,6 @@
     self.onlineOnly = false;
 
     self.usersOnline = [];
-
 
     var onlinePoll = function() {
       (function checkIn() {
@@ -34,8 +32,8 @@
 
     };
 
-   }]);
-  app.controller('LanguageFilterController', [function() {
+  }]);
+    app.controller('LanguageFilterController', [function() {
     this.selectedLanguage = "";
   }]);
 })();

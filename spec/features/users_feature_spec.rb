@@ -77,7 +77,4 @@ context 'user signed up and on the create profile page' do
     expect(page).not_to have_link('Log in')
     expect(page).not_to have_link('Sign up')
   end
-
-    
-
 end

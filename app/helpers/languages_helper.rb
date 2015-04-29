@@ -1,5 +1,2 @@
 module LanguagesHelper
-
-
-
 end

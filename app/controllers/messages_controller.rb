@@ -11,5 +11,4 @@ class MessagesController < ApplicationController
     @message.save!
     @path = conversation_path(@conversation).partition('?').first
   end
-
 end
