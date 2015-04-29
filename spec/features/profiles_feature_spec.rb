@@ -62,4 +62,14 @@ context 'a profile has been created' do
     expect(page).to have_content 'Return to your profile'
   end
 
+  scenario 'click my profile to view my profile' do 
+    joe = create(:user, email: 'joe@joe.com', password: 'testtest')
+    joes_profile = create(:profile, user: joe, name: 'Joe', age: '21', bio: 'I want learn English', gender: 'Male')
+    language = create(:language, user: joe)
+    visit '/'
+    click_link('View profile', match: :first)
+    click_link('My profile')
+    expect(page).to have_content 'Edit your profile'
+  end
+
 end
