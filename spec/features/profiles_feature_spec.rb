@@ -68,5 +68,10 @@ context 'a profile has been created' do
       click_link('My profile')
       expect(page).to have_content 'Edit your profile'
     end
+
+    scenario 'click the sign out button and go to the home page' do
+      click_link('Sign out')
+      expect(page).to have_content 'Welcome'
+    end  
   end
 end
