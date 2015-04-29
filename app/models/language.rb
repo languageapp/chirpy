@@ -47,5 +47,4 @@ class Language < ActiveRecord::Base
                 I18n.t('profiles.form.Italian', :default => 'Italian') => 'Italian',
                 I18n.t('profiles.form.Spanish', :default => 'Spanish') => 'Spanish'}
   end
-
 end

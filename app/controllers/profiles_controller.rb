@@ -36,7 +36,6 @@ class ProfilesController < ApplicationController
     @languagesArray = langArray
   end
 
-
   def create
     @profile = current_user.build_profile(profile_params)
     @language = current_user.languages.build(language_params)
@@ -67,7 +66,6 @@ class ProfilesController < ApplicationController
     @profile = @profiles.find(params[:id])
     @my_id = current_user.profile.id
   end
-
 
   def display_profile(user)
     @profile = user.profile
