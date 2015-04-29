@@ -59,6 +59,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem "codeclimate-test-reporter", group: :test, require: nil
+  gem 'protractor-rails'
 end
 
 group :test do

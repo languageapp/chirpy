@@ -70,6 +70,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    colorize (0.7.7)
     columnize (0.9.0)
     cookiejar (0.3.2)
     daemons (1.2.2)
@@ -174,6 +175,9 @@ GEM
       websocket-driver (>= 0.2.0)
     private_pub (1.0.3)
       faye
+    protractor-rails (0.0.14)
+      colorize
+      railties
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -309,6 +313,7 @@ DEPENDENCIES
   pg
   poltergeist
   private_pub
+  protractor-rails
   rails (= 4.2.1)
   rails-i18n (~> 4.0.0)
   rails_12factor

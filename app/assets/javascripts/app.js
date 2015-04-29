@@ -35,12 +35,7 @@
     };
 
    }]);
-
   app.controller('LanguageFilterController', [function() {
-
-
     this.selectedLanguage = "";
-
   }]);
-
 })();
