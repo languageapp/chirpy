@@ -23,12 +23,15 @@ end
 
 context 'a profile has been created' do
 
-  it 'should display the users profile' do
-    user = create(:user, id: 1)
+  before do 
+    user = create(:user)
     login_as(user, :scope => :user) 
     profile = create(:profile, user: user)
     language = create(:language, user: user)
     visit '/'
+  end  
+
+  it 'should display the users profile' do
     expect(page).to have_content 'Kev'
     expect(page).to have_content '21'
     expect(page).to have_content 'Please teach me Swedish!'
@@ -36,11 +39,6 @@ context 'a profile has been created' do
   end
 
   it 'a profile can be updated' do
-    user = create(:user, id: 2)
-    login_as(user, :scope => :user) 
-    profile = create(:profile, user: user)
-    language = create(:language, user: user)
-    visit '/'
     click_link('Edit your profile')
     fill_in('profile_name', with: 'Joe')
     click_button('Update profile')
