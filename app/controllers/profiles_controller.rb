@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+
   before_action :authenticate_user!, :except => [:index, :show]
 
   helper ProfilesHelper
@@ -7,7 +8,7 @@ class ProfilesController < ApplicationController
     if current_user
       if current_user.profile
         user_lang = current_user.languages[0]
-        user_lang_native = current_user.languages[0].language_native
+        user_lang_native = user_lang.language_native
         formatted_locale = user_lang.format_to_locale(user_lang_native)
         I18n.locale = formatted_locale
         redirect_to profile_path(current_user.profile)
@@ -19,25 +20,22 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
-    @language = Language.new
-
     @genderArray = {I18n.t('profiles.form.Male', :default => 'Male') => 'Male',
                 I18n.t('profiles.form.Female', :default => 'Female') => 'Female'}
-    @proficiencyArray = {I18n.t('profiles.form.Beginner', :default => 'Beginner') => 'Beginner',
-                I18n.t('profiles.form.Average', :default => 'Average') => 'Average',
-               I18n.t('profiles.form.Fluent', :default => 'Fluent') => 'Fluent'}
+    @proficiencyArray = @profile.proficiencies_array
+    display_languages
+  end
 
+  def display_languages
+    @language = Language.new
     @language.language_native = I18n.locale
     lang = @language.language_native
     @lang_native = @language.format_from_locale(lang)
-    langArray = {I18n.t('profiles.form.English', :default => 'English') => 'English',
-                I18n.t('profiles.form.French', :default => 'French') => 'French',
-                I18n.t('profiles.form.German', :default => 'German') => 'German',
-                I18n.t('profiles.form.Italian', :default => 'Italian') => 'Italian',
-                I18n.t('profiles.form.Spanish', :default => 'Spanish') => 'Spanish'}
+    langArray = @language.get_array
     langArray.delete(I18n.t('profiles.form.' + @lang_native))
     @languagesArray = langArray
   end
+
 
   def create
     @profile = current_user.build_profile(profile_params)
@@ -53,6 +51,15 @@ class ProfilesController < ApplicationController
   def show
     @conversations = Conversation.involving(current_user).order("created_at DESC")
     @users = User.where.not("user_id = ?",current_user.id).with_profile
+    find_user
+  end
+
+  def edit
+    display_profile(current_user)
+    populate_select_boxes
+  end
+
+  def find_user
     users_all = User.all
     selected_user = users_all.find(params[:id])
     @language = selected_user.languages
@@ -61,22 +68,22 @@ class ProfilesController < ApplicationController
     @my_id = current_user.profile.id
   end
 
-  def edit
-    @profile = current_user.profile
-    @language = current_user.languages
-    @lang_target = current_user.languages[0].language_target
+
+  def display_profile(user)
+    @profile = user.profile
+    @language = user.languages
+    @lang_target = user.languages[0].language_target
+  end
+
+  def populate_select_boxes
     @genderArray = {I18n.t('profiles.form.Male', :default => 'Male') => 'Male',
-                I18n.t('profiles.form.Female', :default => 'Female') => 'Female'}
-    @proficiencyArray = {I18n.t('profiles.form.Beginner', :default => 'Beginner') => 'Beginner',
-                I18n.t('profiles.form.Average', :default => 'Average') => 'Average',
-               I18n.t('profiles.form.Fluent', :default => 'Fluent') => 'Fluent'}
-    langArray = {I18n.t('profiles.form.English', :default => 'English') => 'English',
-                I18n.t('profiles.form.French', :default => 'French') => 'French',
-                I18n.t('profiles.form.German', :default => 'German') => 'German',
-                I18n.t('profiles.form.Italian', :default => 'Italian') => 'Italian',
-                I18n.t('profiles.form.Spanish', :default => 'Spanish') => 'Spanish'}
+                    I18n.t('profiles.form.Female', :default => 'Female') => 'Female'}
+    lang = Language.new
+    langArray = lang.get_array
     langArray.delete(I18n.t('profiles.form.' + current_user.languages[0].language_native))
     @languagesArray = langArray
+    profs = Profile.new
+    @proficiencyArray = profs.proficiencies_array
   end
 
   def update
@@ -94,7 +101,4 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(:name, :image, :age, :bio, :gender)
   end
-
 end
-
-
