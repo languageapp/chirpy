@@ -49,8 +49,11 @@ context 'a profile has been created' do
 
     before do
       joe = create(:user, email: 'joe@joe.com', password: 'testtest')
-      joes_profile = create(:profile, user: joe, name: 'Joe', age: '21', bio: 'I want learn English', gender: 'Male')
-      language = create(:language, user: joe)
+      joes_profile = create(:profile, user: joe, name: 'Joe', age: '21', bio: 'I want learn French', gender: 'Male')
+      language = create(:language, user: joe, language_native: 'English', language_target: 'French')
+      pedro = create(:user, email: 'pedro@pedro.com', password: 'testtest')
+      pedros_profile = create(:profile, user: pedro, name: 'Pedro', age: '21', bio: 'I want learn English', gender: 'Male')
+      language = create(:language, user: pedro, language_native: 'Spanish', language_target: 'English')  
       visit '/'
     end
 
@@ -72,6 +75,6 @@ context 'a profile has been created' do
     scenario 'click the sign out button and go to the home page' do
       click_link('Sign out')
       expect(page).to have_content 'Welcome'
-    end 
+    end
   end
 end
