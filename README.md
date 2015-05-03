@@ -42,7 +42,7 @@ Features
 - Authentification during the sign-up process
 - CSS animation used for background "moving clouds"
 
-[postscript - the profiles controller is still rather "fat" and will therefore be subject to further refactoring in the near future (JN, 23/4/15)]
+*[postscript - the profiles controller is still rather "fat" and will therefore be subject to further refactoring in the near future (JN, 23/4/15)]*
 
 How to clone this repo
 ----
