@@ -24,7 +24,7 @@ Technologies used
 Screenshot
 ---
 <div align="center">
-        <img width="70%" src="/app/assets/images/chirpy_homepage.png">
+        <img width="100%" src="/app/assets/images/chirpy_homepage.png">
 
 </div>
 Heroku (live)
@@ -70,4 +70,4 @@ collaborators
 - [Kevin Lanzon](https://github.com/kevinlanzon)
 - [Julian Veling](https://github.com/veliancreate)
 - [Paul Fitzgerald](https://github.com/Pau1fitz)
-- [Erik Griffn](https://github.com/ErikAGriffin)
+- [Erik Griffin](https://github.com/ErikAGriffin)
